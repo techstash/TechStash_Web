@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Job Board</title>
+  <title>TechStash</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +37,18 @@
 <style>
 i {
 color: #00e0d8;
+}
+
+.filterDiv {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+button.selected{
+  background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
+  color:white;
 }
 </style>
 
@@ -101,12 +113,20 @@ color: #00e0d8;
 
     
   <div class="container">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Jobs Board</h2>
+    <div class="row align-items-center" id="myBtnContainer">
+       <div class="col-lg-6 col-md-5 text-center text-md-left order-md-1">
+       <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Jobs Board</h2>
+      </div>
+      <div class="col-lg-6 col-md-7 text-center text-md-left  order-md-2 mb-4 mb-md-0">
+       <button class="btn btn-outline-primary" onclick="filterSelection('full-time')" >Full Time</button>
+        <button class="btn btn-outline-primary" onclick="filterSelection('part-time')">Part Time</button>
+     	<button class="btn btn-outline-primary" onclick="filterSelection('remote')">Remote</button> 
+
+      </div>
     </div>
     <br>
     <div class="row">
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin full-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -128,7 +148,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -150,7 +170,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -172,7 +192,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -194,7 +214,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin full-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -216,7 +236,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -238,7 +258,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -260,7 +280,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -282,7 +302,7 @@ color: #00e0d8;
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin">
+          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
@@ -417,6 +437,57 @@ color: #00e0d8;
 <!-- Main Script -->
 <script src="js/blog.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+
+$('button').on('click', function(){
+    $('button').removeClass('selected');
+    $(this).addClass('selected');
+});
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 </body>
 </html>
