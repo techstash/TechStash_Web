@@ -176,7 +176,6 @@
 </section>
 
 <section class="section-grid section-lg-bottom" style="background-color:#f4f6f9">
-    <div class="container">
        <div class="container">
         <div class="col-lg-12 text-center">
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Meet your local community</h2>
@@ -185,10 +184,10 @@
         	<div class="band">
     			<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/chennai.webp);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here</h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>
@@ -196,10 +195,10 @@
     			
 				<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here </h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>
@@ -207,10 +206,10 @@
     			
     			<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here </h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>
@@ -218,10 +217,10 @@
     			
     			<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here </h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>
@@ -229,10 +228,10 @@
     			
     			<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here </h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>
@@ -240,10 +239,10 @@
     			
     			<div class="card border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
-            			<article>
+            			<article class="text-center">
              			<h5>Few Wordings Here </h5>
-             			<h5>29/04/2020</h5>
-             			<h5>Few Wordings Here </h5>
+             			<h6 style="font-weight: normal;">29/04/2020</h6>
+             			<h6 style="font-weight: normal;">Few Wordings Here </h6>
             			</article>
             			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary" style="padding-top: 10px;padding-right: 30px;padding-bottom: 10px;padding-left: 30px;">
                 Read More</a></div>

@@ -87,7 +87,6 @@
 
 
 <section class="section-grid section-lg-bottom" style="background-color:#f4f6f9">
-    <div class="container">
       <div class="col-lg-12 text-center">
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Speakers Directory</h2>
     </div>
@@ -99,9 +98,9 @@
               <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
             </div>
@@ -112,9 +111,9 @@
               <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+               <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
             </div>
@@ -125,9 +124,9 @@
               <img src="images/speakers/speaker-3.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
             </div>
@@ -138,9 +137,9 @@
               <img src="images/speakers/speaker-4.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+               <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
             </div>
@@ -151,8 +150,73 @@
               <img src="images/speakers/speaker-5.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
+                <p style="color:black;">Google Cloud Platform</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
+            <div class="card border-0 shadow rounded-lg">
+            <br>
+              <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <div class="text-center">
+              <br>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
+                <p style="color:black;">Google Cloud Platform</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
+            <div class="card border-0 shadow rounded-lg">
+            <br>
+              <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <div class="text-center">
+              <br>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
+                <p style="color:black;">Google Cloud Platform</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
+            <div class="card border-0 shadow rounded-lg">
+            <br>
+              <img src="images/speakers/speaker-3.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <div class="text-center">
+              <br>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
+                <p style="color:black;">Google Cloud Platform</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
+            <div class="card border-0 shadow rounded-lg">
+            <br>
+              <img src="images/speakers/speaker-4.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <div class="text-center">
+              <br>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
+                <p style="line-height:8px;"><span style="color:black;font-weight:bold;">Category</span></p>
+                <p style="color:black;">Google Cloud Platform</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
+            <div class="card border-0 shadow rounded-lg">
+            <br>
+              <img src="images/speakers/speaker-5.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <div class="text-center">
+              <br>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
                 <span style="color:black;font-weight:bold">Category</span>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
@@ -164,8 +228,8 @@
               <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
                 <span style="color:black;font-weight:bold">Category</span>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
@@ -177,73 +241,8 @@
               <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
-                <p style="color:black;">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-3.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
-                <p style="color:black;">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-4.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
-                <p style="color:black;">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-5.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
-                <p style="color:black;">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
-                <span style="color:black;font-weight:bold">Category</span>
-                <p style="color:black;">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="/speaker_detail">Speaker Name</a></h5>
-                <p style="color:black;">Delhi<p>
+                <h5><a class="title-color" href="#">Speaker Name</a></h5>
+                <p style="color:black;line-height: 10px;">Delhi</p>
                 <span style="color:black;font-weight:bold">Category</span>
                 <p style="color:black;">Google Cloud Platform</p>
               </div>
@@ -361,9 +360,9 @@
 	   <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">\
 	   <div class="text-center">\
 	   <br>\
-	   <h5 style="line-height: 10px;"><a class="title-color" href="#">Speaker Name</a></h5>\
-	   <p style="color:black;">Delhi<p>\
-	   <p style="line-height: 10px;"><span style="color:black;font-weight:bold;">Category</span></p>\
+	   <h5><a class="title-color" href="#">Speaker Name</a></h5>\
+	   <p style="color:black;line-height: 10px;">Delhi</p>\
+	   <p style="line-height:8px;margin-bottom: 5px;"><span style="color:black;font-weight:bold;">Category</span></p>\
 	   <p style="color:black;">Google Cloud Platform</p>\
 	   </div>';
    
