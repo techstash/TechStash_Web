@@ -34,6 +34,17 @@
 
 </head>
 
+<style>
+
+.rounded-image {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    }
+    
+</style>
+
 <body id="body">
 
   <!-- preloader start -->
@@ -42,7 +53,7 @@
   </div>
    <!-- preloader end -->
 
-<div class="conference-navigation fixed-top transition" id="topheader">
+<div class="conference-navigation fixed-top transition nav-bg" id="topheader">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark p-0">
       <a class="navbar-brand p-0" href="/"><img src="images/logo/logo.png" alt="TechStashLogo"></a>
@@ -65,7 +76,7 @@
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Volunteer</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="/blogs">Blog</a>
           </li>
           <li class="nav-item">
@@ -76,6 +87,7 @@
     </nav>
   </div>
 </div>  
+
 
 <section class="page-title page-title-overlay bg-cover overflow-hidden" data-background="images/background/blog.jpg">
     <div class="container">
@@ -89,6 +101,449 @@
       </div>
         </div>
     </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row masonry-container">
+      <div class="col-lg-4 col-sm-6 mb-5">
+      <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" class="thumb img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6 mb-5">
+      <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg, #91EAE4 0%, #7F7FD5 52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg, #91EAE4 0%, #CF8BF3 52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg, #91EAE4 0%, #CF8BF3 52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="subscription bg-white">
+  <div class="container">
+    <div class="subscription-wrapper">
+      <div class="d-flex position-relative mx-5 justify-content-between align-items-center flex-column flex-md-row text-center">
+        <h3 class="flex-fill">Subscribe <br> to our newsletter</h3>
+        <form action="#" class="row flex-fill">
+          <div class="col-lg-7 my-md-2 my-2">
+            <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Your Email" name="email">
+          </div>
+          <div class="col-lg-5 my-md-2 my-2">
+            <button type="submit" class="btn btn-primary btn-lg border-0 w-100">Subscribe Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 
