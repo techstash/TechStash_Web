@@ -1,23 +1,22 @@
+<%@ include file="head.html" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>TechStash</title>
 
-	<!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="css/main.css" rel="stylesheet">
+	
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<script> 
+     	$(function(){ $("head").load("head.html") });
+   	</script>
+   	
+  	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 
-  <!-- Main Stylesheet -->
-  <link href="css/main.css" rel="stylesheet">
-  
-  <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  
-  <!--ShareThis Script-->
-  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 </head>
+
 
 <body id="body">
 
@@ -336,7 +335,14 @@
       <!-- Leaflet Gesture Handling -->
      <script src="https://unpkg.com/leaflet-gesture-handling"></script>
    <script>
-   
+   window.onload = function () {
+       setMeta();
+   }
+  function setMeta(){
+   	document.getElementById("title").setAttribute("content","Input data");
+   	document.getElementById("description").setAttribute("content","Input data");
+   	document.title = 'TechStash Speakers';
+  }
    
    var template = '<br">\
 	   <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">\

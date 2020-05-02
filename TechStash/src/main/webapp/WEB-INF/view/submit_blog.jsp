@@ -1,23 +1,20 @@
+<%@ include file="head.html" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>TechStash</title>
-  
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Main Stylesheet -->
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/blog_form.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<script> 
+     	$(function(){ $("head").load("head.html") });
+   	</script>
+   	
+  	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
-  <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  
-  <!--ShareThis Script-->
-  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
+  	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
+
 </head>
 
 <body>
@@ -75,14 +72,14 @@
                         <div class="form-row">
                             <div class="name">Name</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="full_name" placeholder="" required>
+                                <input class="input--style-6" type="text" name="name" placeholder="" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Topics</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="email" placeholder="" required>
+                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +87,7 @@
                             <div class="name">Description</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="message" placeholder="" required></textarea>
+                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -109,15 +106,19 @@
                             <div class="name">Category</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="email" placeholder="" required>
+                                    <input class="input--style-6" type="text" name="category" placeholder="" required>
                                 </div>
                             </div>
                         </div>
-                    
-                    <div class="card-footer">
-                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                        
+                        <div class="g-recaptcha" data-sitekey="6LdSVvEUAAAAAAQY49q-j8afGRMFMr9HBo-5pJTr"></div>
+                        
+                        <div class="card-footer">
+                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Submit</button>
                 </div>
-                 </form>
+                
+                    </form>
+                    
                 </div>
                 
             </div>
@@ -209,11 +210,24 @@
 <script src="plugins/venobox/venobox.min.js"></script>
 <!-- Aos -->
 <script src="plugins/aos/aos.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <!-- google map -->
 <!-- Main Script -->
 <script src="js/main.js"></script>
 
 <script src="js/form.js"></script>
+
+ <script type="text/javascript">
+ window.onload = function () {
+     setMeta();
+ }
+function setMeta(){
+ 	document.getElementById("title").setAttribute("content","Input data");
+ 	document.getElementById("description").setAttribute("content","Input data");
+ 	document.title = 'TechStash Submit Blog';
+}
+</script>
 
 </body>
 
