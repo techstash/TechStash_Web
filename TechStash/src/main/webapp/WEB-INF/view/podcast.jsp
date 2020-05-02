@@ -1,49 +1,23 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   <meta charset="utf-8">
   <title>TechStash</title>
-
+  
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- ** Plugins Needed for the Project ** -->
-  <link href="css/index.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- Main Stylesheet -->
+  <link href="css/main.css" rel="stylesheet">
   
-  <!-- venobox -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  
-  <!-- slick -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  
-  <!-- AOS -->
-  <link rel="stylesheet" href="plugins/aos/aos.css">
-
-<link href="css/main.css" rel="stylesheet">
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  
+  <!--ShareThis Script-->
   <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
-
 </head>
-
-<style>
-
-.rounded-image {
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    }
-    
-</style>
 
 <body id="body">
 
@@ -120,7 +94,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -157,7 +131,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -190,7 +164,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -226,7 +200,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -259,7 +233,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -292,7 +266,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -328,7 +302,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -364,7 +338,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -400,7 +374,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -436,7 +410,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -469,7 +443,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
@@ -505,7 +479,7 @@
              <div class="col-lg-6 col-sm-6 col-6">
              <div class="pulse-container">
             <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="fa fa-play text-secondary"></i></a>
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
               <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>

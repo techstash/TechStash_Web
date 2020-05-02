@@ -1,36 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   <meta charset="utf-8">
   <title>TechStash</title>
-
+  
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- ** Plugins Needed for the Project ** -->
-  
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  
-  <!-- venobox -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  
-  <!-- slick -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  
-  <!-- AOS -->
-  <link rel="stylesheet" href="plugins/aos/aos.css">
-  
   <!-- Main Stylesheet -->
   <link href="css/main.css" rel="stylesheet">
-  
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
+  <!--ShareThis Script-->
   <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 </head>
 

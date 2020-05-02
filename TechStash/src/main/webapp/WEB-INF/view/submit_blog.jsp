@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>TechStash</title>
-
-	<!-- mobile responsive meta -->
+  
+  <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Main Stylesheet -->
   <link href="css/main.css" rel="stylesheet">
+  <link href="css/blog_form.css" rel="stylesheet">
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -18,39 +19,40 @@
   <!--ShareThis Script-->
   <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 </head>
-<body id="body">
 
+<body>
   <!-- preloader start -->
+  <!-- preloader end -->
+
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
-   <!-- preloader end -->
 
-<div class="naviagtion fixed-top transition" id="topheader">
+<div class="conference-navigation fixed-top transition nav-bg" id="topheader">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark p-0">
-      <a class="navbar-brand p-0" href="/"><img src="images/logo/logo.png" alt="TechStashLogo"></a>
+      <a class="navbar-brand p-0" href="index.html"><img src="images/logo/logo.png" alt="TechStashLogo"></a>
       <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
     aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
     <div class="animated-icon3"><span></span><span></span><span></span></div>
   </button>
 
       <div class="collapse navbar-collapse text-center" id="navbarSupportedContent20">
-       <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="/">Home</a>
+            <a class="nav-link text-white text-capitalize" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="/conference">Conference</a>
+            <a class="nav-link text-white text-capitalize" href="conference.html">Conference</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="/jobs">Jobs</a>
+            <a class="nav-link text-white text-capitalize" href="#">Jobs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Volunteer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="/blogs">Blog</a>
+            <a class="nav-link text-white text-capitalize" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Contact</a>
@@ -61,67 +63,87 @@
   </div>
 </div>  
 
-<section class="page-title page-title-overlay bg-cover overflow-hidden" data-background="images/background/blog.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">Subscribe<span class="watermark-sm">Subscribe</span></h1>
-                <p class="text-white pt-4 pb-4" data-aos="fade-up" data-aos-delay="1200">Latest News</p>
+<section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden" style="background-color:#f4f6f9">
+<div class="page-wrapper p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="section-title">Submit Blog</h2>
+                </div>
+                <div class="card-body card border-0 shadow rounded-lg">
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" name="full_name" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Topics</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="email" placeholder="" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Description</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-6" name="message" placeholder="" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Image</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" name="file_cv" id="file">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span>
+                                </div>
+                                <div class="label--desc">Upload the image. Max file size 3 MB</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Category</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="email" placeholder="" required>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="card-footer">
+                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                </div>
+                 </form>
+                </div>
+                
             </div>
-            <div class="col-lg-5 pl-lg-0 pt-5 pt-lg-0 text-lg-right text-center">
-        <img src="images/newsletter/newsletter.svg" class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
+        </div>
+    </div>
+
+</section>
+
+
+<section class="subscription bg-white">
+  <div class="container">
+    <div class="subscription-wrapper">
+      <div class="d-flex position-relative mx-5 justify-content-between align-items-center flex-column flex-md-row text-center">
+        <h3 class="flex-fill">Subscribe <br> to our newsletter</h3>
+        <form action="#" class="row flex-fill">
+          <div class="col-lg-7 my-md-2 my-2">
+            <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Your Email" name="email">
+          </div>
+          <div class="col-lg-5 my-md-2 my-2">
+            <button type="submit" class="btn btn-primary btn-lg border-0 w-100">Subscribe Now</button>
+          </div>
+        </form>
       </div>
-        </div>
     </div>
+  </div>
 </section>
-
-<section class="section-grid section-lg-bottom">
-   <div class="container">
-    <div class="row">
-    <div class="col-lg-3"></div>
-          <div class="col-lg-6 mb-4 grid-margin" >
-            <div class="card border-0 shadow rounded-lg">
-<form class="text-center border border-light p-5" name="subscribeform" action="#" style="background-color:#f4f6f9">
-
-    <div class="col-lg-12 text-center">
-        <h2 class="section-title">Join Us!</h2>
-    </div>
-
-    <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail" required>
-
-    <input type="text" id="name"  name="name" class="form-control mb-4" placeholder="Full Name" required >
-    
-    <div style="text-align:left;">
-    
-
-    <div class="d-flex justify-content-around">
-        <div>
-            <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribejobs">
-                <label class="custom-control-label" style="color:black" for="subscribejobs">Subscribe to Jobs</label>
-            </div>
-            
-            <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribeevents">
-                <label class="custom-control-label" style="color:black" for="subscribeevents">Subscribe to events, hackthons, conference</label>
-            </div>
-            
-            <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribepodcast">
-                <label class="custom-control-label" style="color:black" for="subscribepodcast">Subscribe to podcast </label>
-            </div>
-        </div>
-    </div>
-    </div>
-<button class="btn btn-outline-primary my-4" type="submit">Subscribe</button>
-</form>
-</div>
-</div>
-<div class="col-lg-3"></div>
-</div>
-</div>
-</section>
-
 
 <!-- footer part start -->
 <footer class="bg-secondary pt-5">
@@ -181,28 +203,18 @@
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- masonry -->
-<script src="plugins/masonry/masonry.js"></script>
-<!-- instafeed -->
-<!-- smooth scroll -->
-<script src="plugins/smooth-scroll/smooth-scroll.js"></script>
-<!-- headroom -->
-<script src="plugins/headroom/headroom.js"></script>
-<!-- reading time -->
-
 <!-- slick -->
+<script src="plugins/slick/slick.min.js"></script>
 <!-- venobox -->
 <script src="plugins/venobox/venobox.min.js"></script>
 <!-- Aos -->
 <script src="plugins/aos/aos.js"></script>
-
+<!-- google map -->
 <!-- Main Script -->
-<script src="js/blog.js"></script>
 <script src="js/main.js"></script>
-<script>
-</script>
+
+<script src="js/form.js"></script>
 
 </body>
+
 </html>

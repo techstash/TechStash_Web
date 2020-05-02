@@ -1,56 +1,24 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   <meta charset="utf-8">
   <title>TechStash</title>
-
+  
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- ** Plugins Needed for the Project ** -->
-  <link href="css/index.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- Main Stylesheet -->
+  <link href="css/main.css" rel="stylesheet">
   
-  <!-- venobox -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  
-  <!-- slick -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  
-  <!-- AOS -->
-  <link rel="stylesheet" href="plugins/aos/aos.css">
-
-<link href="css/main.css" rel="stylesheet">
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  
+  <!--ShareThis Script-->
   <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
-
 </head>
 
-<style>
-i {
-color: #00e0d8;
-}
-
-.filterDiv {
-  display: none;
-}
-.show {
-  display: block;
-}
-
-button.selected{
-  background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
-  color:white;
-}
-</style>
 
 <body id="body">
 
@@ -139,7 +107,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Yahoo<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -161,7 +129,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Google<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -183,7 +151,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Hexaware<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -205,7 +173,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">HCL<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -227,7 +195,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">TCS<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i  class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -249,7 +217,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Fidelity<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -271,7 +239,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Capgemini<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -293,7 +261,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Adobe<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   
@@ -315,7 +283,7 @@ button.selected{
                 <div class="box-alignment">
                 	<p style="color:black;">Yahoo<p>
 				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker"></i></li>
+          				<li class="box-inline-item"><i style="color: #00e0d8;" class="fa fa-map-marker"></i></li>
          				<li class="box-inline-item"><p>Address Here </p></li>
           			</ul> 
           		</div>	   

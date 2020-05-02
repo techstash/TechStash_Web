@@ -1,122 +1,23 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   <meta charset="utf-8">
   <title>TechStash</title>
-
+  
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- ** Plugins Needed for the Project ** -->
-  <link href="css/index.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- Main Stylesheet -->
+  <link href="css/main.css" rel="stylesheet">
   
-  <!-- venobox -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
-  
-  <!-- slick -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  
-  <!-- AOS -->
-  <link rel="stylesheet" href="plugins/aos/aos.css">
-
-<link href="css/main.css" rel="stylesheet">
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  
+  <!--ShareThis Script-->
   <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
-
 </head>
-
-
-<style>
-
-.band {
-  width: 90%;
-  max-width: 1240px;
-  margin: 0 auto;
-  
-  display: grid;
-  
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-  
-}
-
-@media only screen and (min-width: 500px) {
-  .band {
-    grid-template-columns: 1fr;
-  }  
-}
-
-@media only screen and (min-width: 750px) {
-  .band {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 850px) {
-  .band {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-
-.card {
-  min-height: 100%;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: #444;
-  position: relative;
-  top: 0;
-  transition: all .1s ease-in;
-}
-
-.card:hover {
-  top: -2px;
-  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-}
-
-.card article {
-  padding: 20px;
-  display: flex;
-  
-  flex: 1;
-  justify-content: space-between;
-  flex-direction: column;
-  
-}
-.card .thumb {
-  padding-bottom: 60%;
-  background-size: cover;
-  background-position: center center;
-}
-
-.card p { 
-  flex: 1; /* make p grow to fill available space*/
-  line-height: 1.4;
-}
-
-.card span {
-  font-size: 12px;
-  font-weight: bold;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin: 2em 0 0 0;
-}
-
-</style>
 
 <body id="body">
 
@@ -149,7 +50,7 @@
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Volunteer</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="/blogs">Blog</a>
           </li>
           <li class="nav-item">
@@ -182,7 +83,7 @@
     </div>
     <div class="row">
         	<div class="band">
-    			<div class="card border-0 shadow rounded-lg">
+    			<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/chennai.webp);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
@@ -193,7 +94,7 @@
                 Read More</a></div>
     			</div>
     			
-				<div class="card border-0 shadow rounded-lg">
+				<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
@@ -204,7 +105,7 @@
                 Read More</a></div>
     			</div>
     			
-    			<div class="card border-0 shadow rounded-lg">
+    			<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
@@ -215,7 +116,7 @@
                 Read More</a></div>
     			</div>
     			
-    			<div class="card border-0 shadow rounded-lg">
+    			<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
@@ -226,7 +127,7 @@
                 Read More</a></div>
     			</div>
     			
-    			<div class="card border-0 shadow rounded-lg">
+    			<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
@@ -237,7 +138,7 @@
                 Read More</a></div>
     			</div>
     			
-    			<div class="card border-0 shadow rounded-lg">
+    			<div class="card-grid border-0 shadow rounded-lg">
             			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
