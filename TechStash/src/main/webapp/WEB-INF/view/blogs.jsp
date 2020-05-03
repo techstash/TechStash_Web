@@ -87,7 +87,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-1.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -103,7 +103,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-2.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-2.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -118,7 +118,7 @@
      <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-3.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-3.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -133,7 +133,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-4.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-4.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -148,7 +148,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-5.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-5.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -163,7 +163,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-6.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-6.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -178,7 +178,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-7.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-7.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -193,7 +193,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-8.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-8.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -208,7 +208,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-9.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="images/blog/blog-post-9.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -222,7 +222,7 @@
       <div class="col-lg-4 col-sm-6 mb-5">
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
-          <img class="img-fluid mb-4" src="images/blog/blog-post-10.jpg" alt="post-thumb">
+         <img src="images/blog/blog-post-10.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
           <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
           <p class="blog-alignment">Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here
@@ -233,7 +233,7 @@
       <div class="col-lg-4 col-sm-6 mb-5">
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
-          <img class="img-fluid mb-4" src="images/blog/blog-post-1.jpg" alt="post-thumb">
+          <img src="images/blog/blog-post-3.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
           <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
           <p class="blog-alignment">Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here Few Wordings Here
@@ -245,7 +245,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-2.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+             <img src="images/blog/blog-post-6.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
@@ -260,7 +260,7 @@
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-3.jpg" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+             <img src="images/blog/blog-post-2.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
               <p class="text-uppercase mb-2">TRAVEL</p>
           <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>

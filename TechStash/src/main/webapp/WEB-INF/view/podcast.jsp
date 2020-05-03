@@ -105,7 +105,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" class="thumb img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="thumb img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -142,7 +142,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -175,109 +175,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
-             </div>
-            </div> 
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-     <div class="card border-0 shadow rounded-lg" >
-        <article>
-          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
-              <div class="card-body col-lg-8 ">
-          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
-          <br>
-          <h6 class="title-border text-white">Speaker Name</h6>
-          <h6 class="title-border text-white">Designation</h6>
-          </div>
-          <br>
-          <br>
-          <br>
-          <div class="row ">
-             <div class="col-lg-6 col-sm-6 col-6">
-             <div class="pulse-container">
-            <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
-              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-              </svg>
-            </div>
-             </div>
-            </div>
-             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
-             </div>
-            </div> 
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-     <div class="card border-0 shadow rounded-lg" >
-        <article>
-          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
-              <div class="card-body col-lg-8 ">
-          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
-          <br>
-          <h6 class="title-border text-white">Speaker Name</h6>
-          <h6 class="title-border text-white">Designation</h6>
-          </div>
-          <div class="row ">
-             <div class="col-lg-6 col-sm-6 col-6">
-             <div class="pulse-container">
-            <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
-              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-              </svg>
-            </div>
-             </div>
-            </div>
-             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
-             </div>
-            </div> 
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-     <div class="card border-0 shadow rounded-lg" >
-        <article>
-          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
-              <div class="card-body col-lg-8 ">
-          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
-          <br>
-          <h6 class="title-border text-white">Speaker Name</h6>
-          <h6 class="title-border text-white">Designation</h6>
-          </div>
-          <div class="row ">
-             <div class="col-lg-6 col-sm-6 col-6">
-             <div class="pulse-container">
-            <div class="pulse-box">
-              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
-              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
-              </svg>
-            </div>
-             </div>
-            </div>
-             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -313,7 +211,109 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             </div>
+            </div> 
+            </div>
+        </article>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-5">
+     <div class="card border-0 shadow rounded-lg" >
+        <article>
+          <div class="card border-0 shadow rounded-lg" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
+              <div class="card-body col-lg-8 ">
+          <h4 class="title-border"><a class="text-white" href="blog-single.html">Launching your design career</a></h4>
+          <br>
+          <h6 class="title-border text-white">Speaker Name</h6>
+          <h6 class="title-border text-white">Designation</h6>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="row ">
+             <div class="col-lg-6 col-sm-6 col-6">
+             <div class="pulse-container">
+            <div class="pulse-box">
+              <a class="venobox play-icon icon-center" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=acjtWVc_7sc"><i class="playbutton-alignment fa fa-play text-secondary"></i></a>
+              <svg class="pulse-svg" width="90px" height="90px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle class="circle first-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle second-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle third-circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+                <circle class="circle" fill="#fff" cx="25" cy="25" r="25"></circle>
+              </svg>
+            </div>
+             </div>
+            </div>
+             <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -349,7 +349,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -385,7 +385,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -421,7 +421,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -454,7 +454,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>
@@ -490,7 +490,7 @@
              </div>
             </div>
              <div class="col-lg-5 col-sm-5 col-5" style="padding-bottom: 20px;">
-             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" class="img-fluid card-img-top rounded-image" alt="post-thumb">
+             <img style="border: solid white 4px;" src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-image" alt="post-thumb">
              </div>
             </div> 
             </div>

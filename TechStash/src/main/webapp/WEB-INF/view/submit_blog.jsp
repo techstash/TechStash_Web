@@ -63,20 +63,20 @@
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden" style="background-color:#f4f6f9">
 <div class="page-wrapper p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
-            <div class="card card-6">
-                <div class="card-heading">
-                    <h2 class="section-title">Submit Blog</h2>
-                </div>
+            <div class="card-form card-6">
+                <div class="col-lg-12 text-center">
+        <h2 class="section-title">Submit Blog</h2>
+    			</div>
                 <div class="card-body card border-0 shadow rounded-lg">
                     <form method="POST">
                         <div class="form-row">
-                            <div class="name">Name</div>
+                            <div class="name">Name <span style="color:red;"> * </span></div>
                             <div class="value">
                                 <input class="input--style-6" type="text" name="name" placeholder="" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Topics</div>
+                            <div class="name">Topics <span style="color:red;"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-6" type="text" name="topics" placeholder="" required>
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Description</div>
+                            <div class="name">Description <span style="color:red;"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
                                     <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Image</div>
+                            <div class="name">Image <span style="color:red;"> * </span></div>
                             <div class="value">
                                 <div class="input-group js-input-file">
                                     <input class="input-file" type="file" name="file_cv" id="file">
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Category</div>
+                            <div class="name">Category <span style="color:red;"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-6" type="text" name="category" placeholder="" required>
@@ -112,10 +112,9 @@
                         </div>
                         
                         <div class="g-recaptcha" data-sitekey="6LdSVvEUAAAAAAQY49q-j8afGRMFMr9HBo-5pJTr"></div>
-                        
-                        <div class="card-footer">
+                        <div class="card-footer col-lg-12  text-center">
                     <button class="btn btn-outline-primary" type="submit" >Submit</button>
-                </div>
+                    </div>
                 
                     </form>
                     

@@ -454,7 +454,8 @@
   </section>
   <!-- copyright part end -->
 </footer>
-<link href="css/forms.css" rel="stylesheet">
+
+<!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>

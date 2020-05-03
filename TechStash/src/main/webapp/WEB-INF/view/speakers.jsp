@@ -76,7 +76,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -89,7 +89,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -102,7 +102,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-3.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-3.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -115,7 +115,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-4.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-4.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -128,7 +128,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-5.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-5.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -141,7 +141,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -154,7 +154,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -167,7 +167,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-3.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-3.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -180,7 +180,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-4.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-4.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -193,7 +193,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-5.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-5.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -206,7 +206,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-1.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>
@@ -219,7 +219,7 @@
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-2.jpg" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5><a class="title-color" href="#">Speaker Name</a></h5>

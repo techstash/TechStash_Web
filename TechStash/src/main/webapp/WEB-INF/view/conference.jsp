@@ -93,7 +93,7 @@
     <div class="row">
         	<div class="band">
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-1.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-1.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -107,7 +107,7 @@
     			</div>
     			
 				<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-2.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-2.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -121,7 +121,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-3.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-3.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -135,7 +135,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-4.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-4.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -149,7 +149,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-5.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-5.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -163,7 +163,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-6.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-6.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -177,7 +177,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-7.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-7.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -191,7 +191,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-8.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-8.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -205,7 +205,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-9.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-9.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->
@@ -219,7 +219,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-10.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-10.jpg), url(images/placehoder.jpg);"></div>
             <!--		 	<div class="date-pos-left bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">$10.00</div>-->
        					<!--<button type="button" class="btn share-btn btn-circle date-pos-right p-2 d-inline-block position-absolute"><a href="#" target="_blank"><i class="fa fa-share-alt" style="color: white; font-size: 22px;-->
        					<!--top: 7px;left: 8px;position: absolute;"></i>-->

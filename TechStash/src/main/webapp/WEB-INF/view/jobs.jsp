@@ -96,7 +96,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/yahoo.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/yahoo.com"  onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -118,7 +118,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/google.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/google.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -140,7 +140,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/hexaware.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/hexaware.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -162,7 +162,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/hcl.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/hcl.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -184,7 +184,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/tcs.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/tcs.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -206,7 +206,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/fidelity.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/fidelity.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -228,7 +228,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/capgemini.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/capgemini.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -250,7 +250,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/adobe.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/adobe.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>
@@ -272,7 +272,7 @@
             <div class="card border-0 shadow rounded-lg">
             <br>
             <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/yahoo.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="//logo.clearbit.com/yahoo.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
                 <h5>Web Developer</h5>

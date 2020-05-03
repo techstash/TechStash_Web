@@ -83,7 +83,7 @@
     <div class="row">
         	<div class="band">
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/chennai.webp);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/chennai.webp), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
@@ -94,7 +94,7 @@
     			</div>
     			
 				<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
@@ -105,7 +105,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
@@ -116,7 +116,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
@@ -127,7 +127,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
@@ -138,7 +138,7 @@
     			</div>
     			
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
              			<h5>Few Wordings Here </h5>
              			<h6 style="font-weight: normal;">29/04/2020</h6>
