@@ -64,7 +64,8 @@
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-6 pl-lg-0 text-center text-lg-left">
         <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">One Stop Solution for all<span class="watermark">One</span></h1>
-        <p class="text-white pt-2 pb-3" data-aos="fade-up" data-aos-delay="1200">Information contains many number of conference in <br> india.</p>
+        <p class="text-white pt-2 pb-3" data-aos="fade-up" data-aos-delay="1200">Want to stay up to date with the latest wonders in the tech industry? You can subscribe to the
+  best free tech newsletters of the moment and you’re covered.</p>
       <a href="/subscribe" class="btn btn-primary" data-aos="fade-up" data-aos-delay="1400">Subscribe</a>
       </div>
       <div class="col-lg-5 pl-lg-0 pt-5 pt-lg-0 text-lg-right text-center">
@@ -407,7 +408,7 @@
       <div class="row justify-content-between">
         <div class="col-md-5 mb-4 mb-md-0">
           <img src="images/logo/logo.png" class="mb-4" alt="agico">
-          <p class="text-light mb-4">Few Content Here Few Content Here Few Content Here Few Content Here Few Content Here Few Content Here Few Content Here Few Content Here Few Content Here</p>
+          <p class="text-light mb-4">Our mission is to create one stop solution for tech resources ranging from conferences, events, blogs, speaker community, podcasts and Weekly newsletter which is free-for-all.</p>
           <ul class="list-inline social-icons">
             <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
             <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
