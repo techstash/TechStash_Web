@@ -28,7 +28,7 @@
 <div class="conference-navigation fixed-top transition nav-bg" id="topheader">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark p-0">
-      <a class="navbar-brand p-0" href="index.html"><img src="images/logo/logo.png" alt="TechStashLogo"></a>
+      <a class="navbar-brand p-0" href="\"><img src="images/logo/logo.png" alt="TechStashLogo"></a>
       <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
     aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
     <div class="animated-icon3"><span></span><span></span><span></span></div>
@@ -37,19 +37,19 @@
       <div class="collapse navbar-collapse text-center" id="navbarSupportedContent20">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="index.html">Home</a>
+            <a class="nav-link text-white text-capitalize" href="\">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="conference.html">Conference</a>
+            <a class="nav-link text-white text-capitalize" href="\conference">Conference</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="#">Jobs</a>
+            <a class="nav-link text-white text-capitalize" href="\jobs">Jobs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Volunteer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white text-capitalize" href="blog.html">Blog</a>
+            <a class="nav-link text-white text-capitalize" href="\blogs">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white text-capitalize" href="#">Contact</a>
@@ -114,7 +114,7 @@
                         <div class="g-recaptcha" data-sitekey="6LdSVvEUAAAAAAQY49q-j8afGRMFMr9HBo-5pJTr"></div>
                         
                         <div class="card-footer">
-                    <button class="btn btn--radius-2 btn--blue-2" type="submit">Submit</button>
+                    <button class="btn btn-outline-primary" type="submit" >Submit</button>
                 </div>
                 
                     </form>

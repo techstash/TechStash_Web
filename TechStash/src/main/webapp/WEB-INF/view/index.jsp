@@ -4,7 +4,6 @@
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
-	
 	<script src="plugins/jQuery/jquery.min.js"></script>
 	<script> 
      	$(function(){ $("head").load("head.html") });
@@ -454,8 +453,7 @@
   </section>
   <!-- copyright part end -->
 </footer>
-
-<!-- jQuery -->
+<link href="css/forms.css" rel="stylesheet">
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
