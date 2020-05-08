@@ -192,7 +192,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01afe7', end
 }
 
 .wrap-login100 {
-  width: 390px;
+  width: 700px;
+  text-align: center;
   background: transparent;
 }
 
