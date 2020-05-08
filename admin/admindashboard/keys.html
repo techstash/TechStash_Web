@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Dashboard</title>
+  <title>TechStash Keys</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -20,10 +20,9 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
 </head>
+<body class="hold-transition sidebar-mini">
 
-<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
-
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -54,16 +53,18 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.html" class="brand-link">
-      <img src="images/logo/logo.png" alt="AdminLTE Logo" class="brand-image elevation-3"
+      <img src="images/logo/logo.png"
+           alt="TechStash"
+           class="brand-image elevation-3"
            style="opacity: .8">
       <span class="brand-text">TechStash</span>
     </a>
 
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="images/profilephoto/profile-2.jpg" class="elevation-2" alt="User Image">
+        <img src="images/profilephoto/profile-2.jpg" class="elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Welcome Admin</a>
@@ -74,8 +75,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview">
+            <a href="index.html" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -92,13 +93,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="home_setting.html" class="nav-link">
+                <a href="home_setting.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home Setting</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home Content</p>
                 </a>
@@ -456,7 +457,7 @@
             </ul>
           </li>
           	<li class="nav-item">
-            	<a href="keys.html" class="nav-link">
+            	<a href="#" class="nav-link active">
               	<i class="nav-icon fas fa-key"></i>
               		<p>
                 		Keys
@@ -478,95 +479,128 @@
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1>Keys</h1>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
+<div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Item</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    Field Name
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-4">
+                    Field Type
+                  </div>
+                  <div class="col-8">
+                     <div class="form-group">
+                        <select class="custom-select">
+                          <option>Text box</option>
+                          <option>Drop down</option>
+                          <option>Description box</option>
+                          <option>Check box</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+	
     <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>Subscribe list</p>
+      <div class="card">
+              <div class="card-header">
+                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
+                  Add Item
+                </button>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>0</h3>
-
-                <p>Unsubscribed list</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>Some Count here</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Some Count here</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-3">
+                    reCAPTCHA Key
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Sharethis Key
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="button" class="btn btn-block btn-primary">Submit</button>
         </div>
-
-        <div class="row">
-          <section class="col-lg-7 connectedSortable">
-          
-          </section>
-          <section class="col-lg-5 connectedSortable">
-
-          </section>
-        </div>
+      <div class="col-5"></div>
       </div>
     </section>
   </div>
 
   <aside class="control-sidebar control-sidebar-dark">
-
   </aside>
 </div>
 
 <script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>
