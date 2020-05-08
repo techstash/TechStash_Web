@@ -515,13 +515,127 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01afe7', end
   }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ responsive ]*/
-
 @media (max-width: 576px) {
   .wrap-login100 {
     padding-top: 80px;
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+.btn {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  padding: 14px 45px;
+  border-radius: 45px;
+  font-weight: 500;
+  border: 1px solid;
+  position: relative;
+  z-index: 1;
+  transition: .3s ease-in;
+  overflow: hidden;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.btn-lg {
+  padding: 20px 40px;
+}
+
+.btn-sm {
+  padding: 5px 20px;
+}
+
+.btn-primary {
+  border: 0;
+  color: #fff;
+}
+
+.btn-primary:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 102%;
+  height: 100%;
+  background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
+  z-index: -1;
+  transition: ease 0.3s;
+}
+
+.btn-white {
+  background: #fff;
+  color: #0097d5;
+  border: 1px solid #fff;
+}
+
+.btn-white:hover {
+  color: #0097d5;
+  background: #fff;
+}
+
+.btn-light {
+  background: #edeff2;
+  color: #242f3e;
+  border: 0;
+  transition: none;
+}
+
+.btn-light:hover {
+  color: #fff;
+  background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
+}
+
+.btn-outline-primary {
+  color: white;
+  border: 2px solid white;
+  font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background: none;
+  border: 2px solid #00e0d8;
+}
+
+.btn-outline-primary:hover i {
+  color: #fff !important;
+}
+
+.btn-outline-primary:hover:after {
+  left: 0;
+}
+
+.btn-outline-primary.active {
+  background: none;
+}
+
+.btn-outline-primary:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -102%;
+  width: 102%;
+  height: 100%;
+  background: linear-gradient(45deg, #00a8f4 0%, #02d1a1 100%);
+  z-index: -1;
+  transition: ease 0.3s;
+}
+
+.btn-outline-white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-outline-white:hover {
+  color: #0097d5;
+  background: #fff;
 }
