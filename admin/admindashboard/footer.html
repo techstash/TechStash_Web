@@ -85,8 +85,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -95,7 +95,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="home_setting.html" class="nav-link active">
+                <a href="home_setting.html" class="nav-link">
                   <i class="fa fa-cogs nav-icon"></i>
                   <p>Home Setting</p>
                 </a>
@@ -108,8 +108,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Pages
@@ -449,7 +449,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="footer.html" class="nav-link">
+                <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-copyright"></i>
               <p>
                 Footer
@@ -485,7 +485,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Home Setting</h1>
+            <h1>Footer</h1>
           </div>
         </div>
       </div>
@@ -546,7 +546,36 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">
-                    Home Page Title
+                    Logo Image
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Footer text
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
@@ -567,7 +596,70 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Home Page Description
+                    Facebook URL
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Twitter URL
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Youtube URL
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Linkedin URL
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
@@ -607,7 +699,14 @@
 
 <script src="js/index.js"></script>
 
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
 
 </body>
 
