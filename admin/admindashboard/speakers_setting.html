@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Keys</title>
+  <title>TechStash Speakers Setting</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-       <nav class="mt-2">
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -108,8 +108,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Pages
@@ -168,7 +168,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-microphone"></i>
               <p>
                 Speakers
@@ -177,7 +177,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="speakers_setting.html" class="nav-link">
+                <a href="speakers_setting.html" class="nav-link active">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Speaker Settings</p>
                 </a>
@@ -459,7 +459,7 @@
             </ul>
           </li>
           	<li class="nav-item">
-            	<a href="keys.html" class="nav-link active">
+            	<a href="keys.html" class="nav-link">
               	<i class="nav-icon fas fa-key"></i>
               		<p>
                 		Keys
@@ -485,7 +485,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Keys</h1>
+            <h1>Speakers Setting</h1>
           </div>
         </div>
       </div>
@@ -495,7 +495,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Add Item</h4>
+              <h4 class="modal-title">Add Field</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -540,13 +540,13 @@
       <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Item
+                  Add Field
                 </button>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">
-                    reCAPTCHA Key
+                    Speaker Title
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
@@ -567,7 +567,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Sharethis Key
+                    Speaker Description
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
@@ -605,8 +605,10 @@
 
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<script src="js/index.js"></script>
+
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
-<script src="js/index.js"></script>
 </body>
+
 </html>
