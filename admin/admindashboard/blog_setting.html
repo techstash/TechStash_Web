@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Jobs Content</title>
+  <title>TechStash Blogs Setting</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -15,10 +15,6 @@
   <link rel="stylesheet" href="css/index.css">
   
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-   
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -77,7 +73,7 @@
         </div>
       </div>
 
-     <nav class="mt-2">
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -162,7 +158,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="jobs_content.html" class="nav-link active">
+                <a href="jobs_content.html" class="nav-link">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Job Content</p>
                 </a>
@@ -197,7 +193,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Blogs
@@ -206,7 +202,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="blog_setting.html" class="nav-link">
+                <a href="blog_setting.html" class="nav-link active">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Blog Settings</p>
                 </a>
@@ -489,7 +485,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Jobs Content</h1>
+            <h1>Blogs Setting</h1>
           </div>
         </div>
       </div>
@@ -499,7 +495,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Add Jobs</h4>
+              <h4 class="modal-title">Add Field</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -508,7 +504,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-4">
-                    Company Name
+                    Field Name
                   </div>
                   <div class="col-8">
                     <input type="text" class="form-control" placeholder="">
@@ -517,55 +513,15 @@
                 <br>
                 <div class="row">
                   <div class="col-4">
-                    Job Title
+                    Field Type
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Image
-                  </div>
-                  <div class="col-8">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Company Address
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Salary
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Type
-                  </div>
-                  <div class="col-8">
-                    <div class="form-group">
+                     <div class="form-group">
                         <select class="custom-select">
-                          <option>Full Time</option>
-                          <option>Part Time</option>
-                          <option>Remote</option>
+                          <option>Text box</option>
+                          <option>Drop down</option>
+                          <option>Description box</option>
+                          <option>Check box</option>
                         </select>
                       </div>
                   </div>
@@ -582,39 +538,15 @@
 	
     <section class="content">
       <div class="card">
-          <div class="card-header">
-            	<h4>Header</h4>
-          </div>
+              <div class="card-header">
+                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
+                  Add Field
+                </button>
+              </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">
-                    Header Image
-                  </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                    Header title
+                    Blogs Title
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
@@ -635,36 +567,10 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header subtitle
+                    Blogs Description
                   </div>
                   <div class="col-6">
                     <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                    Background Image
-                  </div>
-                  <div class="col-6">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
                   </div>
                   <div class="col-3">
                           <a class="btn btn-info btn-sm" href="#">
@@ -689,344 +595,6 @@
       <div class="col-5"></div>
       </div>
     </section>
-    <br>
-    <section class="content">
-      <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Jobs
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Jobs
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-              </div>
-              <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Job Title</th>
-                    <th>Job Image</th>
-                    <th>Company Address</th>
-                    <th>Salary</th>
-                    <th>Job Type</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Visible</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Chennai</td>
-                    <td>60,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Delhi</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Microsoft</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Cognizant</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Google</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Microsoft</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>HCL</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>TCS</td>
-                    <td>Senior Software Engineer</td>
-                   	<td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>Pune</td>
-                    <td>50,000</td>
-                    <td>Full Time</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-    </section>
   </div>
 
   <aside class="control-sidebar control-sidebar-dark">
@@ -1039,32 +607,7 @@
 
 <script src="js/index.js"></script>
 
-<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-
-<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>
 
 </body>
 
