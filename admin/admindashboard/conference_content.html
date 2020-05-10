@@ -20,6 +20,8 @@
    
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -850,6 +852,19 @@
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+<script src="plugins/moment/moment.min.js"></script>
+
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+  $(function () {
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+
+  })
+</script>
 
 <script type="text/javascript">
 $(document).ready(function () {
