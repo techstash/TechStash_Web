@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Keys</title>
+  <title>TechStash Pricing Details</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="css/index.css">
   
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -73,7 +79,7 @@
         </div>
       </div>
 
-       <nav class="mt-2">
+    <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -465,7 +471,7 @@
             </ul>
           </li>
           	<li class="nav-item">
-            	<a href="keys.html" class="nav-link active">
+            	<a href="keys.html" class="nav-link">
               	<i class="nav-icon fas fa-key"></i>
               		<p>
                 		Keys
@@ -491,17 +497,17 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Keys</h1>
+            <h1>Pricing Details</h1>
           </div>
         </div>
       </div>
     </section>
-
-<div class="modal fade" id="modal-default">
+    
+<div class="modal fade" id="modal-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Add Item</h4>
+              <h4 class="modal-title">Add New Plan Service</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -510,28 +516,43 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-4">
-                    Field Name
+                    Plan Service
                   </div>
                   <div class="col-8">
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
                 <br>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>    
+      
+ <div class="modal fade" id="modal-2">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add New Plan Service</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body">
                 <div class="row">
                   <div class="col-4">
-                    Field Type
+                    Plan Service
                   </div>
                   <div class="col-8">
-                     <div class="form-group">
-                        <select class="custom-select">
-                          <option>Text box</option>
-                          <option>Drop down</option>
-                          <option>Description box</option>
-                          <option>Check box</option>
-                        </select>
-                      </div>
+                    <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
+                <br>
               </div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -541,53 +562,162 @@
           </div>
         </div>
       </div>
-	
+      
+<div class="modal fade" id="modal-3">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add New Plan Service</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                    Plan Service
+                  </div>
+                  <div class="col-8">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+                <br>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>             
+    
     <section class="content">
       <div class="card">
-              <div class="card-header">
-                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Item
-                </button>
+           <div class="card-header">
+              <div class="row">
+                <div class="col-12">
+                  <h4>
+                    Basic Plan details
+                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-1">
+                  Add Plan Service
+                </button></small>
+                  </h4>
+                </div>
               </div>
+          </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">
-                    reCAPTCHA Key
+                    Plan name
                   </div>
-                  <div class="col-6">
+                  <div class="col-5">
                     <input type="text" class="form-control" placeholder="">
                   </div>
-                  <div class="col-3">
+                  <div class="col-4">
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
+                  </div>
+                </div>
+                <br>
+               <div class="row">
+                  <div class="col-3">
+                    Plan Image
+                  </div>
+                  <div class="col-5">
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
                               </i>
-                              Delete
+                              Edit
                           </a>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Sharethis Key
+                    Plan price
                   </div>
-                  <div class="col-6">
+                  <div class="col-5">
                     <input type="text" class="form-control" placeholder="">
                   </div>
-                  <div class="col-3">
+                  <div class="col-4">
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Plan Service
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
                               </i>
-                              Delete
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
                           </a>
                   </div>
                 </div>
@@ -601,6 +731,288 @@
       <div class="col-5"></div>
       </div>
     </section>
+    <br>
+    <section class="content">
+      <div class="card">
+           <div class="card-header">
+              <div class="row">
+                <div class="col-12">
+                  <h4>
+                    Professional Plan details
+                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-2">
+                  Add Plan Service
+                </button></small>
+                  </h4>
+                </div>
+              </div>
+          </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-3">
+                    Plan name
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+               <div class="row">
+                  <div class="col-3">
+                    Plan Image
+                  </div>
+                  <div class="col-5">
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Plan price
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Plan Service
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="button" class="btn btn-block btn-primary">Submit</button>
+        </div>
+      <div class="col-5"></div>
+      </div>
+    </section>
+    <br>
+    
+    <section class="content">
+      <div class="card">
+           <div class="card-header">
+              <div class="row">
+                <div class="col-12">
+                  <h4>
+                    Business Plan details
+                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-3">
+                  Add Plan Service
+                </button></small>
+                  </h4>
+                </div>
+              </div>
+          </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-3">
+                    Plan name
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+               <div class="row">
+                  <div class="col-3">
+                    Plan Image
+                  </div>
+                  <div class="col-5">
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Plan price
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Plan Service
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="">
+                  </div>
+                  <div class="col-4">
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="button" class="btn btn-block btn-primary">Submit</button>
+        </div>
+      <div class="col-5"></div>
+      </div>
+    </section>
+    
+    <br>
+    
   </div>
 
   <aside class="control-sidebar control-sidebar-dark">
@@ -619,8 +1031,48 @@
 
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<script src="js/index.js"></script>
+
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
-<script src="js/index.js"></script>
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+<script src="plugins/moment/moment.min.js"></script>
+
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+  $(function () {
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+
+  })
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
+<script>
+  $(function () {
+    $("#searchtable").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+  });
+</script>
+
 </body>
+
 </html>
