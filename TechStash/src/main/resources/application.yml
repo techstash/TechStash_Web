@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/techstash_database
+    username: techstash
+    password: uryda5uda
+    type: org.apache.tomcat.jdbc.pool.DataSource
