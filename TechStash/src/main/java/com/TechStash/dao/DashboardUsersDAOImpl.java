@@ -26,7 +26,6 @@ public class DashboardUsersDAOImpl implements DashboardUsersDAO {
 	public void saveUsers(Dashboard_users dashboardUsers) {
 
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		System.out.println("agdsgd");
 		Date date = new Date();  
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		String strDate= formatter.format(date);  
@@ -34,7 +33,6 @@ public class DashboardUsersDAOImpl implements DashboardUsersDAO {
 		dashboardUsers.setDate(strDate);
 		
 		dashboardUsers.setStatus("false");
-		System.out.println("agdsgd");
 		currentSession.saveOrUpdate(dashboardUsers);
 		currentSession.close();
 		

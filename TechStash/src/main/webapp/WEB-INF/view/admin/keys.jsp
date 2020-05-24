@@ -530,7 +530,7 @@
         </div>
       </div>
     </section>
-
+<form:form action="keysupdate" method="POST">
 <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -546,7 +546,7 @@
                     Field Name
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <input name="keyName" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
@@ -569,13 +569,15 @@
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
       </div>
+</form:form>
 	
     <section class="content">
+   <%--  <p> ${tempkeys.keyName}</p> --%>
       <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
@@ -583,12 +585,13 @@
                 </button>
               </div>
               <div class="card-body">
+              <c:forEach var="tempkeys" items="${keys}">
                 <div class="row">
                   <div class="col-3">
-                    reCAPTCHA Key
+                    ${tempkeys.keyName}
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" value= "${tempkeys.keyValue}">
                   </div>
                   <div class="col-3">
                           <a class="btn btn-info btn-sm" href="#">
@@ -604,26 +607,7 @@
                   </div>
                 </div>
                 <br>
-                <div class="row">
-                  <div class="col-3">
-                    Sharethis Key
-                  </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                  </div>
-                </div>
+                </c:forEach>
               </div>
             </div>
       <div class="row">
@@ -635,7 +619,7 @@
       </div>
     </section>
   </div>
-
+ <br>
   <aside class="control-sidebar control-sidebar-dark">
   </aside>
   
@@ -665,7 +649,7 @@ $('select[name="dropdown"]').change(function(e){
     	$( ".checkboxlists" ).remove();
     	$( ".message" ).remove();
     	var wrapper= $(".modal-body"); 
-            $(wrapper).append('<div class="row textbox"><div class="col-4"></div><div class="col-8"><input type="text" class="form-control"></div></div>');
+            $(wrapper).append('<div class="row textbox"><div class="col-4"></div><div class="col-8"><input name="keyValue" type="text" class="form-control"/></div></div>');
     }
     
    	if ($(this).val() == "dropdown"){ 

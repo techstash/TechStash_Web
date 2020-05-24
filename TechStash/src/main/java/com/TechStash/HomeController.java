@@ -564,40 +564,6 @@ public class HomeController {
 		
 	}
 	
-	//Keys
-	@RequestMapping("/admin/admindashboard/keys")
-	public String Keys(HttpServletRequest request, Model theModel){
-		HttpSession session = request.getSession();
-		String sessiondesignation=(String) session.getAttribute("designation");
-		String sessionValue=(String) session.getAttribute("session"); 
-		
-		if(sessionValue==null && sessiondesignation==null){
-			return "admin/popup_sessioninvalid";
-		}
-		
-		if(sessionValue != null && sessiondesignation.equals("Founder/CEO/Admin")){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/keys";
-		}
-		else if(!sessiondesignation.equals("Founder/CEO/Admin")) {
-			return "admin/popup_notfound";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
 	//Organizer
 	@RequestMapping("/admin/admindashboard/organizer")
 	public String Organizer(HttpServletRequest request, Model theModel){
@@ -1020,7 +986,7 @@ public class HomeController {
 	
 	// ********Handling Error******** //
 	
-    @ExceptionHandler(Exception.class)
+    /*@ExceptionHandler(Exception.class)
     public ModelAndView handleError(HttpServletRequest request, Exception e)   {
         Logger.getLogger(getClass().getName()).log(Level.SEVERE, "Request: " + request.getRequestURL() + " raised " + e);
         return new ModelAndView("error");
@@ -1030,7 +996,7 @@ public class HomeController {
     public ModelAndView handleError404(HttpServletRequest request, Exception e)   {
         Logger.getLogger(getClass().getName()).log(Level.SEVERE, "Request: " + request.getRequestURL() + " raised " + e);
         return new ModelAndView("error");
-    }
+    }*/
 
     
 }

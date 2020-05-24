@@ -8,12 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import com.mysql.cj.jdbc.Blob;
-
 @Entity
 @Table(name="dashboard_users")
 public class Dashboard_users {
-	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
