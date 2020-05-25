@@ -23,7 +23,7 @@ public class KeysDAOImpl implements KeysDAO {
 	public void keysAdd(String keyName, String KeyValue) {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		currentSession.getTransaction().begin();
-		Query theQuery = currentSession.createNativeQuery("insert into Keys_details (keyname, keyvalue) values (:1, :2)");
+		Query theQuery = currentSession.createNativeQuery("insert into keys_details (keyname, keyvalue) values (:1, :2)");
 		theQuery.setParameter("1", keyName);
 		theQuery.setParameter("2", KeyValue);
 		theQuery.executeUpdate();
@@ -40,6 +40,32 @@ public class KeysDAOImpl implements KeysDAO {
 		List<Keys_details> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
+	}
+
+	@Override
+	public void deleteKey(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from keys_details where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public void updateKey(int id, String keyValue) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE keys_details set keyvalue=:keyvalue where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.setParameter("keyvalue", keyValue);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
 	}
 	
 }

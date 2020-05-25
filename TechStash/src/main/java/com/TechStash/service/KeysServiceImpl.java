@@ -23,8 +23,17 @@ public class KeysServiceImpl implements KeysService {
 
 	@Transactional
 	public List<Keys_details> getKeys() {
-		// TODO Auto-generated method stub
 		return keysDAO.getKeys();
+	}
+
+	@Transactional
+	public void deleteKey(int id) {
+		keysDAO.deleteKey(id);
+	}
+
+	@Transactional
+	public void updateKey(int id, String keyValue) {
+		keysDAO.updateKey(id, keyValue);
 	}
 
 }

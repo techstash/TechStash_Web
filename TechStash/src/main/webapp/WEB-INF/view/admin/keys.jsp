@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   
   <link rel="stylesheet" href="/admin/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/admin/css/util.css">
   
   <link rel="stylesheet" href="/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   
@@ -577,7 +578,6 @@
 </form:form>
 	
     <section class="content">
-   <%--  <p> ${tempkeys.keyName}</p> --%>
       <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
@@ -586,26 +586,38 @@
               </div>
               <div class="card-body">
               <c:forEach var="tempkeys" items="${keys}">
+              <c:url var="deleteLink" value="/admin/admindashboard/keydelete" >
+						<c:param name="id" value="${tempkeys.id}" />
+			  </c:url>
+			  
+			  <c:url var="saveLink" value="/admin/admindashboard/keysedit" >
+						<c:param name="id" value="${tempkeys.id}" />
+			  </c:url>
+              <form:form action="keysedit" method="POST">
                 <div class="row">
                   <div class="col-3">
                     ${tempkeys.keyName}
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" value= "${tempkeys.keyValue}">
+                    <input type="hidden" name="keyId" value="${tempkeys.id}"/>
+                    <input type="text" name="keyValue" class="form-control" id="${tempkeys.id}" value= "${tempkeys.keyValue}" readonly="readonly">
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="#" onclick="myFunction('${tempkeys.id}')">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save p-r-7">
+                              </i>Save</button>
+                          <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this field ?'))) return false">
                               <i class="fas fa-trash">
                               </i>
                               Delete
                           </a>
                   </div>
                 </div>
+                  </form:form>
                 <br>
                 </c:forEach>
               </div>
@@ -613,10 +625,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+         <!--  <button type="submit" class="btn btn-block btn-primary">Submit</button> -->
         </div>
       <div class="col-5"></div>
       </div>
+     
     </section>
   </div>
  <br>
@@ -639,6 +652,7 @@
 <script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
 <script src="/admin/js/index.js"></script>
+
 <script type="text/javascript">
 $('select[name="dropdown"]').change(function(e){
     if ($(this).val() == "textbox"){
@@ -734,5 +748,12 @@ $(function () {
 		$('#txtName').val('');
 	}
 </script> 
+
+<script type="text/javascript">
+function myFunction(id) {
+		document.getElementById(id).removeAttribute('readonly');
+	}
+</script>
+
 </body>
 </html>

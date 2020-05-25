@@ -9,8 +9,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Keys_details;
@@ -97,6 +99,25 @@ public class KeysController {
 			return "admin/popup_sessioninvalid";
 		}
 		
+	}
+	
+	@GetMapping("/admin/admindashboard/keydelete")
+	public String deleteKeys(@RequestParam("id") int id){
+		
+		keysService.deleteKey(id);
+		return "redirect:/admin/admindashboard/keys";
+	}
+	
+	@RequestMapping("/admin/admindashboard/keysedit")
+	public String KeyEdit(HttpServletRequest request){
+		
+		String id = request.getParameter("keyId");
+		int idValue=Integer.parseInt(id);
+        String keyValue = request.getParameter("keyValue");
+		
+		keysService.updateKey(idValue, keyValue);
+		
+		return "redirect:/admin/admindashboard/keys";
 	}
 	
 }
