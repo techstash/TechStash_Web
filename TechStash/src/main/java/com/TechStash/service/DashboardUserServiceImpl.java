@@ -54,4 +54,9 @@ public class DashboardUserServiceImpl implements DashboardUserService {
 		dashboardUsersDAO.profileUpdate(id, name, password, phone, location, image, bio, designation, linkedin, github, twitter, facebook);
 	}
 
+	@Transactional
+	public void declineProfile(String email) {
+		dashboardUsersDAO.declineProfile(email);
+	}
+
 }

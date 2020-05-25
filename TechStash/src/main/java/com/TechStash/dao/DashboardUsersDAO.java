@@ -10,6 +10,8 @@ public interface DashboardUsersDAO {
 	
 	public void approveProfile(String email, String status);
 	
+	public void declineProfile(String email);
+	
 	public List<Dashboard_users> getEmail(String email);
 	
 	public List<Dashboard_users> validateUser(String email,String password);

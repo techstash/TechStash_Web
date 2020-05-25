@@ -173,8 +173,8 @@ public class AdminUserController {
 	  public String DeclineProfile(@PathVariable("email") String email,@PathVariable("key") String key,@PathVariable("status") String status)
 	  {
 		  if(key.equals("2f1c1999c8897d77224133cfabei3f59c708e6f8f05872efa0e584e633db15")){
-			  
-			  return "Profile Declined";
+			  dashboardUserService.declineProfile(email);
+			  return "Profile Declined & Record deleted from database";
 		  }
 		  else
 		  {

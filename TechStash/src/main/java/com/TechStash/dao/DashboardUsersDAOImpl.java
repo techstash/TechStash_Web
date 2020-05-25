@@ -109,4 +109,16 @@ public class DashboardUsersDAOImpl implements DashboardUsersDAO {
 		currentSession.close();
 	}
 
+	@Override
+	public void declineProfile(String email) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from dashboard_users where email=:email");
+		theQuery.setParameter("email", email);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	}
+
 }
