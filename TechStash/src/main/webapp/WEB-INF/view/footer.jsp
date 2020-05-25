@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
 <style>
 
 .clearbit-disable {
@@ -67,7 +68,7 @@
 <script type="text/javascript">
   var CurrentYear = new Date().getFullYear()  
   var copyright = document.getElementById("copyright");
-  copyright.innerHTML = "<p class='mb-0 text-light'>Copyright &copy;"+CurrentYear+", made with <span class='copyright-color'> *** </span> by <a href='https://twitter.com/techstashin' target='_blank'><strong class='unique-color'>TechStash.</strong></a> All Rights Reserved.</p>";
+  copyright.innerHTML = "<p class='mb-0 text-light'>Copyright &copy;"+CurrentYear+", made with <span class='copyright-color'> <i class='fa fa-heart' style='color:red'></i></span> by <a href='https://twitter.com/techstashin' target='_blank'><strong class='unique-color'>TechStash.</strong></a> All Rights Reserved.</p>";
 
   $(document).ready(function() {
 		var pathname = window.location.pathname;

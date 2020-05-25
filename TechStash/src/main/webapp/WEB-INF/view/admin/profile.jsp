@@ -751,7 +751,8 @@
     <strong>Copyright &copy;  <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear +',')
-            </script> made with â¤ by<a href="https://techstash.in" target='_blank'>TechStash.</a></strong>
+            </script> made with  <i class="fa fa-heart" style="color:red">
+                              </i>  by<a href="https://techstash.in" target='_blank'>TechStash.</a></strong>
     All Rights Reserved.
   </footer>
 </div>
