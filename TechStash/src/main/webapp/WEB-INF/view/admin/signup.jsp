@@ -83,6 +83,7 @@
                      <div class="form-group">
                         <form:select class="custom-select" path="designation" required="required">
                           <option value="">Select</option>
+                          <option>Founder/CEO/Admin</option>
                           <option>TSO(TechStash Organizers)</option>
                           <option>TSC (TechStash corodinator)</option>
                           <option>TSC (TechStash chapter)</option>

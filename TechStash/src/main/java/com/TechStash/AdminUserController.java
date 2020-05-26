@@ -243,7 +243,10 @@ public class AdminUserController {
 	        designation.put("TSC (TechStash chapter)", "TSC (TechStash chapter)");
 	        designation.put("TSM (TechStash Members)", "TSM (TechStash Members)");
 	        designation.put("Volunteer", "Volunteer");
+	        String sessionDesignation=(String) session.getAttribute("designation");
+	        if(sessionDesignation.equals("Founder/CEO/Admin")){
 	        designation.put("Founder/CEO/Admin", "Founder/CEO/Admin");
+	        }
 	        theModel.addAttribute("designation", designation);
 	        
 			return "admin/profile";
