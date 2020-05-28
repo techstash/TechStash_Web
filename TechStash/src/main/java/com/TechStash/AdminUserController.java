@@ -3,6 +3,7 @@ package com.TechStash;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Blob;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -297,5 +298,59 @@ public class AdminUserController {
 		session.invalidate();
 		return "admin/logout";
 	}
+	
+	@RequestMapping("/admin/admindashboard/organizer")
+	public String Organizer(HttpServletRequest request, Model theModel, @ModelAttribute("organizer") Dashboard_users dashboard_users) throws UnsupportedEncodingException{
+		HttpSession session = request.getSession();
+		byte[] profileImage=null;
+		String sessiondesignation=(String) session.getAttribute("designation");
+		String sessionValue=(String) session.getAttribute("session"); 
+		
+		if(sessionValue==null && sessiondesignation==null){
+			return "admin/popup_sessioninvalid";
+		}
+		
+		if(sessionValue != null && sessiondesignation.equals("Founder/CEO/Admin")){
+			
+			List<Dashboard_users> result=dashboardUserService.getOrganizer();
+			
+			theModel.addAttribute("organizer", result);
+			
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			return "admin/organizer";
+		}
+		else if(!sessiondesignation.equals("Founder/CEO/Admin")) {
+			return "admin/popup_notfound";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	}
+	
+	  @GetMapping("/admin/admindashboard/updateorganizerstatus")
+	  public String UpdateOrganizerStatus(@RequestParam("id") int id,@RequestParam("status") String status)
+	  {
+		  if(status.equals("true")){
+			  status="false";
+			  dashboardUserService.updateOrganizerStatus(id,status);
+			  return "redirect:/admin/admindashboard/organizer";
+		  }
+		  else
+		  {
+			  status="true";
+			  dashboardUserService.updateOrganizerStatus(id,status);
+			  return "redirect:/admin/admindashboard/organizer";
+		  }
+	  }
 	
 }

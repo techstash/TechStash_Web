@@ -59,4 +59,16 @@ public class DashboardUserServiceImpl implements DashboardUserService {
 		dashboardUsersDAO.declineProfile(email);
 	}
 
+	@Transactional
+	public List<Dashboard_users> getOrganizer() {
+		// TODO Auto-generated method stub
+		return dashboardUsersDAO.getOrganizer();
+	}
+
+	@Transactional
+	public void updateOrganizerStatus(int id, String status) {
+		// TODO Auto-generated method stub
+		dashboardUsersDAO.updateOrganizerStatus(id, status);
+	}
+
 }

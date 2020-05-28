@@ -121,4 +121,35 @@ public class DashboardUsersDAOImpl implements DashboardUsersDAO {
 		currentSession.close();
 	}
 
+	@Override
+	public List<Dashboard_users> getOrganizer() {
+		byte[] profileImage=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Dashboard_users where designation not like '%Founder/CEO/Admin%'",Dashboard_users.class);
+		List<Dashboard_users> result = theQuery.getResultList();
+		
+		for(Dashboard_users dbresult : result) {
+			profileImage=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+			
+        }
+		
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void updateOrganizerStatus(int id, String status) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE dashboard_users set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
 }

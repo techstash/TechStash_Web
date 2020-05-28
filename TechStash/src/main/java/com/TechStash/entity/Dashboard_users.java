@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="dashboard_users")
@@ -59,6 +60,17 @@ public class Dashboard_users {
 	
 	@Column(name="status")
 	private String status;
+	
+	@Transient
+    private String encodedImage;
+	
+	public String getEncodedImage() {
+		return encodedImage;
+	}
+
+	public void setEncodedImage(String encodedImage) {
+		this.encodedImage = encodedImage;
+	}
 
 	public int getId() {
 		return id;

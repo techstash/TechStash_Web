@@ -18,6 +18,9 @@ public interface DashboardUsersDAO {
 	
 	public Dashboard_users getUserDetail(int id);
 	
+	public List<Dashboard_users> getOrganizer();
+	
 	public void profileUpdate(int id, String name,String password, String phone, String location, byte[] image,String bio, String designation,String linkedin, String github, String twitter, String facebook);
 	
+	public void updateOrganizerStatus(int id, String status);
 }

@@ -548,61 +548,40 @@
                     <th>Email address</th>
                     <th>Location</th>
                     <th>Designation</th>
+                    <th>Status</th>
+                    <th>Activate/Deactivate</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <c:forEach var="tempOrganizer" items="${organizer}">
+                  <c:url var="updateLink" value="/admin/admindashboard/updateorganizerstatus" >
+					
+						<c:param name="id" value="${tempOrganizer.id}" />
+						<c:param name="status" value="${tempOrganizer.status}" />
+					</c:url>
                   <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
+                    <td>${tempOrganizer.id}</td>
+                    <td>${tempOrganizer.name}</td>
+                     <td><img src="data:image/jpg;base64,${tempOrganizer.encodedImage}" width="100" height="72"></td>
+                    <td>${tempOrganizer.email}</td>
+                    <td>${tempOrganizer.location}</td>
+                    <td>${tempOrganizer.designation}</td>
+                    <td>${tempOrganizer.status}</td>
+                    <c:choose>
+                    <c:when test="${tempOrganizer.status=='true'}">
+                    <td> <a href="${updateLink}"> Deactivate </a> 
+                    </c:when>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${tempOrganizer.status=='false'}">
+                    <td> <a href="${updateLink}"> Activate </a> 
+                    </c:when>
+                    </c:choose>
                   </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td>Technology</td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>
-              <!-- /.card-body -->
             </div>
     </section>
   </div>

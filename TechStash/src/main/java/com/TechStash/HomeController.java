@@ -539,40 +539,6 @@ public class HomeController {
 		
 	}
 	
-	//Organizer
-	@RequestMapping("/admin/admindashboard/organizer")
-	public String Organizer(HttpServletRequest request, Model theModel){
-		HttpSession session = request.getSession();
-		String sessiondesignation=(String) session.getAttribute("designation");
-		String sessionValue=(String) session.getAttribute("session"); 
-		
-		if(sessionValue==null && sessiondesignation==null){
-			return "admin/popup_sessioninvalid";
-		}
-		
-		if(sessionValue != null && sessiondesignation.equals("Founder/CEO/Admin")){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/organizer";
-		}
-		else if(!sessiondesignation.equals("Founder/CEO/Admin")) {
-			return "admin/popup_notfound";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
 	//Podacast
 	@RequestMapping("/admin/admindashboard/podcast_setting")
 	public String PodcastSetting(HttpServletRequest request, Model theModel){
