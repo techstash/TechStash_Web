@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
 <style>
 
 .clearbit-disable {

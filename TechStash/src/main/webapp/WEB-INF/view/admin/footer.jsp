@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Home Setting</title>
+  <title>TechStash Footer</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -110,8 +110,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Pages
@@ -531,58 +531,9 @@
       </div>
     </section>
 
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Field</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Field Name
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Field Type
-                  </div>
-                  <div class="col-8">
-                     <div class="form-group">
-                        <select class="custom-select">
-                          <option>Text box</option>
-                          <option>Drop down</option>
-                          <option>Description box</option>
-                          <option>Check box</option>
-                        </select>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-	
     <section class="content">
+    <form:form action="footerupdate" modelAttribute="footerdetails" method="POST" enctype="multipart/form-data">
       <div class="card">
-              <div class="card-header">
-                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Field
-                </button>
-              </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">
@@ -591,21 +542,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="50" disabled />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -615,18 +561,15 @@
                     Footer text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <div class="form-group">
+                        <form:textarea path="footer_text" class="form-control" rows="3" readonly="true"></form:textarea>
+                      </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editFooter" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -636,18 +579,13 @@
                     Facebook URL
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="facebook_url" type="text" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editFacebook" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -657,18 +595,13 @@
                     Twitter URL
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="twitter_url" type="text" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editTwitter" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -678,18 +611,13 @@
                     Youtube URL
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="youtube_url" type="text" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editYoutube" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -699,18 +627,13 @@
                     Linkedin URL
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="linkedin_url" type="text" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editLinkedin" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -719,10 +642,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
   </div>
 
@@ -753,6 +677,35 @@
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $(".editFooter").click(function(){
+    	$("#footer_text").prop("readonly",false);
+    	return false;
+    });
+    $(".editFacebook").click(function(){
+    	$("#facebook_url").prop("readonly",false);
+    	return false;
+    });
+    $(".editTwitter").click(function(){
+    	$("#twitter_url").prop("readonly",false);
+    	return false;
+    });
+    $(".editYoutube").click(function(){
+    	$("#youtube_url").prop("readonly",false);
+    	return false;
+    });
+    $(".editLinkedin").click(function(){
+    	$("#linkedin_url").prop("readonly",false);
+    	return false;
+    });
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false); 
+    	return false;
+    });
+})
 </script>
 
 </body>
