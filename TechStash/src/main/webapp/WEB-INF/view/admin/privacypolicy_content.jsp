@@ -537,18 +537,16 @@
 
 	
     <section class="content">
+    <form:form action="privacypolicyupdate" modelAttribute="privacypolicy" method="POST">
       <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-3">
-                    PrivacyPolicy
-                  </div>
-                  <div class="col-6">
+                  <div class="col-11">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder=""></textarea>
+                         <form:textarea name="myTextarea" id="myTextarea" path="content"></form:textarea>
                       </div>
                   </div>
-                  <div class="col-3">
+                  <div class="col-1">
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
@@ -561,10 +559,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
   </div>
@@ -599,6 +598,19 @@
 <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+<script src="/admin/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
+
+<script type="text/javascript">
+tinymce.init({
+	selector: '#myTextarea',
+	height: 350,
+	theme: 'silver',
+	plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+	toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'
+})
+
+</script>
 
 <script type="text/javascript">
 $(document).ready(function () {

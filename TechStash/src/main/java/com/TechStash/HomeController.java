@@ -103,16 +103,6 @@ public class HomeController {
 		return "postjob";
 	}
 	
-	@RequestMapping("/about")
-	public String About(){
-		return "aboutus";
-	}
-	
-	@RequestMapping("/privacypolicy")
-	public String PrivacyPolicy(){
-		return "privacypolicy";
-	}
-	
 	@RequestMapping("/blogdetails")
 	public String BlogDetail(){
 		return "blogdetails";
@@ -148,29 +138,6 @@ public class HomeController {
 			return "admin/popup_sessioninvalid";
 		}
 		
-	}
-	
-	@RequestMapping("/admin/admindashboard/aboutus_content")
-	public String AboutContent(HttpServletRequest request, Model theModel){
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/aboutus_content";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
 	}
 	
 	//Blog
@@ -639,30 +606,6 @@ public class HomeController {
 				e.printStackTrace();
 			}
 			return "admin/privacypolicy_setting";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	@RequestMapping("/admin/admindashboard/privacypolicy_content")
-	public String PrivacyPolicyContent(HttpServletRequest request, Model theModel){
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/privacypolicy_content";
 		}
 		else
 		{
