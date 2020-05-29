@@ -53,7 +53,7 @@
 
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" id="search" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
@@ -91,7 +91,7 @@
       </div>
 
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" id="table" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
@@ -681,13 +681,6 @@
 
  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
-  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-
-<script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-<script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-
-<script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
 <script>
 
@@ -759,15 +752,24 @@ function myFunction() {
 }
 </script>
 
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
+
+<script type='text/javascript'>
+
+$( document ).ready(function() {
+	
+	var $rows = $('#table li');
+	$('#search').keyup(function() {
+		 $("li").addClass("menu-open");
+	    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+	    
+	    $rows.show().filter(function() {
+	        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+	        return !~text.indexOf(val);
+	    }).hide();
+	});
+	
+});
 </script>
-   
 
 </body>
 
