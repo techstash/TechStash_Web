@@ -42,7 +42,7 @@
 
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" type="search" id="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
@@ -82,7 +82,7 @@
       </div>
 
     <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" id="table" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
@@ -952,6 +952,24 @@ $(document).ready(function () {
       "autoWidth": false,
     });
   });
+</script>
+
+<script type='text/javascript'>
+
+$( document ).ready(function() {
+	
+	var $rows = $('#table li');
+	$('#search').keyup(function() {
+		 $("li").addClass("menu-open");
+	    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+	    
+	    $rows.show().filter(function() {
+	        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+	        return !~text.indexOf(val);
+	    }).hide();
+	});
+	
+});
 </script>
 
 </body>
