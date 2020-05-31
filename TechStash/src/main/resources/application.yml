@@ -5,3 +5,4 @@ spring:
     username: techstash
     password: uryda5uda
     type: org.apache.tomcat.jdbc.pool.DataSource
+    maxIdle: 1
