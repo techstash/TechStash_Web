@@ -34,6 +34,11 @@ public class PrivacyController {
 				theModel.addAttribute("name", sessionName);
 				PrivacyPolicy privacypolicy = new PrivacyPolicy();
 				theModel.addAttribute("privacypolicy", privacypolicy);
+				
+				List<PrivacyPolicy> dbresult = privacyPolicyService.getContent();
+				
+				theModel.addAttribute("privacypolicycontent", dbresult);	
+				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

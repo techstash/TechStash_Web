@@ -39,6 +39,12 @@ public class AboutUsController {
 				theModel.addAttribute("name", sessionName);
 				Aboutus aboutus = new Aboutus();
 				theModel.addAttribute("aboutus", aboutus);
+				
+				
+				List<Aboutus> dbresult = aboutUsService.getContent();
+				
+				theModel.addAttribute("aboutuscontent", dbresult);
+				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

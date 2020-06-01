@@ -539,18 +539,15 @@
     <form:form action="aboutusupdate" modelAttribute="aboutus" method="POST">
       <div class="card">
               <div class="card-body">
+               <c:forEach var="tempAboutus" items="${aboutuscontent}">
+              <br>
+              	${tempAboutus.content}
+             </c:forEach>
                 <div class="row">
-                  <div class="col-11">
+                  <div class="col-12">
                     <div class="form-group non-editable">
                        <form:textarea name="myTextarea" id="myTextarea" path="content"></form:textarea>
-                      </div>
-                  </div>
-                  <div class="col-1">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                    </div>
                   </div>
                 </div>
               </div>
