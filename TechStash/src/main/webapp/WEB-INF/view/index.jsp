@@ -1,4 +1,5 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,21 +21,23 @@
 
 <jsp:include page="header.jsp"/>
 
+<c:forEach var="tempBanner" items="${banner}">
 <section class="hero-area bg-cover" data-background="images/background/banner.png">
   <div class="container">
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-6 pl-lg-0 text-center text-lg-left">
-        <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">One Stop Solution for all<span class="watermark">One</span></h1>
-        <p class="text-white pt-2 pb-3" data-aos="fade-up" data-aos-delay="1200">Want to stay up to date with the latest wonders in the tech industry? You can subscribe to the
-  best free tech newsletters of the moment and you're covered.</p>
+        <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">${tempBanner.title}</h1>
+        <p class="text-white pt-2 pb-3" data-aos="fade-up" data-aos-delay="1200">${tempBanner.subtitle}</p>
+       
       <a href="/subscribe" class="btn btn-primary" data-aos="fade-up" data-aos-delay="1400">Subscribe</a>
       </div>
       <div class="col-lg-5 pl-lg-0 pt-5 pt-lg-0 text-lg-right text-center">
-        <img src="images/home/banner.png" class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
+        <img src="data:image/jpg;base64,${tempBanner.encodedImage}" class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
       </div>
     </div>
   </div>
 </section>
+</c:forEach>
 
 <!-- Conference -->
 <section id="conference" class="section pb-0 overflow-hidden">

@@ -23,10 +23,15 @@ public class AboutUsServiceImpl implements AboutUsService {
 	}
 
 	@Transactional
+	public Aboutus getResult() {
+		// TODO Auto-generated method stub
+		return aboutUsDAO.getResult();
+	}
+	
+	@Transactional
 	public List<Aboutus> getContent() {
 		// TODO Auto-generated method stub
 		return aboutUsDAO.getContent();
 	}
-
 
 }

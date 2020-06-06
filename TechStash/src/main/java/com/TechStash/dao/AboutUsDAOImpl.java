@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.TechStash.entity.Aboutus;
+import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Keys_details;
 
@@ -34,6 +35,15 @@ public class AboutUsDAOImpl implements AboutUsDAO {
 		
 	}
 
+	@Override
+	public Aboutus getResult() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		int id=1;
+		Aboutus dbresult=currentSession.get(Aboutus.class,id);
+		currentSession.close();
+		return dbresult;
+	}
+	
 	@Override
 	public List<Aboutus> getContent() {
 		

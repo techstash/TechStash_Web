@@ -16,23 +16,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.TechStash.service.FooterService;
+import com.TechStash.entity.Aboutus;
+import com.TechStash.entity.Banner;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
+import com.TechStash.service.BannerService;
+
 
 @Controller
-public class FooterController {
-	
-	@Autowired
-	private FooterService footerService;
+public class HomeContentController {
 
-	@RequestMapping("/admin/admindashboard/footer")
-	public String Footer(HttpServletRequest request, Model theModel){
+	@Autowired
+	private BannerService bannerService;
+	
+	@RequestMapping("/")
+	public String Home(Model theModel){
+		
+		List<Banner> dbresult = bannerService.getDetail();
+		theModel.addAttribute("banner", dbresult);
+		return "index";
+	}
+	
+	@RequestMapping("/admin/admindashboard/home_content")
+	public String HomeContent(HttpServletRequest request, Model theModel){
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
-			Footer dbresult=footerService.getDetails(1);
-			theModel.addAttribute("footerdetails", dbresult);
 			String sessionName=(String) session.getAttribute("name");
 			byte[] image=(byte[]) session.getAttribute("image");
 			byte[] encode = java.util.Base64.getEncoder().encode(image);
@@ -43,7 +52,12 @@ public class FooterController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return "admin/footer";
+			
+			Banner dbresultBanner=bannerService.getContent();
+			theModel.addAttribute("banner", dbresultBanner);
+			
+			
+			return "admin/home_content";
 		}
 		else
 		{
@@ -52,29 +66,29 @@ public class FooterController {
 		
 	}
 	
-	@PostMapping("/admin/admindashboard/footerupdate")
-	public String profileUpdate(@ModelAttribute("footerdetails") Footer footer,HttpServletRequest request, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+	@PostMapping("/admin/admindashboard/bannerupdate")
+	public String profileUpdate(@ModelAttribute("banner") Banner banner,HttpServletRequest request, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+		
 		byte[] image=null;
 		try {
 			if(photo!=null){
 			byte[] photoBytes = photo.getBytes();
-			footer.setLogo_image(photoBytes);
+			banner.setImage(photoBytes);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		if(photo==null){
-			System.out.println("photo is null");
-			List<Footer> result=footerService.getLogoImage(1);
-			  for(Footer dbresult : result) {
-				  image=dbresult.getLogo_image();
+			List<Banner> result=bannerService.getImage(1);
+			  for(Banner dbresult : result) {
+				  image=dbresult.getImage();
 		        }
-			footer.setLogo_image(image);
+			banner.setImage(image);
 		}
-		footerService.footerUpdate(1, footer.getLogo_image(), footer.getFooter_text(), footer.getFacebook_url(), footer.getTwitter_url(), footer.getYoutube_url(), footer.getLinkedin_url());			
-		return "redirect:/admin/admindashboard/footer";
+		bannerService.bannerUpdate(banner.getImage(), banner.getTitle(), banner.getSubtitle(), banner.getStatus());
+				
+		return "redirect:/admin/admindashboard/home_content";
 			
+		 
 	}
-	
 }

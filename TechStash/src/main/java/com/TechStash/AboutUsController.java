@@ -37,13 +37,8 @@ public class AboutUsController {
 			try {
 				theModel.addAttribute("image", new String(encode, "UTF-8"));
 				theModel.addAttribute("name", sessionName);
-				Aboutus aboutus = new Aboutus();
-				theModel.addAttribute("aboutus", aboutus);
-				
-				
-				List<Aboutus> dbresult = aboutUsService.getContent();
-				
-				theModel.addAttribute("aboutuscontent", dbresult);
+				Aboutus dbresult=aboutUsService.getResult();
+				theModel.addAttribute("aboutus", dbresult);
 				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block

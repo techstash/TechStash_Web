@@ -539,15 +539,18 @@
     <form:form action="aboutusupdate" modelAttribute="aboutus" method="POST">
       <div class="card">
               <div class="card-body">
-               <c:forEach var="tempAboutus" items="${aboutuscontent}">
-              <br>
-              	${tempAboutus.content}
-             </c:forEach>
                 <div class="row">
-                  <div class="col-12">
-                    <div class="form-group non-editable">
-                       <form:textarea name="myTextarea" id="myTextarea" path="content"></form:textarea>
+                  <div class="col-11">
+                    <div class="form-group">
+                       <form:textarea path="content" id="content" class="form-control" rows="18" readonly="true"></form:textarea>
                     </div>
+                  </div>
+                  <div class="col-1">
+                          <a class="btn btn-info btn-sm editContent" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
                   </div>
                 </div>
               </div>
@@ -594,19 +597,6 @@
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
-<script src="/admin/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
-
-<script type="text/javascript">
-tinymce.init({
-	selector: '#myTextarea',
-	height: 350,
-	theme: 'silver',
-	plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
-	toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'
-})
-
-</script>
-
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
@@ -638,6 +628,16 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $(".editContent").click(function(){
+    	$("#content").prop("readonly",false);
+    	return false;
+    });
+    
+})
 </script>
 
 </body>

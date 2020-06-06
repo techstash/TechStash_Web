@@ -28,11 +28,6 @@ public class HomeController {
 	
 	// ********Navigation into the requested url TechStash Website******** //
 	
-	@RequestMapping("/")
-	public String Home(){
-		return "index";
-	}
-	
 	@RequestMapping("/conference")
 	public String Conference(){
 		return "conference";
@@ -425,30 +420,6 @@ public class HomeController {
 				e.printStackTrace();
 			}
 			return "admin/home_setting";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	@RequestMapping("/admin/admindashboard/home_content")
-	public String HomeContent(HttpServletRequest request, Model theModel){
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/home_content";
 		}
 		else
 		{

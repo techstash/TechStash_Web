@@ -533,6 +533,7 @@
 
     <section class="content">
     <form:form action="footerupdate" modelAttribute="footerdetails" method="POST" enctype="multipart/form-data">
+     <form:hidden path="id" />
       <div class="card">
               <div class="card-body">
                 <div class="row">
@@ -543,6 +544,7 @@
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="50" disabled />
+                         <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>

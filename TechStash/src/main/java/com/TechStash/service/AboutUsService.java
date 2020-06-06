@@ -8,5 +8,7 @@ public interface AboutUsService {
 
 	public void saveContent(String content);
 	
+	public Aboutus getResult();
+	
 	public List<Aboutus> getContent();
 }

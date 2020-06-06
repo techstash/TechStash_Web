@@ -538,6 +538,8 @@
     </section>
 	
     <section class="content">
+    <form:form action="bannerupdate" modelAttribute="banner" method="POST" enctype="multipart/form-data">
+    <form:hidden path="id" />
       <div class="card">
           <div class="card-header">
             	<h4>Banner</h4>
@@ -550,21 +552,17 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                        <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBannerImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -574,18 +572,13 @@
                     Banner Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="title" type="text" id="bannerTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBannerTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -595,18 +588,13 @@
                     Banner Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="subtitle" class="form-control" id="bannerSubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBannerSubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -626,10 +614,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
@@ -1463,40 +1452,27 @@
 
 <script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
-<script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
-
-<script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-<script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-
-<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
-<script src="plugins/moment/moment.min.js"></script>
-
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-
-<script>
-  $(function () {
-    $('#reservationdate').datetimepicker({
-        format: 'L'
+<script type="text/javascript">
+$(function(){
+    $(".editBannerImage").click(function(){
+    	$("#bannerImage").prop("disabled",false);
+    	return false;
     });
-
-  })
+    $(".editBannerTitle").click(function(){
+    	$("#bannerTitle").prop("readonly",false);
+    	return false;
+    });
+    $(".editBannerSubtitle").click(function(){
+    	$("#bannerSubtitle").prop("readonly",false);
+    	return false;
+    });
+})
 </script>
 
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
 </script>
 
 <script type='text/javascript'>
