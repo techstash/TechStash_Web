@@ -552,7 +552,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg .svg" size="200" disabled/>
+                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
@@ -635,7 +635,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="conferenceImage" accept=".png, .jpg, .jpeg .svg" size="200" disabled/>
+                        <input type="file" name="photo" class="custom-file-input" id="conferenceImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -736,6 +736,7 @@
     </section>
     <br>
     <section class="content">
+     <form:form action="jobsectionupdate" modelAttribute="jobsection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Jobs</h4>
@@ -748,21 +749,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                         <input type="file" name="photo" class="custom-file-input" id="jobImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editJobImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -772,18 +768,13 @@
                     Jobs Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="title" type="text" id="jobTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editJobTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -793,18 +784,13 @@
                     Jobs Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="subtitle" class="form-control" id="jobSubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editSubTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -814,18 +800,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontextleft" type="text" id="jobButtonLeft" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editButtonLeft" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -835,18 +816,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="buttontextright" type="text" id="jobButtonRight" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editButtonRight" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -857,7 +833,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -866,13 +842,15 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
+    <form:form action="speakersectionupdate" modelAttribute="speakersection" method="POST">
       <div class="card">
           <div class="card-header">
             	<h4>Speaker</h4>
@@ -883,18 +861,13 @@
                     Speaker Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="title" type="text" id="spakerTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editSpeakerTtile" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -904,18 +877,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontext" type="text" id="speakerButton" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editSpeakerButton" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -926,7 +894,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -935,13 +903,15 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
+    <form:form action="blogsectionupdate" modelAttribute="blogsection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Blog</h4>
@@ -954,21 +924,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                         <input type="file" name="photo" class="custom-file-input" id="blogImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBlogImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -978,18 +943,13 @@
                     Blog Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="title" type="text" id="blogTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBlogTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -999,18 +959,13 @@
                     Blog Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="subtitle" class="form-control" id="blogSubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBlogSubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1020,18 +975,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="buttontextleft" type="text" id="blogbuttonleft" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editblogleft" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1041,18 +991,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontextright" type="text" id="blogbuttonright" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editblogright" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1063,7 +1008,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -1072,13 +1017,15 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
+    <form:form action="podcastsectionupdate" modelAttribute="podcastsection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Podcast</h4>
@@ -1091,21 +1038,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                         <input type="file" name="photo" class="custom-file-input" id="podcastImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPodcastImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1115,18 +1057,13 @@
                     Podcast Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="title" type="text" id="podcastTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPodcastTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1136,18 +1073,13 @@
                     Podcast Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:textarea path="subtitle" class="form-control" id="podcastSubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPodcastSubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1157,18 +1089,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontext" type="text" id="buttonTextPodcast" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editButonPodcast" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1179,7 +1106,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -1188,13 +1115,15 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
+    <form:form action="communitysectionupdate" modelAttribute="communitysection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Community</h4>
@@ -1207,21 +1136,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                         <input type="file" name="photo" class="custom-file-input" id="communityImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editCommunityImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1231,18 +1155,13 @@
                     Community Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="title" type="text" id="communityTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editCommunityTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1252,18 +1171,13 @@
                     Community Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="subtitle" class="form-control" id="communitySubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editcommunitySubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1273,18 +1187,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontextleft" type="text" id="CommunityLeft" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editCommunityLeft" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1294,18 +1203,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="buttontextright" type="text" id="CommunityRight" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editCommunityRight" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1316,7 +1220,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -1325,13 +1229,113 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
+    <form:form action="resourcesectionupdate" modelAttribute="resourcesection" method="POST" enctype="multipart/form-data">
+      <div class="card">
+          <div class="card-header">
+            	<h4>Resources</h4>
+          </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-3">
+                    Resource Image
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <div class="custom-file">
+                         <input type="file" name="photo" class="custom-file-input" id="resourceImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editResourceImage" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Resource Title
+                  </div>
+                  <div class="col-6">
+                   <form:input path="title" type="text" id="resourceTitle" class="form-control" readonly="true"/>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editResourceTitle" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Resource Subtitle
+                  </div>
+                  <div class="col-6">
+                    <form:textarea path="subtitle" class="form-control" id="resourceSubtitle" rows="3" readonly="true"></form:textarea>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editResourceSubtitle" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Button Text
+                  </div>
+                  <div class="col-6">
+                    <form:input path="buttontext" type="text" id="resourceButton" class="form-control" readonly="true"/>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editResourceButton" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Visible/Not Visible
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check">
+                          <form:checkbox path="status" class="form-check-input"/>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
+        </div>
+      <div class="col-5"></div>
+      </div>
+      </form:form>
+    </section>
+    <br>
+    <section class="content">
+    <form:form action="newslettersectionupdate" modelAttribute="newslettersection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Subscribe Newsletter</h4>
@@ -1342,18 +1346,13 @@
                     Newsletter Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="title" type="text" id="newsletterTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editNewsletterTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1365,21 +1364,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                         <input type="file" name="photo" class="custom-file-input" id="newsletterImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editNewsletterImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -1390,7 +1384,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -1399,11 +1393,13 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
-    </section>
+      </form:form>
+      <br>
+    </section> 
   </div>
 
   <aside class="control-sidebar control-sidebar-dark">
@@ -1431,6 +1427,8 @@
 
 <script type="text/javascript">
 $(function(){
+	
+	// banner	
     $(".editBannerImage").click(function(){
     	$("#bannerImage").prop("disabled",false);
     	return false;
@@ -1444,6 +1442,7 @@ $(function(){
     	return false;
     });
     
+    // conference
     $(".editConferenceImage").click(function(){
     	$("#conferenceImage").prop("disabled",false);
     	return false;
@@ -1468,6 +1467,157 @@ $(function(){
     	$("#conferenceButtonRight").prop("readonly",false);
     	return false;
     });
+    
+    //jobs
+    
+    $(".editJobImage").click(function(){
+    	$("#jobImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editJobTitle").click(function(){
+    	$("#jobTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editSubTitle").click(function(){
+    	$("#jobSubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editButtonLeft").click(function(){
+    	$("#jobButtonLeft").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editButtonRight").click(function(){
+    	$("#jobButtonRight").prop("readonly",false);
+    	return false;
+    });
+    
+    // speakers
+    
+    $(".editSpeakerTtile").click(function(){
+    	$("#spakerTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editSpeakerButton").click(function(){
+    	$("#speakerButton").prop("readonly",false);
+    	return false;
+    });
+    
+    // blog
+    
+    $(".editBlogImage").click(function(){
+    	$("#blogImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editBlogTitle").click(function(){
+    	$("#blogTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editBlogSubtitle").click(function(){
+    	$("#blogSubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editblogleft").click(function(){
+    	$("#blogbuttonleft").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editblogright").click(function(){
+    	$("#blogbuttonright").prop("readonly",false);
+    	return false;
+    });
+    
+    // podcast
+    
+    $(".editPodcastImage").click(function(){
+    	$("#podcastImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editPodcastTitle").click(function(){
+    	$("#podcastTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPodcastSubtitle").click(function(){
+    	$("#podcastSubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editButonPodcast").click(function(){
+    	$("#buttonTextPodcast").prop("readonly",false);
+    	return false;
+    });
+    
+    // community
+    
+    $(".editCommunityImage").click(function(){
+    	$("#communityImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editCommunityTitle").click(function(){
+    	$("#communityTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editcommunitySubtitle").click(function(){
+    	$("#communitySubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editCommunityLeft").click(function(){
+    	$("#CommunityLeft").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editCommunityRight").click(function(){
+    	$("#CommunityRight").prop("readonly",false);
+    	return false;
+    });
+    	
+   // resource
+   
+   $(".editResourceImage").click(function(){
+    	$("#resourceImage").prop("disabled",false);
+    	return false;
+    });
+   
+   $(".editResourceTitle").click(function(){
+   		$("#resourceTitle").prop("readonly",false);
+   		return false;
+   });
+   
+   $(".editResourceSubtitle").click(function(){
+   		$("#resourceSubtitle").prop("readonly",false);
+   		return false;
+   });
+   
+   $(".editResourceButton").click(function(){
+   		$("#resourceButton").prop("readonly",false);
+   		return false;
+   });
+    
+    // newsletter
+    
+    $(".editNewsletterImage").click(function(){
+    	$("#newsletterImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editNewsletterTitle").click(function(){
+    	$("#newsletterTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    
 })
 </script>
 

@@ -65,29 +65,35 @@
 </c:forEach>
 
 <!-- jobs -->
+<c:forEach var="tempjobsection" items="${jobsection}">
+<c:if test="${tempjobsection.status}">
 <section id="blog" class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 col-md-7 text-center text-md-left order-md-1 ">
-        <h2 class="section-title" data-aos="fade-right" data-aos-delay="200">Jobs</h2>
-        <p class="mb-4" data-aos="fade-right" data-aos-delay="300"> Explore the latest Core Technical Jobs</p>
-        <a href="/jobs" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">View Jobs</a>
+        <h2 class="section-title" data-aos="fade-right" data-aos-delay="200">${tempjobsection.title}</h2>
+        <p class="mb-4" data-aos="fade-right" data-aos-delay="300"> ${tempjobsection.subtitle}</p>
+        <a href="/jobs" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">${tempjobsection.buttontextleft}</a>
         &nbsp;&nbsp;
-         <a href="/postjob" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">Post a Job</a>
+         <a href="/postjob" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">${tempjobsection.buttontextright}</a>
       </div>
       <div class="col-lg-6 col-md-5 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-        <img src="images/home/jobs.svg" class="img-fluid w-100" alt="jobs" data-aos="fade-left">
+        <img src="data:image/jpg;base64,${tempjobsection.encodedImage}" class="img-fluid w-100" alt="jobs" data-aos="fade-left">
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
-	<!-- Speakers -->
+<!-- Speakers -->
+<c:forEach var="tempspeakersection" items="${speakersection}">
+<c:if test="${tempspeakersection.status}">
 <section class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Speakers</h2>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">${tempspeakersection.title}</h2>
       </div>
     </div>
     <div class="row testimonial-slider" data-aos="fade-up" data-aos-delay="200">
@@ -149,94 +155,113 @@
     <br>
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-12 text-center text-lg-center text-md-center">
-      <a href="/speakers" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">Load More Speakers</a>
+      <a href="/speakers" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempspeakersection.buttontext}</a>
       </div>
       </div>
       
   </div>
 </section>
+</c:if>
+</c:forEach>
+
 <!-- Blogs -->
+<c:forEach var="tempblogsection" items="${blogsection}">
+<c:if test="${tempblogsection.status}">
 <section id="conference" class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row align-items-center">
        <div class="col-lg-6 col-md-5 text-center text-md-left order-md-1 order-1">
-        <img src="images/home/blog.svg" class="img-fluid" alt="blog" data-aos="fade-right">
+        <img src="data:image/jpg;base64,${tempblogsection.encodedImage}" class="img-fluid" alt="blog" data-aos="fade-right">
       </div>
       <div class="col-lg-6 col-md-7 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">Blogs</h2>
-        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">Staying current with the latest technology and is a great place to read and learn from a wide range of authors.</p>
-        <a href="/blogs" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">View Blogs</a>
+        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">${tempblogsection.title}</h2>
+        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">${tempblogsection.subtitle}</p>
+        <a href="/blogs" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempblogsection.buttontextleft}</a>
         &nbsp;&nbsp;
-        <a href="/postblog" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">Post a Blog</a>
+        <a href="/postblog" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempblogsection.buttontextright}</a>
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
-	<!-- Podcast -->
+<!-- Podcast -->
+<c:forEach var="temppodcastsection" items="${podcastsection}">
+<c:if test="${temppodcastsection.status}">
 <section id="blog" class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 col-md-7 text-center text-md-left order-md-1 ">
-        <h2 class="section-title" data-aos="fade-right" data-aos-delay="200">Podcast</h2>
-        <p class="mb-4" data-aos="fade-right" data-aos-delay="300">New technology is emerging every day, and it can be difficult to keep up with the latest research and trends. Listen to our 
-  collection of best tech podcasts from industry experts.</p>
-        <a href="/podcast" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">View Podcast</a>
+        <h2 class="section-title" data-aos="fade-right" data-aos-delay="200">${temppodcastsection.title}</h2>
+        <p class="mb-4" data-aos="fade-right" data-aos-delay="300">${temppodcastsection.subtitle}</p>
+        <a href="/podcast" class="btn btn-outline-primary" data-aos="fade-right" data-aos-delay="500">${temppodcastsection.buttontext}</a>
       </div>
       <div class="col-lg-6 col-md-5 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-        <img src="images/home/podcast.svg" class="img-fluid w-100" alt="podcast" data-aos="fade-left">
+        <img src="data:image/jpg;base64,${temppodcastsection.encodedImage}" class="img-fluid w-100" alt="podcast" data-aos="fade-left">
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
-	<!-- Community -->
+<!-- Community -->
+<c:forEach var="tempcommunitysection" items="${communitysection}">
+<c:if test="${tempcommunitysection.status}">
 <section id="conference" class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row align-items-center">
        <div class="col-lg-6 col-md-5 text-center text-md-left order-md-1 order-1">
-        <img src="images/home/community.svg" class="img-fluid" alt="community" data-aos="fade-right">
+        <img src="data:image/jpg;base64,${tempcommunitysection.encodedImage}" class="img-fluid" alt="community" data-aos="fade-right">
       </div>
       <div class="col-lg-6 col-md-7 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">Community</h2>
-        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">Find a community and meet people near you who share your interests or identifying, expanding, and sharing their expertise 
-  with the support of an engaged peer network.</p>
-        <a href="/community class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">View Community</a>
+        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">${tempcommunitysection.title}</h2>
+        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">${tempcommunitysection.subtitle}</p>
+        <a href="/community" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempcommunitysection.buttontextleft}</a>
         &nbsp;&nbsp;
-        <a href="/volunteer" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">Volunteer</a>
+        <a href="/volunteer" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempcommunitysection.buttontextright}</a>
 
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
+<!-- Twitter -->
 <section class="section-lg pb-0 bg-cover" data-background="images/background/twitter-background.png">
 	<div class="elfsight-app-f5798e0d-505b-4f1f-b37d-5e9e5b0be181"></div>
 </section>
 
-	<!-- Resources -->
+<!-- Resources -->
+<c:forEach var="tempresourcesection" items="${resourcesection}">
+<c:if test="${tempresourcesection.status}">
 <section class="bg-triangles bg-gradient-primary overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 text-center text-lg-left">
          <div class="section">
-          <h2 class="section-title text-white" data-aos="fade-up">Resources</h2>
-          <p class="text-white mb-4" data-aos="fade-up" data-aos-delay="200">Best collection of online resources that caters your quest to upgrade your skills.</p>
+          <h2 class="section-title text-white" data-aos="fade-up">${tempresourcesection.title}</h2>
+          <p class="text-white mb-4" data-aos="fade-up" data-aos-delay="200">${tempresourcesection.subtitle}</p>
           <ul class="list-inline">
             <li class="list-inline-item mb-3 mb-lg-0">
-              <a href="/resources" class="btn btn-primary" data-aos="fade-up" data-aos-delay="1400">Resources</a>
+              <a href="/resources" class="btn btn-primary" data-aos="fade-up" data-aos-delay="1400">${tempresourcesection.buttontext}</a>
             </li>
           </ul>
         </div> 
       </div>
       <div class="col-lg-6 align-self-end" data-aos="fade-left" data-aos-delay="600">
-        <img src="images/home/resources.svg" class="img-fluid w-100" alt="mobile-screen">
+        <img src="data:image/jpg;base64,${tempresourcesection.encodedImage}" class="img-fluid w-100" alt="mobile-screen">
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
-	<section class="section section-lg-bottom">
+<!-- Pricing Details -->
+<section class="section section-lg-bottom">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -312,12 +337,15 @@
 	</div>
 </section>
 
+<!-- Newsletter -->
+<c:forEach var="tempnewslettersection" items="${newslettersection}">
+<c:if test="${tempnewslettersection.status}">
 <section class="bg-triangles bg-gradient-primary overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 text-center text-lg-left">
          <div class="section">
-          <h2 class="section-title text-white" data-aos="fade-up">Subscribe to our newsletter</h2>
+          <h2 class="section-title text-white" data-aos="fade-up">${tempnewslettersection.title}</h2>
          <form action="#" class="flex-fill" data-aos="fade-up">
           <div class="row">
             <div class="col-lg-7 my-md-2 my-2">
@@ -332,11 +360,13 @@
         </div> 
       </div>
       <div class="col-lg-6 align-self-end" data-aos="fade-left" data-aos-delay="600">
-        <img src="images/home/newsletter.png" class="img-fluid w-100" alt="mobile-screen">
+        <img src="data:image/jpg;base64,${tempnewslettersection.encodedImage}" class="img-fluid w-100" alt="mobile-screen">
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
 <jsp:include page="footer.jsp"/>
 
