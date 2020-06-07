@@ -18,9 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.TechStash.entity.Aboutus;
 import com.TechStash.entity.Banner;
+import com.TechStash.entity.ConferenceSection;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
 import com.TechStash.service.BannerService;
+import com.TechStash.service.ConferenceSectionService;
 
 
 @Controller
@@ -29,11 +31,18 @@ public class HomeContentController {
 	@Autowired
 	private BannerService bannerService;
 	
+	@Autowired
+	private ConferenceSectionService conferenceSectionService;
+	
 	@RequestMapping("/")
 	public String Home(Model theModel){
 		
-		List<Banner> dbresult = bannerService.getDetail();
-		theModel.addAttribute("banner", dbresult);
+		List<Banner> dbResultBanner = bannerService.getDetail();
+		theModel.addAttribute("banner", dbResultBanner);
+		
+		List<ConferenceSection> dbResultConference = conferenceSectionService.getResultWebsite();
+		theModel.addAttribute("conferenesection", dbResultConference);
+		
 		return "index";
 	}
 	
@@ -56,6 +65,9 @@ public class HomeContentController {
 			Banner dbresultBanner=bannerService.getContent();
 			theModel.addAttribute("banner", dbresultBanner);
 			
+			ConferenceSection dbresultConference=conferenceSectionService.getResultAdmin();
+			theModel.addAttribute("conferencesection", dbresultConference); 
+			
 			
 			return "admin/home_content";
 		}
@@ -67,8 +79,7 @@ public class HomeContentController {
 	}
 	
 	@PostMapping("/admin/admindashboard/bannerupdate")
-	public String profileUpdate(@ModelAttribute("banner") Banner banner,HttpServletRequest request, @RequestParam(required = false, value = "photo") MultipartFile photo) {
-		
+	public String BannerUpdate(@ModelAttribute("banner") Banner banner,HttpServletRequest request, @RequestParam(required = false, value = "photo") MultipartFile photo) {
 		byte[] image=null;
 		try {
 			if(photo!=null){
@@ -89,6 +100,31 @@ public class HomeContentController {
 				
 		return "redirect:/admin/admindashboard/home_content";
 			
-		 
 	}
+	
+	@PostMapping("/admin/admindashboard/conferencesectionupdate")
+	public String ConferenceUpdate(@ModelAttribute("conferencesection") ConferenceSection conferenceSection,HttpServletRequest request, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+		
+		byte[] image=null;
+		try {
+			if(photo!=null){
+			byte[] photoBytes = photo.getBytes();
+			conferenceSection.setImage(photoBytes);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		if(photo==null){
+			List<ConferenceSection> result=conferenceSectionService.getImage(1);
+			  for(ConferenceSection dbresult : result) {
+				  image=dbresult.getImage();
+		        }
+			  conferenceSection.setImage(image);
+		}
+		conferenceSectionService.conferenceSectionupdate(conferenceSection.getImage(), conferenceSection.getTitle(), conferenceSection.getSubtitle(), conferenceSection.getButtontextleft(),conferenceSection.getButtontextright(),conferenceSection.isStatus());
+				
+		return "redirect:/admin/admindashboard/home_content";
+			
+	}
+	
 }

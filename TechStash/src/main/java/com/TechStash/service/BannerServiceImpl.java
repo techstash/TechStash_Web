@@ -26,7 +26,7 @@ public class BannerServiceImpl implements BannerService {
 	}
 
 	@Transactional
-	public void bannerUpdate(byte[] image, String title, String subtitle, String status) {
+	public void bannerUpdate(byte[] image, String title, String subtitle, Boolean status) {
 		bannerDAO.bannerUpdate(image, title, subtitle, status);
 	}
 

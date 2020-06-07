@@ -35,7 +35,7 @@ public class ConferenceSection {
 	private String buttontextright;
 	
 	@Column(name="status")
-	private String status;
+	private boolean status;
 	
 	@Transient
     private String encodedImage;
@@ -88,20 +88,20 @@ public class ConferenceSection {
 		this.buttontextright = buttontextright;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getEncodedImage() {
 		return encodedImage;
 	}
 
 	public void setEncodedImage(String encodedImage) {
 		this.encodedImage = encodedImage;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 }

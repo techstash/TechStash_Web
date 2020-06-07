@@ -21,7 +21,9 @@
 
 <jsp:include page="header.jsp"/>
 
+<!-- Banner -->
 <c:forEach var="tempBanner" items="${banner}">
+<c:if test="${tempBanner.status}">
 <section class="hero-area bg-cover" data-background="images/background/banner.png">
   <div class="container">
     <div class="row align-items-center justify-content-between">
@@ -37,25 +39,30 @@
     </div>
   </div>
 </section>
+</c:if>
 </c:forEach>
 
 <!-- Conference -->
+<c:forEach var="tempConferenceSection" items="${conferenesection}">
+<c:if test="${tempConferenceSection.status}">
 <section id="conference" class="section pb-0 overflow-hidden">
   <div class="container">
     <div class="row align-items-center">
        <div class="col-lg-6 col-md-5 text-center text-md-left order-md-1 order-1">
-        <img src="images/home/conference.svg" class="img-fluid" alt="conference" data-aos="fade-right">
+        <img src="data:image/jpg;base64,${tempConferenceSection.encodedImage}" class="img-fluid" alt="conference" data-aos="fade-right">
       </div>
       <div class="col-lg-6 col-md-7 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">Conference</h2>
-        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">Searching for the top technology events to attend in 2020? or Gain inspiration from thought leaders, share best practices with industry experts.</p>
-        <a href="/conference" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">View Conferences</a>&nbsp;&nbsp;
-         <a href="/postconference" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">Post a Conference</a>
+        <h2 class="section-title" data-aos="fade-left" data-aos-delay="200">${tempConferenceSection.title}</h2>
+        <p class="mb-4" data-aos="fade-left" data-aos-delay="300">${tempConferenceSection.subtitle}</p>
+        <a href="/conference" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempConferenceSection.buttontextleft}</a>&nbsp;&nbsp;
+         <a href="/postconference" class="btn btn-outline-primary" data-aos="fade-left" data-aos-delay="500">${tempConferenceSection.buttontextright}</a>
 
       </div>
     </div>
   </div>
 </section>
+</c:if>
+</c:forEach>
 
 <!-- jobs -->
 <section id="blog" class="section pb-0 overflow-hidden">

@@ -552,7 +552,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg .svg" size="200" disabled/>
                         <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
@@ -605,7 +605,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -622,6 +622,7 @@
     </section>
     <br>
     <section class="content">
+    <form:form action="conferencesectionupdate" modelAttribute="conferencesection" method="POST" enctype="multipart/form-data">
       <div class="card">
           <div class="card-header">
             	<h4>Conference</h4>
@@ -634,21 +635,16 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" name="photo" class="custom-file-input" id="conferenceImage" accept=".png, .jpg, .jpeg .svg" size="200" disabled/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editConferenceImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -658,18 +654,13 @@
                     Conference Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="title" type="text" id="conferenceTitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editConferenceTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -679,18 +670,13 @@
                     Conference Subtitle
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:textarea path="subtitle" class="form-control" id="conferenceSubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editConferenceSubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -700,18 +686,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                      <form:input path="buttontextleft" type="text" id="conferenceButtonLeft" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editConferenceButtonLeft" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -721,18 +702,13 @@
                     Button Text
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                      <form:input path="buttontextright" type="text" id="conferenceButtonRight" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editConferenceButtonRight" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -743,7 +719,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
+                          <form:checkbox path="status" class="form-check-input"/>
                         </div>
                   </div>
                 </div>
@@ -752,10 +728,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
     <br>
     <section class="content">
@@ -1464,6 +1441,31 @@ $(function(){
     });
     $(".editBannerSubtitle").click(function(){
     	$("#bannerSubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editConferenceImage").click(function(){
+    	$("#conferenceImage").prop("disabled",false);
+    	return false;
+    });
+    
+    $(".editConferenceTitle").click(function(){
+    	$("#conferenceTitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editConferenceSubtitle").click(function(){
+    	$("#conferenceSubtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editConferenceButtonLeft").click(function(){
+    	$("#conferenceButtonLeft").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editConferenceButtonRight").click(function(){
+    	$("#conferenceButtonRight").prop("readonly",false);
     	return false;
     });
 })

@@ -29,7 +29,7 @@ public class Banner {
 	private String subtitle;
 	
 	@Column(name="status")
-	private String status;
+	private Boolean status;
 	
 	@Transient
     private String encodedImage;
@@ -66,11 +66,11 @@ public class Banner {
 		this.subtitle = subtitle;
 	}
 
-	public String getStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 

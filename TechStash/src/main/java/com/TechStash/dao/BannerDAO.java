@@ -12,5 +12,5 @@ public interface BannerDAO {
 	
 	public List<Banner> getDetail();
 	
-	public void bannerUpdate(byte[] image, String title, String subtitle, String status);
+	public void bannerUpdate(byte[] image, String title, String subtitle, boolean status);
 }

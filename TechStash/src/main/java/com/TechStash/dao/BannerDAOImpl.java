@@ -40,7 +40,7 @@ public class BannerDAOImpl implements BannerDAO {
 	}
 
 	@Override
-	public void bannerUpdate(byte[] image, String title, String subtitle, String status) {
+	public void bannerUpdate(byte[] image, String title, String subtitle, boolean status) {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		currentSession.getTransaction().begin();
 		Query theQuery = currentSession.createNativeQuery("UPDATE banner set image=:image,title=:title,subtitle=:subtitle,status=:status where id=1");

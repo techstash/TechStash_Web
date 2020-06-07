@@ -12,5 +12,5 @@ public interface BannerService {
 	
 	public List<Banner> getImage(int id);
 	
-	public void bannerUpdate(byte[] image, String title, String subtitle, String status);
+	public void bannerUpdate(byte[] image, String title, String subtitle, Boolean status);
 }
