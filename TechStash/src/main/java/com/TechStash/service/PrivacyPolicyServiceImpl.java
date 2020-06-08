@@ -25,4 +25,9 @@ public class PrivacyPolicyServiceImpl implements PrivacyPolicyService {
 		return privacyPolicyDAO.getContent();
 	}
 
+	@Transactional
+	public PrivacyPolicy getResult() {
+		return privacyPolicyDAO.getResult();
+	}
+
 }

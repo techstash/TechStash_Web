@@ -10,7 +10,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.TechStash.entity.Aboutus;
 import com.TechStash.entity.PrivacyPolicy;
 
 @Repository
@@ -40,6 +39,15 @@ public class PrivacyPolicyDAOImpl implements PrivacyPolicyDAO {
 		List<PrivacyPolicy> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
+	}
+
+	@Override
+	public PrivacyPolicy getResult() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		int id=1;
+		PrivacyPolicy dbresult=currentSession.get(PrivacyPolicy.class,id);
+		currentSession.close();
+		return dbresult;
 	}
 
 }

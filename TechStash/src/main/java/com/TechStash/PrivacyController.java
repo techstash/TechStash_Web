@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.TechStash.entity.Aboutus;
 import com.TechStash.entity.PrivacyPolicy;
 import com.TechStash.service.PrivacyPolicyService;
 
@@ -32,12 +33,8 @@ public class PrivacyController {
 			try {
 				theModel.addAttribute("image", new String(encode, "UTF-8"));
 				theModel.addAttribute("name", sessionName);
-				PrivacyPolicy privacypolicy = new PrivacyPolicy();
-				theModel.addAttribute("privacypolicy", privacypolicy);
-				
-				List<PrivacyPolicy> dbresult = privacyPolicyService.getContent();
-				
-				theModel.addAttribute("privacypolicycontent", dbresult);	
+				PrivacyPolicy dbresult=privacyPolicyService.getResult();
+				theModel.addAttribute("privacypolicy", dbresult);
 				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block

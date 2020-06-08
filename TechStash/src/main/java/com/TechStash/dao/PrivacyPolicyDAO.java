@@ -6,8 +6,10 @@ import com.TechStash.entity.PrivacyPolicy;
 
 public interface PrivacyPolicyDAO {
 	
-public void saveContent(String content);
+	public void saveContent(String content);
 	
 	public List<PrivacyPolicy> getContent();
+	
+	public PrivacyPolicy getResult();
 
 }
