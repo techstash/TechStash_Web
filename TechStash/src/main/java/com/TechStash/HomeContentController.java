@@ -16,13 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.TechStash.entity.Aboutus;
 import com.TechStash.entity.Banner;
 import com.TechStash.entity.BlogSection;
 import com.TechStash.entity.CommunitySection;
 import com.TechStash.entity.ConferenceSection;
-import com.TechStash.entity.Dashboard_users;
-import com.TechStash.entity.Footer;
+import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.JobSection;
 import com.TechStash.entity.NewsletterSection;
 import com.TechStash.entity.PodcastSection;
@@ -32,6 +30,7 @@ import com.TechStash.service.BannerService;
 import com.TechStash.service.BlogSectionService;
 import com.TechStash.service.CommunitySectionService;
 import com.TechStash.service.ConferenceSectionService;
+import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.JobSectionService;
 import com.TechStash.service.NewsletterSectionService;
 import com.TechStash.service.PodcastSectionService;
@@ -69,8 +68,16 @@ public class HomeContentController {
 	@Autowired
 	private ResourceSectionService resourceSectionService;
 	
+	@Autowired
+	private HomeSettingService homeSettingService;
+	
 	@RequestMapping("/")
 	public String Home(Model theModel){
+		
+		String metaTitle=null;
+		String metaDescription=null;
+		String documentTitle=null;
+		byte[] favicon=null;
 		
 		List<Banner> dbResultBanner = bannerService.getDetail();
 		theModel.addAttribute("banner", dbResultBanner);
@@ -98,6 +105,10 @@ public class HomeContentController {
 		
 		List<ResourceSection> dbResultResource = resourceSectionService.getResultWebsite();
 		theModel.addAttribute("resourcesection", dbResultResource);
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		
 		return "index";
 	}

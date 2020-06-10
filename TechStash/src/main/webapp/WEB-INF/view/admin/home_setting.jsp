@@ -577,6 +577,7 @@
       </div>
 	
     <section class="content">
+    <form:form action="homesettingupdate" modelAttribute="home_setting" method="POST" enctype="multipart/form-data">
       <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
@@ -589,18 +590,13 @@
                     Home Page Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="metatitle" type="text" id="metatitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -610,18 +606,50 @@
                     Home Page Description
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                  <form:textarea path="metadescription" class="form-control" id="metaDescription" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editDescription" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Browser Title
+                  </div>
+                  <div class="col-6">
+                    <form:input path="browsertitle" type="text" id="browserTitle" class="form-control" readonly="true"/>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editBrowserTitle" href="#">
+                              <i class="fas fa-pencil-alt">
                               </i>
-                              Delete
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Fevicon Image
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <div class="custom-file">
+                         <input type="file" name="photo" class="custom-file-input" id="feviconImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editFevicon" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
                           </a>
                   </div>
                 </div>
@@ -630,10 +658,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      </form:form>
     </section>
   </div>
 
@@ -658,6 +687,14 @@
 
 <script src="/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
+<script src="/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
 <script type='text/javascript'>
 
 $( document ).ready(function() {
@@ -674,6 +711,28 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editTitle").click(function(){
+    	$("#metatitle").prop("readonly",false);
+    	return false;
+    });
+    $(".editDescription").click(function(){
+    	$("#metaDescription").prop("readonly",false);
+    	return false;
+    });
+    $(".editBrowserTitle").click(function(){
+    	$("#browserTitle").prop("readonly",false);
+    	return false;
+    });
+    $(".editFevicon").click(function(){
+    	$("#feviconImage").prop("disabled",false);
+    	return false;
+    });
+})
 </script>
 
 </body>

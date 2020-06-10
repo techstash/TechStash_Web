@@ -2,7 +2,9 @@
 	
 	$(window).on('load', function () {
 		
-		
+		var metaTitleIndex = $('#metaTitleIndex').val();
+		var metaDescriptionIndex = $('#metaDescriptionIndex').val();
+		var documentTitleIndex = $('#documentTitleIndex').val();
 		$('head').append('<meta charset="utf-8">');
 		$('head').append('<meta name="language" content="en" />');
 		$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />');
@@ -31,9 +33,9 @@
 		
 
 		if(index == 'index'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-			document.title = 'TechStash Home';
+			$('head').append('<meta name="title" content="'+metaTitleIndex+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionIndex+'" />');
+			document.title = documentTitleIndex;
 		}
 		
 		if(conference == 'conference'){

@@ -683,7 +683,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Left
                   </div>
                   <div class="col-6">
                       <form:input path="buttontextleft" type="text" id="conferenceButtonLeft" class="form-control" readonly="true"/>
@@ -699,7 +699,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Right
                   </div>
                   <div class="col-6">
                       <form:input path="buttontextright" type="text" id="conferenceButtonRight" class="form-control" readonly="true"/>
@@ -797,7 +797,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Left
                   </div>
                   <div class="col-6">
                     <form:input path="buttontextleft" type="text" id="jobButtonLeft" class="form-control" readonly="true"/>
@@ -813,7 +813,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Right
                   </div>
                   <div class="col-6">
                    <form:input path="buttontextright" type="text" id="jobButtonRight" class="form-control" readonly="true"/>
@@ -972,7 +972,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Left
                   </div>
                   <div class="col-6">
                    <form:input path="buttontextleft" type="text" id="blogbuttonleft" class="form-control" readonly="true"/>
@@ -988,7 +988,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Right
                   </div>
                   <div class="col-6">
                     <form:input path="buttontextright" type="text" id="blogbuttonright" class="form-control" readonly="true"/>
@@ -1184,7 +1184,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Left
                   </div>
                   <div class="col-6">
                     <form:input path="buttontextleft" type="text" id="CommunityLeft" class="form-control" readonly="true"/>
@@ -1200,7 +1200,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Button Text
+                    Button Text Right
                   </div>
                   <div class="col-6">
                     <form:input path="buttontextright" type="text" id="CommunityRight" class="form-control" readonly="true"/>
