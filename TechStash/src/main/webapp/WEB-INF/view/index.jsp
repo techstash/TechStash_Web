@@ -5,10 +5,14 @@
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
-
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+	<c:forEach var="tempMetaDetails" items="${homeSetting}">
+	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	<input type="hidden" id="index" name="index" value="index">
+	<input type="hidden" id="metaTitleIndex" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionIndex" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitleIndex" value='${tempMetaDetails.browsertitle}'/>
+</c:forEach>
 </head>
 
 <body>
@@ -16,17 +20,17 @@
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
-  
-<input type="hidden" id="index" name="index" value="index">
+
+
 
 <jsp:include page="header.jsp"/>
 
 <!-- Banner -->
 <c:forEach var="tempBanner" items="${banner}">
-<c:if test="${tempBanner.status}">
 <section class="hero-area bg-cover" data-background="images/background/banner.png">
   <div class="container">
     <div class="row align-items-center justify-content-between">
+    <c:if test="${tempBanner.status}">
       <div class="col-lg-6 pl-lg-0 text-center text-lg-left">
         <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">${tempBanner.title}</h1>
         <p class="text-white pt-2 pb-3" data-aos="fade-up" data-aos-delay="1200">${tempBanner.subtitle}</p>
@@ -36,10 +40,10 @@
       <div class="col-lg-5 pl-lg-0 pt-5 pt-lg-0 text-lg-right text-center">
         <img src="data:image/jpg;base64,${tempBanner.encodedImage}" class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
       </div>
+      </c:if>
     </div>
   </div>
 </section>
-</c:if>
 </c:forEach>
 
 <!-- Conference -->
@@ -385,6 +389,13 @@
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
+
+<script>
+   // var message = "${documentTitle}";
+   // alert(message);
+   // document.title = 'dsgds';
+</script>
+
 </body>
 
 </html>
