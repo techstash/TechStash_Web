@@ -577,6 +577,7 @@
       </div>
 	
     <section class="content">
+    <form:form action="conferencesettingupdate" modelAttribute="conference_setting" method="POST">
       <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
@@ -589,18 +590,13 @@
                     Conference Title
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                   <form:input path="metatitle" type="text" id="metatitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -610,18 +606,29 @@
                     Conference Description
                   </div>
                   <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="metadescription" class="form-control" id="metaDescription" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editDescription" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Browser Title
+                  </div>
+                  <div class="col-6">
+                    <form:input path="browsertitle" type="text" id="browserTitle" class="form-control" readonly="true"/>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editBrowserTitle" href="#">
+                              <i class="fas fa-pencil-alt">
                               </i>
-                              Delete
+                              Edit
                           </a>
                   </div>
                 </div>
@@ -630,10 +637,11 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
+      \</form:form>
     </section>
   </div>
 
@@ -674,6 +682,24 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editTitle").click(function(){
+    	$("#metatitle").prop("readonly",false);
+    	return false;
+    });
+    $(".editDescription").click(function(){
+    	$("#metaDescription").prop("readonly",false);
+    	return false;
+    });
+    $(".editBrowserTitle").click(function(){
+    	$("#browserTitle").prop("readonly",false);
+    	return false;
+    });
+})
 </script>
 
 </body>

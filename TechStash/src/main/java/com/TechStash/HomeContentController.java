@@ -74,11 +74,6 @@ public class HomeContentController {
 	@RequestMapping("/")
 	public String Home(Model theModel){
 		
-		String metaTitle=null;
-		String metaDescription=null;
-		String documentTitle=null;
-		byte[] favicon=null;
-		
 		List<Banner> dbResultBanner = bannerService.getDetail();
 		theModel.addAttribute("banner", dbResultBanner);
 		

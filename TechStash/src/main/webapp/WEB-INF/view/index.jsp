@@ -12,7 +12,7 @@
 	<input type="hidden" id="metaTitleIndex" value='${tempMetaDetails.metatitle}'/>
 	<input type="hidden" id="metaDescriptionIndex" value='${tempMetaDetails.metadescription}'/>
 	<input type="hidden" id="documentTitleIndex" value='${tempMetaDetails.browsertitle}'/>
-</c:forEach>
+	</c:forEach>
 </head>
 
 <body>
