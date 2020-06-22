@@ -1,12 +1,15 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<c:forEach var="tempMetaDetails" items="${homeSetting}">
+	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	</c:forEach>
 
 </head>
 
@@ -40,7 +43,7 @@
     </div>
           <div class="col-md-12">
               
-              <p class="text-black">Monica is the Innovation Lead for Collaboration and Workplace Automation at Roche where she helps translate ambiguity into a vision for transformative Enterprise Solutions that have superior demonstrable business value. Roche is a Swiss multinational with a mission to create innovative medicines and diagnostic tests that help millions of patients globally. She has been the Chief Evangelist for G Suite since she started on this journey in 2009 as Technical Lead for the migration of Genentech Mail/Calendar to G Suite. Genentech was the first US biotech to move to the cloud very early and at that time G Suiteâs biggest customer. After the acquisition of Genentech by Roche in 2009, the two companies had several platform interoperability issues since Roche was on MSFT Exchange. In order to enable seamless collaboration across the global organization, Roche migrated 90,000 employees to G Suite in 2013. Monica was instrumental in transitioning the organization towards a new way of working by listening, understanding the pain points and helping teams across the various business groups become more productive by working closely with leadership and change management organization to build trust and know-how for the new cloud solutions. She was selected from Roche to be part Googleâs G Suite Product Strategists team as a consultant to give their product teams feedback on what they could do to make their products a better fit for large enterprises, meet business and compliance demands and offer a better user experience. She has led several initiatives within a very large global enterprise like Roche, including pioneering new ways of working and developing applications to build the adoption of G Suite, help change mindsets and navigate a highly regulated environment while still keeping a great customer experience at the heart of it all. Monica passion for solving problems, natural ability to work with technical and business communities and in-depth knowledge of G Suite apps, has enabled her to identify opportunities for applying G Suite's power and its extensions as well as other Google Cloud Platform technologies to improve, 
+              <p class="text-black">Monica is the Innovation Lead for Collaboration and Workplace Automation at Roche where she helps translate ambiguity into a vision for transformative Enterprise Solutions that have superior demonstrable business value. Roche is a Swiss multinational with a mission to create innovative medicines and diagnostic tests that help millions of patients globally. She has been the Chief Evangelist for G Suite since she started on this journey in 2009 as Technical Lead for the migration of Genentech Mail/Calendar to G Suite. Genentech was the first US biotech to move to the cloud very early and at that time G Suite’s biggest customer. After the acquisition of Genentech by Roche in 2009, the two companies had several platform interoperability issues since Roche was on MSFT Exchange. In order to enable seamless collaboration across the global organization, Roche migrated 90,000 employees to G Suite in 2013. Monica was instrumental in transitioning the organization towards a new way of working by listening, understanding the pain points and helping teams across the various business groups become more productive by working closely with leadership and change management organization to build trust and know-how for the new cloud solutions. She was selected from Roche to be part Google’s G Suite Product Strategists team as a consultant to give their product teams feedback on what they could do to make their products a better fit for large enterprises, meet business and compliance demands and offer a better user experience. She has led several initiatives within a very large global enterprise like Roche, including pioneering new ways of working and developing applications to build the adoption of G Suite, help change mindsets and navigate a highly regulated environment while still keeping a great customer experience at the heart of it all. Monica passion for solving problems, natural ability to work with technical and business communities and in-depth knowledge of G Suite apps, has enabled her to identify opportunities for applying G Suite's power and its extensions as well as other Google Cloud Platform technologies to improve, 
               redesign and transform existing business solutions. Monica has a background in Mechanical Engineering, 
               </p>
               

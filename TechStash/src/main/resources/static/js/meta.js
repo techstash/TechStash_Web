@@ -2,6 +2,12 @@
 	
 	$(window).on('load', function () {
 		
+		$('head').append('<meta charset="utf-8">');
+		$('head').append('<meta name="language" content="en" />');
+		$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />');
+		$('head').append('<meta name="copyright" content="TechStash" />');
+		$('head').append('<meta name="company" content="TechStash" />');
+		
 		var metaTitleIndex = $('#metaTitleIndex').val();
 		var metaDescriptionIndex = $('#metaDescriptionIndex').val();
 		var documentTitleIndex = $('#documentTitleIndex').val();
@@ -10,12 +16,50 @@
 		var metaDescriptionConference = $('#metaDescriptionConference').val();
 		var documentTitleIndexConference = $('#documentTitleIndexConference').val();
 		
-		$('head').append('<meta charset="utf-8">');
-		$('head').append('<meta name="language" content="en" />');
-		$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />');
-		$('head').append('<meta name="copyright" content="TechStash" />');
-		$('head').append('<meta name="company" content="TechStash" />');
-
+		var metaTitleIndexJob = $('#metaTitleIndexJob').val();
+		var metaDescriptionJob = $('#metaDescriptionJob').val();
+		var documentTitleIndexJob = $('#documentTitleIndexJob').val();
+		
+		var metaTitleIndexSpeaker = $('#metaTitleIndexSpeaker').val();
+		var metaDescriptionSpeaker = $('#metaDescriptionSpeaker').val();
+		var documentTitleIndexSpeaker = $('#documentTitleIndexSpeaker').val();
+		
+		var metaTitleIndexBlogs = $('#metaTitleIndexBlogs').val();
+		var metaDescriptionBlogs = $('#metaDescriptionBlogs').val();
+		var documentTitleIndexBlogs = $('#documentTitleIndexBlogs').val();
+		
+		var metaTitleIndexPodcast = $('#metaTitleIndexPodcast').val();
+		var metaDescriptionPodcast = $('#metaDescriptionPodcast').val();
+		var documentTitleIndexPodcast = $('#documentTitleIndexPodcast').val();
+		
+		var metaTitleIndexCommunity = $('#metaTitleIndexCommunity').val();
+		var metaDescriptionCommunity = $('#metaDescriptionCommunity').val();
+		var documentTitleIndexCommunity = $('#documentTitleIndexCommunity').val();
+		
+		var metaTitleIndexResource = $('#metaTitleIndexResource').val();
+		var metaDescriptionResource = $('#metaDescriptionResource').val();
+		var documentTitleIndexResource = $('#documentTitleIndexResource').val();
+		
+		var metaTitleIndexVolunteer = $('#metaTitleIndexVolunteer').val();
+		var metaDescriptionVolunteer = $('#metaDescriptionVolunteer').val();
+		var documentTitleIndexVolunteer = $('#documentTitleIndexVolunteer').val();
+		
+		var metaTitleIndexSubscribe = $('#metaTitleIndexSubscribe').val();
+		var metaDescriptionSubscribe = $('#metaDescriptionSubscribe').val();
+		var documentTitleIndexSubscribe = $('#documentTitleIndexSubscribe').val();
+		
+		var metaTitleIndexContactus = $('#metaTitleIndexContactus').val();
+		var metaDescriptionContactus = $('#metaDescriptionContactus').val();
+		var documentTitleIndexContactus = $('#documentTitleIndexContactus').val();
+		
+		var metaTitleIndexAboutus = $('#metaTitleIndexAboutus').val();
+		var metaDescriptionAboutus = $('#metaDescriptionAboutus').val();
+		var documentTitleIndexAboutus = $('#documentTitleIndexAboutus').val();
+		
+		var metaTitleIndexPrivacy = $('#metaTitleIndexPrivacy').val();
+		var metaDescriptionPrivacy = $('#metaDescriptionPrivacy').val();
+		var documentTitleIndexPrivacy = $('#documentTitleIndexPrivacy').val();
+		
 		var index=$("#index").val();
 		var conference=$("#conference").val();
 		var jobs=$("#jobs").val();
@@ -50,45 +94,45 @@
 		}
 		
 		if(jobs == 'jobs'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Jobs';
+			$('head').append('<meta name="title" content="'+metaTitleIndexJob+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionJob+'" />');
+			document.title = documentTitleIndexJob;
 		}
 		
 		if(blogs == 'blogs'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Blogs';
+			$('head').append('<meta name="title" content="'+metaTitleIndexBlogs+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionBlogs+'" />');
+			document.title = documentTitleIndexBlogs;
 		}
 		
 		if(community == 'community'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Community';
+			$('head').append('<meta name="title" content="'+metaTitleIndexCommunity+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionCommunity+'" />');
+			document.title = documentTitleIndexCommunity;
 		}
 		
 		if(resources == 'resources'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Resources';
+			$('head').append('<meta name="title" content="'+metaTitleIndexResource+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionResource+'" />');
+			document.title = documentTitleIndexResource;
 		}
 		
 		if(speakers == 'speakers'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Speakers';
+			$('head').append('<meta name="title" content="'+metaTitleIndexSpeaker+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionSpeaker+'" />');
+			document.title = documentTitleIndexSpeaker;
 		}
 		
 		if(podcast == 'podcast'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Podcast';
+			$('head').append('<meta name="title" content="'+metaTitleIndexPodcast+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionPodcast+'" />');
+			document.title = documentTitleIndexPodcast;
 		}
 		
 		if(subscribe == 'subscribe'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Subscribe';
+			$('head').append('<meta name="title" content="'+metaTitleIndexSubscribe+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionSubscribe+'" />');
+			document.title = documentTitleIndexSubscribe;
 		}
 		
 		if(blogdetails == 'blogdetails'){
@@ -104,9 +148,9 @@
 		}
 		
 		if(volunteer == 'volunteer'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Volunteer';
+			$('head').append('<meta name="title" content="'+metaTitleIndexVolunteer+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionVolunteer+'" />');
+			document.title = documentTitleIndexVolunteer;
 		}
 		
 		if(postblog == 'postblog'){
@@ -128,21 +172,21 @@
 		}
 		
 		if(contactus == 'contactus'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Contactus';
+			$('head').append('<meta name="title" content="'+metaTitleIndexContactus+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionContactus+'" />');
+			document.title = documentTitleIndexContactus;
 		}
 		
 		if(aboutus == 'aboutus'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash About';
+			$('head').append('<meta name="title" content="'+metaTitleIndexAboutus+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionAboutus+'" />');
+			document.title = documentTitleIndexAboutus;
 		}
 		
 		if(privacy == 'privacy'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Privacy Policy';
+			$('head').append('<meta name="title" content="'+metaTitleIndexPrivacy+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionPrivacy+'" />');
+			document.title = documentTitleIndexPrivacy;
 		}
 		
 		if(error == 'error'){

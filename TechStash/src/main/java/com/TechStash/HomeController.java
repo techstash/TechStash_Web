@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,81 +21,50 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import com.TechStash.entity.Dashboard_users;
+import com.TechStash.entity.Home_setting;
+import com.TechStash.service.HomeSettingService;
+import com.TechStash.service.SettingService;
 
 @Controller
 public class HomeController {
 	
-	
+	@Autowired
+	private HomeSettingService homeSettingService;
 	
 	// ********Navigation into the requested url TechStash Website******** //
 	
-	@RequestMapping("/speakers")
-	public String Speakers(){
-		return "speakers";
-	}
-	
-	@RequestMapping("/blogs")
-	public String Blogs(){
-		return "blogs";
-	}
-	
-	@RequestMapping("/podcast")
-	public String podcast(){
-		return "podcast";
-	}
-	
-	@RequestMapping("/community")
-	public String Community(){
-		return "community";
-	}
-	
-	@RequestMapping("/resources")
-	public String Resources(){
-		return "resources";
-	}
-	
-	@RequestMapping("/subscribe")
-	public String Subscribe(){
-		return "subscribe";
-	}
-	
-	@RequestMapping("/volunteer")
-	public String Volunteer(){
-		return "volunteer";
-	}
-	
-	@RequestMapping("/submit_blog")
-	public String SubmitBlog(){
-		return "submit_blog";
-	}
-	
-	@RequestMapping("/contact")
-	public String Contact(){
-		return "contactus";
-	}
-	
 	@RequestMapping("/postblog")
-	public String PostBlog(){
+	public String PostBlog(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		return "postblog";
 	}
 	
 	@RequestMapping("/postconference")
-	public String PostConference(){
+	public String PostConference(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		return "postconference";
 	}
 	
 	@RequestMapping("/postjob")
-	public String PostJob(){
+	public String PostJob(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		return "postjob";
 	}
 	
 	@RequestMapping("/blogdetails")
-	public String BlogDetail(){
+	public String BlogDetail(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		return "blogdetails";
 	}
 	
 	@RequestMapping("/speakerdetails")
-	public String SpeakerDetail(){
+	public String SpeakerDetail(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		return "speakerdetails";
 	}
 	
@@ -102,6 +72,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/blog_content")
 	public String BlogContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -126,6 +98,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/community_content")
 	public String CommunityContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -150,6 +124,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/conference_content")
 	public String ConferenceContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -174,6 +150,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/contactus_content")
 	public String ContactContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -198,6 +176,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/contactus_response")
 	public String ContactResponses(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -222,6 +202,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/faq_content")
 	public String FaqContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -247,6 +229,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/jobs_content")
 	public String JobContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -272,6 +256,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/podcast_content")
 	public String PodcastContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -297,6 +283,8 @@ public class HomeController {
 	//Pricing
 	@RequestMapping("/admin/admindashboard/pricing_details")
 	public String PricingDetails(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		String sessiondesignation=(String) session.getAttribute("designation");
@@ -330,6 +318,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/resource_content")
 	public String ResourcesContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -354,6 +344,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/speakers_content")
 	public String SpeakersContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -378,6 +370,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/subscribe_list")
 	public String SubscribeList(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -402,6 +396,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/unsubscribe_list")
 	public String UnubscribeList(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -426,6 +422,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/volunteer_content")
 	public String VolunteerContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -450,6 +448,8 @@ public class HomeController {
 	
 	@RequestMapping("/admin/admindashboard/volunteer_details")
 	public String VolunteerDetails(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		String sessiondesignation=(String) session.getAttribute("designation");

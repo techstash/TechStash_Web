@@ -17,17 +17,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.TechStash.service.FooterService;
+import com.TechStash.service.HomeSettingService;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
+import com.TechStash.entity.Home_setting;
 
 @Controller
 public class FooterController {
 	
 	@Autowired
 	private FooterService footerService;
+	
+	@Autowired
+	private HomeSettingService homeSettingService;
 
 	@RequestMapping("/admin/admindashboard/footer")
 	public String Footer(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){

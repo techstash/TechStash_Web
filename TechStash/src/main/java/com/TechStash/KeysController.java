@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.TechStash.entity.Dashboard_users;
+import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Keys_details;
 import com.TechStash.service.DashboardUserService;
+import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.KeysService;
 
 @Controller
@@ -24,9 +26,15 @@ public class KeysController {
 	
 	@Autowired
 	private KeysService keysService;
+	
+	@Autowired
+	private HomeSettingService homeSettingService;
 
 	@RequestMapping("/admin/admindashboard/keys")
 	public String Keys(HttpServletRequest request, Model theModel,  @ModelAttribute("keys") Keys_details keysDetails){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		
 		HttpSession session = request.getSession();
 		String sessiondesignation=(String) session.getAttribute("designation");

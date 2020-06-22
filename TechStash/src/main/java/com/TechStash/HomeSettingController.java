@@ -30,6 +30,8 @@ public class HomeSettingController {
 	
 	@RequestMapping("/admin/admindashboard/home_setting")
 	public String HomeSetting(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){

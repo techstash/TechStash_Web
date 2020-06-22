@@ -6,8 +6,10 @@
 
 	<link href="css/main.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<c:forEach var="tempMetaDetails" items="${homeSetting}">
+	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	</c:forEach>
 
 </head>
 
@@ -25,7 +27,12 @@ p{
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
   
-<input type="hidden" id="privacy" name="privacy" value="privacy">
+<c:forEach var="tempMetaDetails" items="${privacypolicySetting}">
+	<input type="hidden" id="privacy" name="privacy" value="privacy">
+	<input type="hidden" id="metaTitleIndexPrivacy" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionPrivacy" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitleIndexPrivacy" value='${tempMetaDetails.browsertitle}'/>
+  </c:forEach>
 
 <jsp:include page="header.jsp"/>  
 

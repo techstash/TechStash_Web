@@ -36,8 +36,15 @@ public class SettingController {
 	@Autowired
 	private SettingService settingService;
 	
+	@Autowired
+	private HomeSettingService homeSettingService;
+	
 	@RequestMapping("/admin/admindashboard/conference_setting")
 	public String ConferenceSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -73,6 +80,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/jobs_setting")
 	public String JobsSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -108,6 +119,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/speakers_setting")
 	public String SpeakersSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -143,6 +158,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/blog_setting")
 	public String BlogSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -177,6 +196,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/podcast_setting")
 	public String PodcastSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -212,6 +235,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/community_setting")
 	public String CommunitySetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -247,6 +274,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/resource_setting")
 	public String ResourcesSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -282,6 +313,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/volunteer_setting")
 	public String VolunteerSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -317,6 +352,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/subscribe_setting")
 	public String SubscribeSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -352,6 +391,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/contactus_setting")
 	public String ContactSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -387,6 +430,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/aboutus_setting")
 	public String AboutSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -422,6 +469,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/privacypolicy_setting")
 	public String PrivacyPolicySetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -457,6 +508,10 @@ public class SettingController {
 	
 	@RequestMapping("/admin/admindashboard/faq_setting")
 	public String FaqSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){

@@ -13,21 +13,34 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.TechStash.entity.Aboutus;
+import com.TechStash.entity.Aboutus_setting;
+import com.TechStash.entity.Contactus_setting;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
+import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Keys_details;
 import com.TechStash.service.AboutUsService;
 import com.TechStash.service.DashboardUserService;
+import com.TechStash.service.HomeSettingService;
+import com.TechStash.service.SettingService;
 
 @Controller
 public class AboutUsController {
 	
 	@Autowired
 	private AboutUsService aboutUsService;
+	
+	@Autowired
+	private SettingService settingService;
+	
+	@Autowired
+	private HomeSettingService homeSettingService;
 
 	
 	@RequestMapping("/admin/admindashboard/aboutus_content")
 	public String AboutContent(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -68,6 +81,14 @@ public class AboutUsController {
 		List<Aboutus> dbresult = aboutUsService.getContent();
 		
 		theModel.addAttribute("aboutus", dbresult);
+		
+		List<Aboutus_setting> dbResultAboutusSetting = settingService.aboutusResultWebsite();
+		
+		theModel.addAttribute("aboutusSetting", dbResultAboutusSetting);
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		
 		return "aboutus";
 	}

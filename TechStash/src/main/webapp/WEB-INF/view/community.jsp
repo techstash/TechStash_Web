@@ -1,12 +1,15 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<c:forEach var="tempMetaDetails" items="${homeSetting}">
+	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
+	</c:forEach>
 
 </head>
 
@@ -16,8 +19,13 @@
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
-  
-<input type="hidden" id="community" name="community" value="community">
+
+<c:forEach var="tempMetaDetails" items="${communitySetting}">
+	<input type="hidden" id="community" name="community" value="community">
+	<input type="hidden" id="metaTitleIndexCommunity" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionCommunity" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitleIndexCommunity" value='${tempMetaDetails.browsertitle}'/>
+  </c:forEach>
 
 <jsp:include page="header.jsp"/>   
 

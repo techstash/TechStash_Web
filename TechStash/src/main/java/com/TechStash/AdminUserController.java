@@ -24,17 +24,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.TechStash.entity.Dashboard_users;
+import com.TechStash.entity.Home_setting;
 import com.TechStash.mail.SignupMail;
 import com.TechStash.service.DashboardUserService;
+import com.TechStash.service.HomeSettingService;
 
 @Controller
 public class AdminUserController {
+	
+	@Autowired
+	private HomeSettingService homeSettingService;
 	
 	@Autowired
 	private DashboardUserService dashboardUserService;
 	
 	@RequestMapping("/admin/admindashboard/login")
 	public String Login(HttpServletRequest request,Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		Dashboard_users dashboard_users = new Dashboard_users();
 		theModel.addAttribute("login", dashboard_users);
 		return "admin/login";
@@ -42,6 +49,10 @@ public class AdminUserController {
 	
 	@RequestMapping("/admin/admindashboard/index")
 	public String validateUser(@ModelAttribute("users") Dashboard_users dashboard_users,HttpServletRequest request, Model theModel) {
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		String status="false";
 		String designation=null;
 		byte[] image=null;
@@ -113,6 +124,8 @@ public class AdminUserController {
 	
 	@RequestMapping("/admin/admindashboard/signup")
 	public String Signup(HttpServletRequest request,Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		Dashboard_users dashboard_users = new Dashboard_users();
 
 		theModel.addAttribute("user", dashboard_users);
@@ -135,12 +148,19 @@ public class AdminUserController {
 		if(result.isEmpty()){
 			dashboardUserService.saveUsers(dashboard_users);
 			SignupMail.ApproveMail(dashboard_users.getName(), dashboard_users.getEmail(), dashboard_users.getPhone(), dashboard_users.getLocation(), dashboard_users.getBio(), dashboard_users.getDesignation(), dashboard_users.getLinkedin(), dashboard_users.getGithub(), dashboard_users.getTwitter(), dashboard_users.getFacebook());
-			return "admin/thanks_signup";
+			return "redirect:/admin/admindashboard/thanks_signup";
 		}
 		else{
 			return "admin/popup_user";
 		}
 		
+	}
+	
+	@RequestMapping("/admin/admindashboard/thanks_signup")
+	public String ThanksSignup(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		return "admin/thanks_signup";
 	}
 	
 	  @GetMapping("/approvalauth/{email}/{key}/{status}")
@@ -186,6 +206,8 @@ public class AdminUserController {
 	
 	@RequestMapping("/admin/admindashboard/forgotpassword")
 	public String ForgotPassword(HttpServletRequest request,Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		Dashboard_users dashboard_users = new Dashboard_users();
 		theModel.addAttribute("forgotpassword", dashboard_users);
 		return "admin/forgotpassword";
@@ -213,7 +235,7 @@ public class AdminUserController {
 		        }
 			if(userstatus.equals("true")){ 
 			SignupMail.ForgotPassword(profilename,useremail, userpass); 
-			return "admin/thanks_forgotpassword";
+			return "redirect:/admin/admindashboard/thanks_forgot";
 			}
 			else
 			{
@@ -223,8 +245,17 @@ public class AdminUserController {
 		
 	}
 	
+	@RequestMapping("/admin/admindashboard/thanks_forgot")
+	public String ThanksForgot(Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		return "admin/thanks_forgotpassword";
+	}
+	
 	@RequestMapping("/admin/admindashboard/profile")
 	public String Profile(HttpServletRequest request, Model theModel){
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -301,6 +332,8 @@ public class AdminUserController {
 	
 	@RequestMapping("/admin/admindashboard/organizer")
 	public String Organizer(HttpServletRequest request, Model theModel, @ModelAttribute("organizer") Dashboard_users dashboard_users) throws UnsupportedEncodingException{
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		HttpSession session = request.getSession();
 		byte[] profileImage=null;
 		String sessiondesignation=(String) session.getAttribute("designation");

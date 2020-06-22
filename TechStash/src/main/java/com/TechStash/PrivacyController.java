@@ -13,8 +13,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.TechStash.entity.Aboutus;
+import com.TechStash.entity.Contactus_setting;
+import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.PrivacyPolicy;
+import com.TechStash.entity.Privacypolicy_setting;
+import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.PrivacyPolicyService;
+import com.TechStash.service.SettingService;
 
 @Controller
 public class PrivacyController {
@@ -22,8 +27,19 @@ public class PrivacyController {
 	@Autowired
 	private PrivacyPolicyService privacyPolicyService;
 	
+	@Autowired
+	private SettingService settingService;
+	
+	@Autowired
+	private HomeSettingService homeSettingService;
+	
 	@RequestMapping("/admin/admindashboard/privacypolicy_content")
 	public String PrivacyPolicyContent(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		HttpSession session = request.getSession();
 		String sessionValue=(String) session.getAttribute("session"); 
 		if(sessionValue != null){
@@ -64,6 +80,15 @@ public class PrivacyController {
 		List<PrivacyPolicy> dbresult = privacyPolicyService.getContent();
 		
 		theModel.addAttribute("privacypolicy", dbresult);	
+		
+		List<Privacypolicy_setting> dbResultPrivacypolicySetting = settingService.privacypolicyResultWebsite();
+		
+		theModel.addAttribute("privacypolicySetting", dbResultPrivacypolicySetting);
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
 		return "privacypolicy";
 	}
 

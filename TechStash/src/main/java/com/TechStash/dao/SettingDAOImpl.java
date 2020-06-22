@@ -74,7 +74,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Job_setting> jobResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Job_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Job_setting where id=1",Job_setting.class);
 		List<Job_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -105,7 +105,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Speaker_setting> speakerResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Speaker_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Speaker_setting where id=1",Speaker_setting.class);
 		List<Speaker_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -137,7 +137,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Blog_setting> blogResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Blog_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Blog_setting where id=1",Blog_setting.class);
 		List<Blog_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -169,7 +169,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Podcast_setting> podcastResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Podcast_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Podcast_setting where id=1",Podcast_setting.class);
 		List<Podcast_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -200,7 +200,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Community_setting> communityResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Community_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Community_setting where id=1",Community_setting.class);
 		List<Community_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -232,7 +232,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Resource_setting> resourceResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Resource_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Resource_setting where id=1",Resource_setting.class);
 		List<Resource_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -264,7 +264,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Volunteer_setting> volunteerResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Volunteer_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Volunteer_setting where id=1",Volunteer_setting.class);
 		List<Volunteer_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -296,7 +296,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Subscribe_setting> subscriberResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Subscribe_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Subscribe_setting where id=1",Subscribe_setting.class);
 		List<Subscribe_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -328,7 +328,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Contactus_setting> cotactusResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Contactus_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Contactus_setting where id=1",Contactus_setting.class);
 		List<Contactus_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -360,7 +360,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Aboutus_setting> aboutusResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Aboutus_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Aboutus_setting where id=1",Aboutus_setting.class);
 		List<Aboutus_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -392,7 +392,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Privacypolicy_setting> privacypolicyResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Privacypolicy_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Privacypolicy_setting where id=1",Privacypolicy_setting.class);
 		List<Privacypolicy_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
@@ -424,7 +424,7 @@ public class SettingDAOImpl implements SettingDAO {
 	@Override
 	public List<Faq_setting> faqResultWebsite() {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Faq_setting where id=1",Conference_setting.class);
+		Query theQuery = currentSession.createQuery("from Faq_setting where id=1",Faq_setting.class);
 		List<Faq_setting> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
