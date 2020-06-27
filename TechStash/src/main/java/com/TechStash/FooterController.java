@@ -74,7 +74,6 @@ public class FooterController {
 		}
 		
 		if(photo==null){
-			System.out.println("photo is null");
 			List<Footer> result=footerService.getLogoImage(1);
 			  for(Footer dbresult : result) {
 				  image=dbresult.getLogo_image();

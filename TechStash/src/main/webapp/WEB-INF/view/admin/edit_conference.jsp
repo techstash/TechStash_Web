@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Conference Content</title>
+  <title>TechStash Edit Conference</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
   
@@ -23,8 +23,6 @@
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   
   <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  
-  <link rel="stylesheet" type="text/css" href="/admin/css/util.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -85,7 +83,7 @@
         </div>
       </div>
 
-    <nav class="mt-2">
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" id="table" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -535,120 +533,79 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Conference Content</h1>
+            <h1>Edit Conference</h1>
           </div>
         </div>
       </div>
     </section>
-<form:form action="newcarousel" method="POST" enctype="multipart/form-data">    
-<div class="modal fade" id="modal-carousel">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">New Carousel</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+
+    <section class="content">
+    <form:form action="conferenceeditupdate" modelAttribute="conference" method="POST" enctype="multipart/form-data">
+      <div class="card">
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
-                  <div class="col-4">
-                    Upload Image
-                  </div>
-                  <div class="col-8">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" required>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>    
-    </form:form>
-<form:form action="newconference" method="POST" modelAttribute="conference" enctype="multipart/form-data">
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Conference</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Conference Title
                   </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="title" type="text" required="required"/>
+                  <div class="col-6">
+                   <form:input path="title" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Conference Image
                   </div>
-                  <div class="col-8">
+                  <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
+                         <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editImage" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Conference Description
                   </div>
-                  <div class="col-8">
-                    <div class="form-group">
-                        <form:textarea class="form-control" rows="3" path="description" required="required"></form:textarea>
-                      </div>
+                  <div class="col-6">
+                    <form:textarea path="description" class="form-control" id="description" rows="3"></form:textarea>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
-                    Conference Location
+                  <div class="col-3">
+                   	Conference Location
                   </div>
-                  <div class="col-8">
-                    <div class="form-group">
-                        <form:input class="form-control" path="location" type="text" required="required"/>
-                      </div>
+                  <div class="col-6">
+                    <form:input path="location" type="text" id="browserTitle" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
-                    Conference Link
+                  <div class="col-3">
+                   	Conference Link
                   </div>
-                  <div class="col-8">
-                    <div class="form-group">
-                        <form:input class="form-control" path="link" type="text" required="required"/>
-                      </div>
+                  <div class="col-6">
+                    <form:input path="link" type="text" id="browserTitle" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
-                     Conference Date
+                  <div class="col-3">
+                   	Conference Date
                   </div>
-                  <div class="col-8">
+                  <div class="col-2">
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         <form:input type="text" path="date" class="form-control datetimepicker-input" data-target="#reservationdate" required="required"/>
                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -657,162 +614,17 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
- </form:form>
-	
-    <section class="content">
-      <div class="card">
-           <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Carousel
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-carousel">
-                  New Carousel
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-          </div>
-              <div class="card-body">
-              <c:forEach var="tempCarousel" items="${carousel}">
-              <c:url var="deleteLink" value="/admin/admindashboard/carouseldelete" >
-						<c:param name="id" value="${tempCarousel.id}" />
-			  </c:url>
-			  <c:url var="changeStatus" value="/admin/admindashboard/editcarouselstatus" >
-						<c:param name="id" value="${tempCarousel.id}" />
-						<c:param name="status" value="${tempCarousel.status}" />
-					</c:url>
-			  <form:form action="carouseledit" method="POST" enctype="multipart/form-data">
-			  <input type="hidden" name="id" value="${tempCarousel.id}"/>
-                <div class="row">
-                  <div class="col-3">
-                    Carousel Image
-                  </div>
-                  <div class="col-4">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="${tempCarousel.id}" accept=".png, .jpg, .jpeg" size="50" disabled required />
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                          <a class="btn btn-info btn-sm" href="#" onclick="myFunction('${tempCarousel.id}')">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save p-r-7">
-                              </i>Save</button>
-                          <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this image ?'))) return false">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                  </div>
-                  <div class="col-1" style=" padding-left: 30px;">
-                  <c:choose>
-                 		<c:when test="${tempCarousel.status=='true'}">
-                    	<a href="${changeStatus}"> Enabled </a>
-                    	</c:when>
-                   </c:choose>
-                    	<c:choose>
-                    	<c:when test="${tempCarousel.status=='false'}">
-                    	<a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
-                    	</c:when>
-                    </c:choose>
-                  </div>
-                </div>
-                </form:form>
                 <br>
-                </c:forEach>
               </div>
             </div>
-    </section>
-    <br>
-    <section class="content">
-      <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Conference
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  New Conference
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-              </div>
-              <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Conference Title</th>
-                    <th>Conference Image</th>
-                    <th>Conference Description</th>
-                    <th>Conference Location</th>
-                    <th>Conference Link</th>
-                    <th>Conference Date</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Visible</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <c:forEach var="tempConference" items="${conferenceContent}">
-                  <c:url var="deleteLink" value="/admin/admindashboard/deleteconference" >
-						<c:param name="id" value="${tempConference.id}" />
-					</c:url>
-				   <c:url var="editLink" value="/admin/admindashboard/editconference" >
-						<c:param name="id" value="${tempConference.id}" />
-					</c:url>
-					<c:url var="changeStatus" value="/admin/admindashboard/editconferencestatus" >
-						<c:param name="id" value="${tempConference.id}" />
-						<c:param name="status" value="${tempConference.status}" />
-					</c:url>							
-					
-                  <tr>
-                    <td>${tempConference.title}</td>
-                     <td><img src="data:image/jpg;base64,${tempConference.encodedImage}" width="100" height="72"></td>
-                    <td>${tempConference.description}</td>
-                    <td>${tempConference.location}</td>
-                    <td>${tempConference.link}</td>
-                    <td>${tempConference.date}</td>
-                    <td><a class="btn btn-info btn-sm" href="${editLink}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <c:choose>
-                    <c:when test="${tempConference.status=='true'}">
-                    <td> <a href="${changeStatus}"> Enabled </a>
-                    </c:when>
-                    </c:choose>
-                    <c:choose>
-                    <c:when test="${tempConference.status=='false'}">
-                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
-                    </c:when>
-                    </c:choose>
-                  </tr>
-                  </c:forEach>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
+        </div>
+      <div class="col-5"></div>
+      </div>
+      \</form:form>
     </section>
   </div>
 
@@ -861,24 +673,9 @@
 </script>
 
 <script type="text/javascript">
-function myFunction(id) {
-		document.getElementById(id).removeAttribute('disabled');
-	}
-</script>
-
-<script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
 </script>
 
 <script type='text/javascript'>
@@ -899,6 +696,15 @@ $( document ).ready(function() {
 });
 </script>
 
+<script type="text/javascript">
+$(function(){
+	
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false);
+    	return false;
+    });
+})
+</script>
 
 </body>
 

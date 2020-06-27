@@ -554,7 +554,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                      <input type="file" name="photo" class="custom-file-input" id="bannerImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
@@ -637,7 +637,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="conferenceImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                        <input type="file" name="photo" class="custom-file-input" id="conferenceImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -751,7 +751,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="jobImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="jobImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -926,7 +926,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="blogImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="blogImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -1040,7 +1040,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="podcastImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="podcastImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -1138,7 +1138,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="communityImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="communityImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -1252,7 +1252,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="resourceImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="resourceImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -1366,7 +1366,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="newsletterImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="newsletterImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>

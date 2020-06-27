@@ -25,21 +25,19 @@
 	<input type="hidden" id="metaDescriptionConference" value='${tempMetaDetails.metadescription}'/>
 	<input type="hidden" id="documentTitleIndexConference" value='${tempMetaDetails.browsertitle}'/>
   </c:forEach>
+  <input type="hidden" id="carouselMinId" value='${carouselMinId}'/>
 <jsp:include page="header_nontransparent.jsp"/>
 
 <section class="page-height-conference bg-cover overflow-hidden">
            <div id="carouselExample1" class="carousel slide z-depth-1-half" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="images/conference/conference-1.jpg" onerror="this.src='images/placehoder.jpg'" alt="First slide">
+      <c:forEach var="tempCarousel" items="${carouselImages}">
+        <div class="carousel-item carouselArgument" id="${tempCarousel.id}">
+          <img class="d-block w-100" src="data:image/jpg;base64,${tempCarousel.encodedImage}" onerror="this.src='images/placehoder.jpg'" alt="Third slide">
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/conference/conference-2.jpg" onerror="this.src='images/placehoder.jpg'" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/conference/conference-3.jpg" onerror="this.src='images/placehoder.jpg'" alt="Third slide">
-        </div>
+        </c:forEach>
       </div>
+      
       <a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -59,107 +57,18 @@
   <div class="container">
     <div class="row">
         	<div class="band">
+        	<c:forEach var="tempOrganizer" items="${conferenceContent}">
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-1.jpg), url(images/placehoder.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(data:image/jpg;base64,${tempOrganizer.encodedImage}), url(images/placehoder.jpg);"></div>
             			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                     	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
+            			<p class="text-dark">${tempOrganizer.date}</p>
+             			<h5><a class="text-dark" href="${tempOrganizer.link}" target="_blank">${tempOrganizer.title}</a></h5>
+             			<p class="text-dark">${tempOrganizer.location}</p>
+                     	<p>${tempOrganizer.description}</p>
             			</article>
     			</div>
-    			
-				<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-2.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                     	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-3.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-4.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-5.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-6.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-7.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-8.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-9.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/conference/conference-post-10.jpg), url(images/placehoder.jpg);"></div>
-            			<article>
-            			<p class="card-date">Dec 30, 2018</p>
-             			<h5><a class="text-dark" href="#">Few Wordings Here Few wordings here
-                    	anim. </a></h5>
-                    	<p>Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here Few Wordings here</p>
-            			</article>
-    			</div>
-    			        
-            </div>
+    			</c:forEach>
+             </div>
           </div>
         </div>
 </section>
@@ -197,6 +106,21 @@
 <script src="js/master.js"></script>
 
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
+
+
+<script type='text/javascript'>
+
+$( document ).ready(function() {
+
+	var  carouselMinId= $('#carouselMinId').val();
+	var x = document.getElementsByClassName("carouselArgument")[0].id;
+	if(x=carouselMinId){
+		var testarray = document.getElementsByClassName("carouselArgument");
+		    testarray[0].className += " active";
+	}
+	
+});
+</script>
 
 </body>
 

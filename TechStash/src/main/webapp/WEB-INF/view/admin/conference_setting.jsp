@@ -643,7 +643,7 @@
         </div>
       <div class="col-5"></div>
       </div>
-      \</form:form>
+      </form:form>
     </section>
   </div>
 

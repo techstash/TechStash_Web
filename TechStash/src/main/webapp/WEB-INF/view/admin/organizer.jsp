@@ -564,7 +564,7 @@
                   <tr>
                     <td>${tempOrganizer.id}</td>
                     <td>${tempOrganizer.name}</td>
-                     <td><img src="data:image/jpg;base64,${tempOrganizer.encodedImage}" width="100" height="72"></td>
+                    <td><img src="data:image/jpg;base64,${tempOrganizer.encodedImage}" width="100" height="72"></td>
                     <td>${tempOrganizer.email}</td>
                     <td>${tempOrganizer.location}</td>
                     <td>${tempOrganizer.designation}</td>

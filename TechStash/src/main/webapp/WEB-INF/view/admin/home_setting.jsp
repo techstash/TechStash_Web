@@ -642,7 +642,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                         <input type="file" name="photo" class="custom-file-input" id="feviconImage" accept=".png, .jpg, .jpeg" size="200" disabled/>
+                         <input type="file" name="photo" class="custom-file-input" id="feviconImage" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>

@@ -545,7 +545,7 @@
                   <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="50" disabled />
+                        <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                          <input type="hidden" name="photo" />
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>

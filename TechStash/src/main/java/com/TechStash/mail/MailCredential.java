@@ -16,8 +16,8 @@ public class MailCredential {
 	public static List<String> Credential()
 	{
 		String host ="smtp.gmail.com" ;
-        String user = "techstashinfo@gmail.com";  //techstashinfo@gmail.com
-        String pass = "pyiqdsngsxilmxkn";        //techstash key pyiqdsngsxilmxkn       // Vignesh key pbnsmyjpyrbpiovy
+        String user = "techstashinfo@gmail.com";
+        String pass = "pyiqdsngsxilmxkn";               
         String from = "techstashinfo@gmail.com";
 
 		return Arrays.asList(host, user, pass, from);
