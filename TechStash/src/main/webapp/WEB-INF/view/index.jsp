@@ -390,12 +390,6 @@
 
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 
-<script>
-   // var message = "${documentTitle}";
-   // alert(message);
-   // document.title = 'dsgds';
-</script>
-
 </body>
 
 </html>

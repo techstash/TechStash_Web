@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Conference_setting;
+import com.TechStash.entity.Footer;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.service.ContentService;
+import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.SettingService;
 
@@ -26,6 +28,9 @@ public class ConferenceController {
 	
 	@Autowired
 	private HomeSettingService homeSettingService;
+	
+	@Autowired
+	private FooterService footerService;
 
 	@RequestMapping("/conference")
 	public String Conference(Model theModel){
@@ -50,6 +55,9 @@ public class ConferenceController {
 			System.out.println(dbresult.getId());
 			theModel.addAttribute("carouselMinId", dbresult.getId());
         }
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);
 		
 		return "conference";
 	}

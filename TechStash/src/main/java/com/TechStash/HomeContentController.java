@@ -20,6 +20,7 @@ import com.TechStash.entity.Banner;
 import com.TechStash.entity.BlogSection;
 import com.TechStash.entity.CommunitySection;
 import com.TechStash.entity.ConferenceSection;
+import com.TechStash.entity.Footer;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.JobSection;
 import com.TechStash.entity.NewsletterSection;
@@ -30,6 +31,7 @@ import com.TechStash.service.BannerService;
 import com.TechStash.service.BlogSectionService;
 import com.TechStash.service.CommunitySectionService;
 import com.TechStash.service.ConferenceSectionService;
+import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.JobSectionService;
 import com.TechStash.service.NewsletterSectionService;
@@ -71,6 +73,9 @@ public class HomeContentController {
 	@Autowired
 	private HomeSettingService homeSettingService;
 	
+	@Autowired
+	private FooterService footerService;
+	
 	@RequestMapping("/")
 	public String Home(Model theModel){
 		
@@ -102,8 +107,10 @@ public class HomeContentController {
 		theModel.addAttribute("resourcesection", dbResultResource);
 		
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);
 		
 		return "index";
 	}

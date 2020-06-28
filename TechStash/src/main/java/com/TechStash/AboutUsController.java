@@ -21,6 +21,7 @@ import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Keys_details;
 import com.TechStash.service.AboutUsService;
 import com.TechStash.service.DashboardUserService;
+import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.SettingService;
 
@@ -35,8 +36,10 @@ public class AboutUsController {
 	
 	@Autowired
 	private HomeSettingService homeSettingService;
-
 	
+	@Autowired
+	private FooterService footerService;
+
 	@RequestMapping("/admin/admindashboard/aboutus_content")
 	public String AboutContent(HttpServletRequest request, Model theModel){
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
@@ -89,6 +92,9 @@ public class AboutUsController {
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
 		
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);	
 		
 		return "aboutus";
 	}

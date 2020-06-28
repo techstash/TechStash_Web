@@ -18,8 +18,13 @@
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
   
-<input type="hidden" id="postjob" name="postjob" value="postjob">
-
+  <c:forEach var="tempMetaDetails" items="${postjobSetting}">
+	<input type="hidden" id="postjob" name="postjob" value="postjob">
+	<input type="hidden" id="metaTitlePostJob" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionPostJob" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitlePostJob" value='${tempMetaDetails.browsertitle}'/>
+  </c:forEach>
+  
 <jsp:include page="header_nontransparent.jsp"/> 
 
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">

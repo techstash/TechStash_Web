@@ -10,6 +10,9 @@ import com.TechStash.entity.Contactus_setting;
 import com.TechStash.entity.Faq_setting;
 import com.TechStash.entity.Job_setting;
 import com.TechStash.entity.Podcast_setting;
+import com.TechStash.entity.Postblog_setting;
+import com.TechStash.entity.Postconference_setting;
+import com.TechStash.entity.Postjob_setting;
 import com.TechStash.entity.Privacypolicy_setting;
 import com.TechStash.entity.Resource_setting;
 import com.TechStash.entity.Speaker_setting;
@@ -65,6 +68,18 @@ public interface SettingDAO {
 	public Privacypolicy_setting privacypolicyContent();
 	public List<Privacypolicy_setting> privacypolicyResultWebsite();
 	public void privacypolicySettingUpdate(String metatitle, String metadescription, String browsertitle);
+	
+	public Postconference_setting postConferenceContent();
+	public List<Postconference_setting> postConferenceWebsite();
+	public void postConferenceSettingUpdate(String metatitle, String metadescription, String browsertitle);
+	
+	public Postjob_setting postJobContent();
+	public List<Postjob_setting> postJobResultWebsite();
+	public void postJobSettingUpdate(String metatitle, String metadescription, String browsertitle);
+	
+	public Postblog_setting postBlogContent();
+	public List<Postblog_setting> postBlogResultWebsite();
+	public void postBlogSettingUpdate(String metatitle, String metadescription, String browsertitle);
 	
 	public Faq_setting faqContent();
 	public List<Faq_setting> faqResultWebsite();

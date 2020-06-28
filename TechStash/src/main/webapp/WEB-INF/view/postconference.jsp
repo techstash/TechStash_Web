@@ -18,8 +18,13 @@
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
   
-<input type="hidden" id="postconference" name="postconference" value="postconference">
-
+  <c:forEach var="tempMetaDetails" items="${postconferenceSetting}">
+	<input type="hidden" id="postconference" name="postconference" value="postconference">
+	<input type="hidden" id="metaTitlePostConference" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionPostConference" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitlePostConference" value='${tempMetaDetails.browsertitle}'/>
+  </c:forEach>
+  
 <jsp:include page="header_nontransparent.jsp"/>
 
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">

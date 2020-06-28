@@ -34,5 +34,10 @@ public class FooterServiceImpl implements FooterService {
 		// TODO Auto-generated method stub
 		return footerDAO.getLogoImage(id);
 	}
+
+	@Transactional
+	public List<Footer> getFooterResultWebsite() {
+		return footerDAO.getFooterResultWebsite();
+	}
 	
 }

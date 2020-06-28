@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="footer")
@@ -35,6 +36,9 @@ public class Footer {
 	
 	@Column(name="linkedin_url")
 	private String linkedin_url;
+	
+	@Transient
+    private String encodedImage;
 
 	public int getId() {
 		return id;
@@ -91,8 +95,13 @@ public class Footer {
 	public void setLinkedin_url(String linkedin_url) {
 		this.linkedin_url = linkedin_url;
 	}
-	
-	
-	
+
+	public String getEncodedImage() {
+		return encodedImage;
+	}
+
+	public void setEncodedImage(String encodedImage) {
+		this.encodedImage = encodedImage;
+	}
 	
 }

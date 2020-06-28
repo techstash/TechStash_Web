@@ -2,8 +2,6 @@ package com.TechStash;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,19 +9,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
-import com.TechStash.entity.Dashboard_users;
+import com.TechStash.entity.Footer;
 import com.TechStash.entity.Home_setting;
+import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
-import com.TechStash.service.SettingService;
 
 @Controller
 public class HomeController {
@@ -31,33 +22,17 @@ public class HomeController {
 	@Autowired
 	private HomeSettingService homeSettingService;
 	
-	// ********Navigation into the requested url TechStash Website******** //
-	
-	@RequestMapping("/postblog")
-	public String PostBlog(Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		return "postblog";
-	}
-	
-	@RequestMapping("/postconference")
-	public String PostConference(Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		return "postconference";
-	}
-	
-	@RequestMapping("/postjob")
-	public String PostJob(Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		return "postjob";
-	}
+	@Autowired
+	private FooterService footerService;
 	
 	@RequestMapping("/blogdetails")
 	public String BlogDetail(Model theModel){
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);
+		
 		return "blogdetails";
 	}
 	
@@ -65,6 +40,10 @@ public class HomeController {
 	public String SpeakerDetail(Model theModel){
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);
+		
 		return "speakerdetails";
 	}
 	
@@ -469,6 +448,12 @@ public class HomeController {
         Logger.getLogger(getClass().getName()).log(Level.SEVERE, "Request: " + request.getRequestURL() + " raised " + e);
         return new ModelAndView("error");
     }*/
+	
+	/*  @ExceptionHandler(Exception.class)
+	  public ModelAndView handleError(HttpServletRequest req, Exception ex) {
+		  System.out.println("agd");
+		  return new ModelAndView("teryrhahha");
+	  }*/
 
     
 }

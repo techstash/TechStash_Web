@@ -16,14 +16,15 @@
   <section class="section border-bottom border-color">
     <div class="container">
       <div class="row justify-content-between">
+      <c:forEach var="tempFooter" items="${footerContent}">
         <div class="col-md-5 mb-4 mb-md-0">
-          <img src="images/logo/logo.png" class="mb-4" alt="agico">
-          <p class="text-light mb-4">Our mission is to create one stop solution for tech resources ranging from conferences, events, blogs, speaker community, podcasts and Weekly newsletter which is free-for-all.</p>
+          <img src="data:image/jpg;base64,${tempFooter.encodedImage}" class="mb-4" alt="agico">
+          <p class="text-light mb-4">${tempFooter.footer_text}</p>
           <ul class="list-inline social-icons">
-            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-github"></i></a></li>
+            <li class="list-inline-item"><a href="${tempFooter.facebook_url}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="${tempFooter.twitter_url}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="${tempFooter.youtube_url}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li class="list-inline-item"><a href="${tempFooter.linkedin_url}"><i class="fa fa-github"></i></a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-6 center-mobile footer-padding">
@@ -42,9 +43,11 @@
           <li class="list-inline-item"><a class="text-light" href="mailto:techstashinfo@gmail.com">techstashinfo@gmail.com</a></li>
           </ul>
         </div>
+        </c:forEach>
       </div>
     </div>
   </section>
+ </
 
   <section class="py-4">
     <div class="container">

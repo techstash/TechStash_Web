@@ -1,5 +1,9 @@
 package com.TechStash.dao;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
@@ -10,6 +14,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.TechStash.entity.Conference;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Footer;
 
@@ -56,6 +61,23 @@ public class FooterDAOImpl implements FooterDAO {
 		Query theQuery=currentSession.createQuery("from Footer where id=:id");
 		theQuery.setParameter("id", id);
 		List<Footer> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Footer> getFooterResultWebsite() {
+		byte[] profileImage=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Footer where id=1",Footer.class);
+		List<Footer> result = theQuery.getResultList();
+		
+		for(Footer dbresult : result) {
+			profileImage=dbresult.getLogo_image();
+			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+        }
+		
 		currentSession.close();
 		return result;
 	}

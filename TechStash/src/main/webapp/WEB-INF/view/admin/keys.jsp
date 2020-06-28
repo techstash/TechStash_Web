@@ -138,6 +138,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="postconference_setting" class="nav-link">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Post Conference Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="conference_content" class="nav-link">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Conference Content</p>
@@ -160,6 +166,12 @@
                 <a href="jobs_setting" class="nav-link">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Job Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="postjob_setting" class="nav-link">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Post Job Settings</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -210,6 +222,12 @@
                 <a href="blog_setting" class="nav-link">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Blog Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="postblog_setting" class="nav-link">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Post Blog Settings</p>
                 </a>
               </li>
               <li class="nav-item">

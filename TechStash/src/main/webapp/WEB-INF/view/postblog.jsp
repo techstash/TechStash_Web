@@ -19,8 +19,13 @@
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
   
-<input type="hidden" id="postblog" name="postblog" value="postblog">
-
+  <c:forEach var="tempMetaDetails" items="${postblogSetting}">
+	<input type="hidden" id="postblog" name="postblog" value="postblog">
+	<input type="hidden" id="metaTitlePostBlog" value='${tempMetaDetails.metatitle}'/>
+	<input type="hidden" id="metaDescriptionPostBlog" value='${tempMetaDetails.metadescription}'/>
+	<input type="hidden" id="documentTitlePostBlog" value='${tempMetaDetails.browsertitle}'/>
+  </c:forEach>
+  
 <jsp:include page="header_nontransparent.jsp"/>  
 
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">

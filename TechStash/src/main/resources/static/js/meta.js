@@ -60,6 +60,18 @@
 		var metaDescriptionPrivacy = $('#metaDescriptionPrivacy').val();
 		var documentTitleIndexPrivacy = $('#documentTitleIndexPrivacy').val();
 		
+		var metaTitlePostConference = $('#metaTitlePostConference').val();
+		var metaDescriptionPostConference = $('#metaDescriptionPostConference').val();
+		var documentTitlePostConference = $('#documentTitlePostConference').val();
+		
+		var metaTitlePostJob = $('#metaTitlePostJob').val();
+		var metaDescriptionPostJob = $('#metaDescriptionPostJob').val();
+		var documentTitlePostJob = $('#documentTitlePostJob').val();
+		
+		var metaTitlePostBlog = $('#metaTitlePostBlog').val();
+		var metaDescriptionPostBlog = $('#metaDescriptionPostBlog').val();
+		var documentTitlePostBlog = $('#documentTitlePostBlog').val();
+		
 		var index=$("#index").val();
 		var conference=$("#conference").val();
 		var jobs=$("#jobs").val();
@@ -72,7 +84,7 @@
 		var blogdetails=$("#blogdetails").val();
 		var speakerdetails=$("#speakerdetails").val();
 		var volunteer=$("#volunteer").val();
-		var postblog=$("#post_blog").val();
+		var postblog=$("#postblog").val();
 		var postjob=$("#postjob").val();
 		var postconference=$("#postconference").val();
 		var contactus=$("#contactus").val();
@@ -154,21 +166,21 @@
 		}
 		
 		if(postblog == 'postblog'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Post Blog';
+			$('head').append('<meta name="title" content="'+metaTitlePostBlog+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionPostBlog+'" />');
+			document.title = documentTitlePostBlog;
 		}
 		
 		if(postjob == 'postjob'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Post Job';
+			$('head').append('<meta name="title" content="'+metaTitlePostJob+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionPostJob+'" />');
+			document.title = documentTitlePostJob;
 		}
 		
 		if(postconference == 'postconference'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Post Conference';
+			$('head').append('<meta name="title" content="'+metaTitlePostConference+'" />');
+			$('head').append('<meta name="description" content="'+metaDescriptionPostConference+'" />');
+			document.title = documentTitlePostConference;
 		}
 		
 		if(contactus == 'contactus'){

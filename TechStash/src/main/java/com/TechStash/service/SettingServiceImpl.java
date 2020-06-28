@@ -15,6 +15,9 @@ import com.TechStash.entity.Contactus_setting;
 import com.TechStash.entity.Faq_setting;
 import com.TechStash.entity.Job_setting;
 import com.TechStash.entity.Podcast_setting;
+import com.TechStash.entity.Postblog_setting;
+import com.TechStash.entity.Postconference_setting;
+import com.TechStash.entity.Postjob_setting;
 import com.TechStash.entity.Privacypolicy_setting;
 import com.TechStash.entity.Resource_setting;
 import com.TechStash.entity.Speaker_setting;
@@ -221,6 +224,51 @@ public class SettingServiceImpl implements SettingService {
 	@Transactional
 	public void faqSettingUpdate(String metatitle, String metadescription, String browsertitle) {
 		settingDAO.faqSettingUpdate(metatitle, metadescription, browsertitle);		
+	}
+
+	@Transactional
+	public Postconference_setting postConferenceContent() {
+		return settingDAO.postConferenceContent();
+	}
+
+	@Transactional
+	public List<Postconference_setting> postConferenceWebsite() {
+		return settingDAO.postConferenceWebsite();
+	}
+
+	@Transactional
+	public void postConferenceSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		settingDAO.postConferenceSettingUpdate(metatitle, metadescription, browsertitle);
+	}
+
+	@Transactional
+	public Postjob_setting postJobContent() {
+		return settingDAO.postJobContent();
+	}
+
+	@Transactional
+	public List<Postjob_setting> postJobResultWebsite() {
+		return settingDAO.postJobResultWebsite();
+	}
+
+	@Transactional
+	public void postJobSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		settingDAO.postJobSettingUpdate(metatitle, metadescription, browsertitle);
+	}
+
+	@Transactional
+	public Postblog_setting postBlogContent() {
+		return settingDAO.postBlogContent();
+	}
+
+	@Transactional
+	public List<Postblog_setting> postBlogResultWebsite() {
+		return settingDAO.postBlogResultWebsite();
+	}
+
+	@Transactional
+	public void postBlogSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		settingDAO.postBlogSettingUpdate(metatitle, metadescription, browsertitle);
 	}
 
 }

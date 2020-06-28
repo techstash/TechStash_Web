@@ -92,7 +92,7 @@ public class ContentServiceImpl implements ContentService {
 		return contentDAO.carouselResultWebsite();
 	}
 
-	@Override
+	@Transactional
 	public List<Carousel> carouselResultMinId() {
 		return contentDAO.carouselResultMinId();
 	}

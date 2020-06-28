@@ -22,6 +22,9 @@ import com.TechStash.entity.Faq_setting;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Job_setting;
 import com.TechStash.entity.Podcast_setting;
+import com.TechStash.entity.Postblog_setting;
+import com.TechStash.entity.Postconference_setting;
+import com.TechStash.entity.Postjob_setting;
 import com.TechStash.entity.Privacypolicy_setting;
 import com.TechStash.entity.Resource_setting;
 import com.TechStash.entity.Speaker_setting;
@@ -69,6 +72,123 @@ public class SettingController {
 			return "admin/popup_sessioninvalid";
 		}
 		
+	}
+	
+	@RequestMapping("/admin/admindashboard/postconference_setting")
+	public String postConferenceSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		HttpSession session = request.getSession();
+		String sessionValue=(String) session.getAttribute("session"); 
+		if(sessionValue != null){
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+				
+				Postconference_setting dbresult=settingService.postConferenceContent();
+				theModel.addAttribute("postconference_setting", dbresult);
+				
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "admin/postconference_setting";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	}
+	
+	@RequestMapping("/admin/admindashboard/postjob_setting")
+	public String postJobSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		HttpSession session = request.getSession();
+		String sessionValue=(String) session.getAttribute("session"); 
+		if(sessionValue != null){
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+				
+				Postjob_setting dbresult=settingService.postJobContent();
+				theModel.addAttribute("postjob_setting", dbresult);
+				
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "admin/postjob_setting";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	}
+	
+	@RequestMapping("/admin/admindashboard/postblog_setting")
+	public String postBlogSetting(HttpServletRequest request, Model theModel){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		HttpSession session = request.getSession();
+		String sessionValue=(String) session.getAttribute("session"); 
+		if(sessionValue != null){
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+				
+				Postblog_setting dbresult=settingService.postBlogContent();
+				theModel.addAttribute("postblog_setting", dbresult);
+				
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "admin/postblog_setting";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	}
+	
+	@PostMapping("/admin/admindashboard/postblogsettingupdate")
+	public String postBlogSettingUpdate(@ModelAttribute("postblog_setting") Postblog_setting postblog_setting,HttpServletRequest request) {
+		settingService.postBlogSettingUpdate(postblog_setting.getMetatitle(), postblog_setting.getMetadescription(), postblog_setting.getBrowsertitle());
+		return "redirect:/admin/admindashboard/postblog_setting";
+			
+	}
+	
+	@PostMapping("/admin/admindashboard/postjobsettingupdate")
+	public String postJobSettingUpdate(@ModelAttribute("postjob_setting") Postjob_setting postjob_setting,HttpServletRequest request) {
+		settingService.postJobSettingUpdate(postjob_setting.getMetatitle(), postjob_setting.getMetadescription(), postjob_setting.getBrowsertitle());
+		return "redirect:/admin/admindashboard/postjob_setting";
+			
+	}
+	
+	@PostMapping("/admin/admindashboard/postconferencesettingupdate")
+	public String postConferenceSettingUpdate(@ModelAttribute("postconference_setting") Postconference_setting postconference_setting,HttpServletRequest request) {
+		settingService.postConferenceSettingUpdate(postconference_setting.getMetatitle(), postconference_setting.getMetadescription(), postconference_setting.getBrowsertitle());
+		return "redirect:/admin/admindashboard/postconference_setting";
+			
 	}
 	
 	@PostMapping("/admin/admindashboard/conferencesettingupdate")

@@ -19,6 +19,9 @@ import com.TechStash.entity.Faq_setting;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Job_setting;
 import com.TechStash.entity.Podcast_setting;
+import com.TechStash.entity.Postblog_setting;
+import com.TechStash.entity.Postconference_setting;
+import com.TechStash.entity.Postjob_setting;
 import com.TechStash.entity.Privacypolicy_setting;
 import com.TechStash.entity.Resource_setting;
 import com.TechStash.entity.Speaker_setting;
@@ -435,6 +438,102 @@ public class SettingDAOImpl implements SettingDAO {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		currentSession.getTransaction().begin();
 		Query theQuery = currentSession.createNativeQuery("UPDATE faq_setting set metatitle=:metatitle,metadescription=:metadescription,browsertitle=:browsertitle where id=1");
+		theQuery.setParameter("metatitle", metatitle);
+		theQuery.setParameter("metadescription", metadescription);
+		theQuery.setParameter("browsertitle", browsertitle);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public Postconference_setting postConferenceContent() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		int id=1;
+		Postconference_setting dbresult=currentSession.get(Postconference_setting.class,id);
+		currentSession.close();
+		return dbresult;
+	}
+
+	@Override
+	public List<Postconference_setting> postConferenceWebsite() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Postconference_setting where id=1",Postconference_setting.class);
+		List<Postconference_setting> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void postConferenceSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE postconference_setting set metatitle=:metatitle,metadescription=:metadescription,browsertitle=:browsertitle where id=1");
+		theQuery.setParameter("metatitle", metatitle);
+		theQuery.setParameter("metadescription", metadescription);
+		theQuery.setParameter("browsertitle", browsertitle);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public Postjob_setting postJobContent() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		int id=1;
+		Postjob_setting dbresult=currentSession.get(Postjob_setting.class,id);
+		currentSession.close();
+		return dbresult;
+	}
+
+	@Override
+	public List<Postjob_setting> postJobResultWebsite() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Postjob_setting where id=1",Postjob_setting.class);
+		List<Postjob_setting> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void postJobSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE postjob_setting set metatitle=:metatitle,metadescription=:metadescription,browsertitle=:browsertitle where id=1");
+		theQuery.setParameter("metatitle", metatitle);
+		theQuery.setParameter("metadescription", metadescription);
+		theQuery.setParameter("browsertitle", browsertitle);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public Postblog_setting postBlogContent() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		int id=1;
+		Postblog_setting dbresult=currentSession.get(Postblog_setting.class,id);
+		currentSession.close();
+		return dbresult;
+	}
+
+	@Override
+	public List<Postblog_setting> postBlogResultWebsite() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Postblog_setting where id=1",Postblog_setting.class);
+		List<Postblog_setting> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void postBlogSettingUpdate(String metatitle, String metadescription, String browsertitle) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE postblog_setting set metatitle=:metatitle,metadescription=:metadescription,browsertitle=:browsertitle where id=1");
 		theQuery.setParameter("metatitle", metatitle);
 		theQuery.setParameter("metadescription", metadescription);
 		theQuery.setParameter("browsertitle", browsertitle);
