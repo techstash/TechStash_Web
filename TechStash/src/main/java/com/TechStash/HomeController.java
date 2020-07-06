@@ -49,58 +49,6 @@ public class HomeController {
 	
 	// ********Navigation into the requested url TechStash Admin******** //
 	
-	@RequestMapping("/admin/admindashboard/blog_content")
-	public String BlogContent(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/blog_content";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	@RequestMapping("/admin/admindashboard/community_content")
-	public String CommunityContent(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/community_content";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
 	@RequestMapping("/admin/admindashboard/contactus_content")
 	public String ContactContent(HttpServletRequest request, Model theModel){
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
@@ -179,60 +127,6 @@ public class HomeController {
 		
 	}
 	
-	
-	@RequestMapping("/admin/admindashboard/jobs_content")
-	public String JobContent(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/jobs_content";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	
-	@RequestMapping("/admin/admindashboard/podcast_content")
-	public String PodcastContent(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/podcast_content";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
 	//Pricing
 	@RequestMapping("/admin/admindashboard/pricing_details")
 	public String PricingDetails(HttpServletRequest request, Model theModel){
@@ -261,32 +155,6 @@ public class HomeController {
 		}
 		else if(!sessiondesignation.equals("Founder/CEO/Admin")) {
 			return "admin/popup_notfound";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	@RequestMapping("/admin/admindashboard/resource_content")
-	public String ResourcesContent(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/resource_content";
 		}
 		else
 		{

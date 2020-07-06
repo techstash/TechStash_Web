@@ -623,102 +623,94 @@
         </div>
       </div>
 	
+    <form:form action="saveheadersectioncommunity" method="POST" modelAttribute="header_section" enctype="multipart/form-data">
     <section class="content">
       <div class="card">
           <div class="card-header">
             	<h4>Header</h4>
           </div>
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-2">
                     Header Image
                   </div>
-                  <div class="col-6">
+                  <div class="col-1">
+                  <c:forEach var="tempHeader" items="${headerimage}">
+                  <img src="data:image/jpg;base64,${tempHeader.encodedHeaderimage}" width="100" height="72">
+                  </c:forEach>
+                  </div>
+                  <div class="col-5">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="headerImage" name="headerImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editHeaderImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header title
+                    Header Title
                   </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                  <div class="col-5">
+                    <form:input path="title" type="text" id="title" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editTitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header subtitle
+                    Header Subtitle
                   </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="">
+                  <div class="col-5">
+                    <form:textarea path="subtitle" class="form-control" id="subtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editSubtitle" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-2">
                     Background Image
                   </div>
-                  <div class="col-6">
+                  <div class="col-1">
+                  <c:forEach var="tempHeader" items="${headerimage}">
+                  <img src="data:image/jpg;base64,${tempHeader.encodedBackgroundimage}" width="100" height="72">
+                  </c:forEach>
+                  </div>
+                  <div class="col-5">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="backgroundImage" name="backgroundImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editBackgroundImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
                           </a>
                   </div>
                 </div>
@@ -727,11 +719,12 @@
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
     </section>
+    </form:form>
     <br>
     <section class="content">
       <div class="card">
@@ -935,6 +928,28 @@ $(document).ready(function () {
       "autoWidth": false,
     });
   });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$(".editHeaderImage").click(function(){
+    	$("#headerImage").prop("disabled",false); 
+    	return false;
+    });
+    $(".editTitle").click(function(){
+    	$("#title").prop("readonly",false);
+    	return false;
+    });
+    $(".editSubtitle").click(function(){
+    	$("#subtitle").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editBackgroundImage").click(function(){
+    	$("#backgroundImage").prop("disabled",false); 
+    	return false;
+    });
+})
 </script>
 
 <script type='text/javascript'>

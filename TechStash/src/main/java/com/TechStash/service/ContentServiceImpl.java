@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.TechStash.dao.ContentDAO;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
+import com.TechStash.entity.Header_section;
 
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -95,6 +96,31 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public List<Carousel> carouselResultMinId() {
 		return contentDAO.carouselResultMinId();
+	}
+
+	@Transactional
+	public Header_section headerContentAdmin(int id) {
+		return contentDAO.headerContentAdmin(id);
+	}
+
+	@Transactional
+	public List<Header_section> headerContentAdminList(int id) {
+		return contentDAO.headerContentAdminList(id);
+	}
+
+	@Transactional
+	public void headerSectionUpdate(int id, byte[] headerImage, String title, String subtitle, byte[] backgroundImage) {
+		contentDAO.headerSectionUpdate(id, headerImage, title, subtitle, backgroundImage);
+	}
+
+	@Override
+	public List<Header_section> getSectionHeaderImage(int id) {
+		return contentDAO.getSectionHeaderImage(id);
+	}
+
+	@Override
+	public List<Header_section> getSectionBackgroundImage(int id) {
+		return contentDAO.getSectionBackgroundImage(id);
 	}
 
 }

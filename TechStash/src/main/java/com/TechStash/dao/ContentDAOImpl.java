@@ -19,6 +19,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Conference_setting;
 import com.TechStash.entity.Footer;
+import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Keys_details;
 
 @Repository
@@ -202,9 +203,18 @@ public class ContentDAOImpl implements ContentDAO {
 	@Override
 	public List<Carousel> getCarousel() {
 		
+		byte[] profileImage=null;
+		
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		Query theQuery=currentSession.createQuery("from Carousel",Carousel.class);
 		List<Carousel> result = theQuery.getResultList();
+		
+		for(Carousel dbresult : result) {
+			profileImage=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+        }
+		
 		currentSession.close();
 		return result;
 	}
@@ -293,6 +303,72 @@ public class ContentDAOImpl implements ContentDAO {
 		Query theQuery=currentSession.createQuery("from Carousel WHERE id = ( SELECT MIN(id) from Carousel )");
 		List<Carousel> result = theQuery.getResultList();
 		
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public Header_section headerContentAdmin(int id) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Header_section result=currentSession.get(Header_section.class,id);
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Header_section> headerContentAdminList(int id) {
+		byte[] headerImage=null;
+		byte[] backgroundImage=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Header_section where id=:id");
+		theQuery.setParameter("id", id);
+		List<Header_section> result = theQuery.getResultList();
+		
+		for(Header_section dbresult : result) {
+			headerImage=dbresult.getHeaderimage();
+			byte[] encode1 = java.util.Base64.getEncoder().encode(headerImage);
+			dbresult.setEncodedHeaderimage(new String(java.util.Base64.getEncoder().encode(headerImage)));
+				
+			backgroundImage=dbresult.getBackgroundimage();
+			byte[] encode2 = java.util.Base64.getEncoder().encode(backgroundImage);
+			dbresult.setEncodedBackgroundimage(new String(java.util.Base64.getEncoder().encode(backgroundImage)));
+        }
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void headerSectionUpdate(int id, byte[] headerImage, String title, String subtitle, byte[] backgroundImage) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE header_section set headerimage=:headerimage,title=:title,subtitle=:subtitle,backgroundimage=:backgroundimage where id=:id");
+		theQuery.setParameter("headerimage", headerImage);
+		theQuery.setParameter("title", title);
+		theQuery.setParameter("subtitle", subtitle);
+		theQuery.setParameter("backgroundimage", backgroundImage);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();	
+	}
+
+	@Override
+	public List<Header_section> getSectionHeaderImage(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Header_section where id=:id");
+		theQuery.setParameter("id", id);
+		List<Header_section> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Header_section> getSectionBackgroundImage(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Header_section where id=:id");
+		theQuery.setParameter("id", id);
+		List<Header_section> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
 	}

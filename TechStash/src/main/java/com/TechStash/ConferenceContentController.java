@@ -91,7 +91,7 @@ public class ConferenceContentController {
 		}
 	
 	@GetMapping("/admin/admindashboard/deleteconference")
-	public String deleteKeys(@RequestParam("id") int id){
+	public String deleteConference(@RequestParam("id") int id){
 		
 		contentService.deleteConference(id);
 		return "redirect:/admin/admindashboard/conference_content";

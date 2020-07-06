@@ -551,59 +551,9 @@
       </div>
     </section>
 
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Field</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Field Name
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Field Type
-                  </div>
-                  <div class="col-8">
-                     <div class="form-group">
-                        <select class="custom-select">
-                          <option>Text box</option>
-                          <option>Drop down</option>
-                          <option>Description box</option>
-                          <option>Check box</option>
-                        </select>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-	
     <section class="content">
     <form:form action="conferencesettingupdate" modelAttribute="conference_setting" method="POST">
       <div class="card">
-              <div class="card-header">
-                <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Field
-                </button>
-              </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-3">

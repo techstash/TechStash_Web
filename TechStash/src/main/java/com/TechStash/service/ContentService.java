@@ -6,9 +6,12 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Conference_setting;
 import com.TechStash.entity.Footer;
+import com.TechStash.entity.Header_section;
+import com.TechStash.entity.Home_setting;
 
 public interface ContentService {
 	
+	// Conference Content
 	public void saveConference(Conference conference);
 	public List<Conference> conferenceContent();
 	public List<Conference> conferenceTable();
@@ -18,6 +21,7 @@ public interface ContentService {
 	public List<Conference> getConfereceImage(int id);
 	public void conferenceStatusUpdate(int id,String status);
 	
+	// Conference Carousel Content
 	public List<Carousel> getCarousel();
 	public void deleteCarousel(int id);
 	public List<Carousel> getCarouselImage(int id);
@@ -26,4 +30,11 @@ public interface ContentService {
 	public void newcarousel(byte[] image);
 	public List<Carousel> carouselResultWebsite();
 	public List<Carousel> carouselResultMinId();
+	
+	// Header Section
+	public Header_section headerContentAdmin(int id);
+	public List<Header_section> headerContentAdminList(int id);
+	public void headerSectionUpdate(int id,byte[] headerImage, String title, String subtitle,byte[] backgroundImage);
+	public List<Header_section> getSectionHeaderImage(int id);
+	public List<Header_section> getSectionBackgroundImage(int id);
 }

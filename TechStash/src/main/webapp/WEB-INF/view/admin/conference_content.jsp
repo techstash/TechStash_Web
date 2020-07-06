@@ -712,10 +712,13 @@
 			  <form:form action="carouseledit" method="POST" enctype="multipart/form-data">
 			  <input type="hidden" name="id" value="${tempCarousel.id}"/>
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-2">
                     Carousel Image
                   </div>
-                  <div class="col-4">
+                  <div class="col-2">
+                  <img src="data:image/jpg;base64,${tempCarousel.encodedImage}" width="100" height="72">
+                  </div>
+                  <div class="col-3">
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" name="photo" class="custom-file-input" id="${tempCarousel.id}" accept=".png, .jpg, .jpeg" size="50" disabled required />
