@@ -30,19 +30,21 @@
 <jsp:include page="header.jsp"/>  
 
 
-<section class="page-title page-title-overlay bg-cover overflow-hidden" data-background="images/background/podcast.jpg">
+<c:forEach var="tempheader" items="${header_section}">
+<section class="page-title page-title-overlay bg-cover overflow-hidden" data-background="data:image/jpg;base64,${tempheader.encodedBackgroundimage}">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
-                <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">Podcast<span class="watermark-sm">Podcast</span></h1>
-                <p class="text-white pt-4 pb-4" data-aos="fade-up" data-aos-delay="1200">Latest Podcast Release</p>
+                <h1 class="text-white position-relative" data-aos="fade-up" data-aos-delay="1000">${tempheader.title}<span class="watermark-sm">${tempheader.title}</span></h1>
+                <p class="text-white pt-4 pb-4" data-aos="fade-up" data-aos-delay="1200">${tempheader.subtitle}</p>
             </div>
             <div class="col-lg-5 pl-lg-0 pt-5 pt-lg-0 text-lg-right text-center">
-        <img src="images/podcast/podcast.svg" class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
+         <img src="data:image/jpg;base64,${tempheader.encodedHeaderimage}"  class="img-fluid" alt="banner-image" data-aos="zoom-in" data-aos-delay="1500">
       </div>
         </div>
     </div>
 </section>
+</c:forEach>
 
 <section class="section">
   <div class="container">
