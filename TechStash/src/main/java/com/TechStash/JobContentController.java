@@ -2,7 +2,9 @@ package com.TechStash;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,18 +12,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.TechStash.entity.Carousel;
-import com.TechStash.entity.Conference;
-import com.TechStash.entity.Conference_setting;
-import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
+import com.TechStash.entity.Jobs;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.HomeSettingService;
 
@@ -54,6 +54,12 @@ public class JobContentController {
 				List<Header_section> result=contentService.headerContentAdminList(1);
 				theModel.addAttribute("headerimage", result);
 				
+				List<Jobs> jobContent=contentService.jobContent();
+				theModel.addAttribute("jobContent", jobContent);
+				
+				Jobs jobs = new Jobs();
+				theModel.addAttribute("jobs", jobs);
+				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -65,6 +71,110 @@ public class JobContentController {
 			return "admin/popup_sessioninvalid";
 		}
 		
+	}
+	
+	@PostMapping("/admin/admindashboard/newjob")
+	public String saveJob(@ModelAttribute("jobs") Jobs jobs,HttpServletRequest request, @RequestParam MultipartFile photo) {
+		
+		try {
+			byte[] photoBytes = photo.getBytes();
+			jobs.setImage(photoBytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		contentService.saveJob(jobs);
+			return "redirect:/admin/admindashboard/jobs_content";
+		}
+	
+	@GetMapping("/admin/admindashboard/deletejob")
+	public String deleteJob(@RequestParam("id") int id){
+		
+		contentService.deleteJob(id);
+		return "redirect:/admin/admindashboard/jobs_content";
+	}
+	
+	@GetMapping("/admin/admindashboard/editjob")
+	public String editJob(HttpServletRequest request, @RequestParam("id") int id, Model theModel)
+	  {
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		HttpSession session = request.getSession();
+		String sessionValue=(String) session.getAttribute("session"); 
+		if(sessionValue != null){
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			Jobs dbresult=contentService.jobEditResult(id);
+			theModel.addAttribute("jobs", dbresult);
+			
+			Map<String, String> jobtype = new HashMap<>();
+			jobtype.put("Full Time", "Full Time");
+			jobtype.put("Part Time", "Part Time");
+			jobtype.put("Remote", "Remote");
+	        theModel.addAttribute("jobtype", jobtype);
+			
+			return "admin/edit_jobs";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	  }
+	
+	@GetMapping("/admin/admindashboard/editjobstatus")
+	public String editJobStatus(HttpServletRequest request, @RequestParam("id") int id,@RequestParam("status") String status, Model theModel)
+	  {
+		
+		if(status.equals("true")){
+			  status="0";
+			  contentService.jobStatusUpdate(id,status);
+			  return "redirect:/admin/admindashboard/jobs_content";
+		  }
+		  else
+		  {
+			  status="1";
+			  contentService.jobStatusUpdate(id,status);
+			  return "redirect:/admin/admindashboard/jobs_content";
+		  }
+		
+	  }	
+	
+	@PostMapping("/admin/admindashboard/jobeditupdate")
+	public String editJobUpdate(@ModelAttribute("jobs") Jobs jobs, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+	
+	byte[] image=null;
+	try {
+		if(photo!=null){
+		byte[] photoBytes = photo.getBytes();
+		jobs.setImage(photoBytes);
+		}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	
+	if(photo==null){
+		List<Jobs> result=contentService.getJobImage(jobs.getId());
+		  for(Jobs dbresult : result) {
+			  image=dbresult.getImage();
+	        }
+		  jobs.setImage(image);
+	}
+	
+	contentService.jobContentUpdate(jobs.getId(), jobs.getCompanyname(),jobs.getTitle(),jobs.getImage(), jobs.getAddress(),jobs.getSalary(),jobs.getType(),jobs.getLink());
+				
+	return "redirect:/admin/admindashboard/jobs_content";
+			
 	}
 	
 	

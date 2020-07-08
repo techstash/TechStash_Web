@@ -16,6 +16,7 @@ import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.SettingService;
+import com.TechStash.entity.Jobs;
 
 @Controller
 public class JobController {
@@ -46,6 +47,9 @@ public class JobController {
 		
 		List<Header_section> result=contentService.headerContentAdminList(1);
 		theModel.addAttribute("header_section", result);
+		
+		List<Jobs> jobResult=contentService.jobsWebsiteContent();
+		theModel.addAttribute("jobContent", jobResult);
 		
 		return "jobs";
 	}

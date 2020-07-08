@@ -657,7 +657,7 @@
                   </div>
                   <div class="col-8">
                     <div class="form-group">
-                        <form:input class="form-control" path="link" type="text" required="required"/>
+                        <form:textarea path="link" class="form-control" rows="2" required="required"></form:textarea>
                       </div>
                   </div>
                 </div>

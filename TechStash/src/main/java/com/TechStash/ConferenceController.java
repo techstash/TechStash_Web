@@ -52,7 +52,6 @@ public class ConferenceController {
 		List<Carousel> carouselMinId=contentService.carouselResultMinId();
 		
 		for(Carousel dbresult : carouselMinId) {
-			System.out.println(dbresult.getId());
 			theModel.addAttribute("carouselMinId", dbresult.getId());
         }
 		

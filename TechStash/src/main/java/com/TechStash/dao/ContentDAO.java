@@ -5,6 +5,7 @@ import java.util.List;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
+import com.TechStash.entity.Jobs;
 
 public interface ContentDAO {
 	
@@ -31,4 +32,13 @@ public interface ContentDAO {
 	public void headerSectionUpdate(int id, byte[] headerImage, String title, String subtitle,byte[] backgroundImage);
 	public List<Header_section> getSectionHeaderImage(int id);
 	public List<Header_section> getSectionBackgroundImage(int id);
+	
+	public List<Jobs> jobContent();
+	public void saveJob(Jobs jobs);
+	public void jobContentUpdate(int id,String companyname,String title, byte[] image, String address, String salary, String type, String link);
+	public void deleteJob(int id);
+	public void jobStatusUpdate(int id,String status);
+	public Jobs jobEditResult(int id);
+	public List<Jobs> getJobImage(int id);
+	public List<Jobs> jobsWebsiteContent();
 }

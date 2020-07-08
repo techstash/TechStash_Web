@@ -53,213 +53,39 @@
        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Jobs Board</h2>
       </div>
       <div class="col-lg-6 col-md-7 text-center text-md-left  order-md-2 mb-4 mb-md-0">
-       <button class="btn btn-outline-primary" onclick="filterSelection('full-time')" >Full Time</button>
-        <button class="btn btn-outline-primary" onclick="filterSelection('part-time')">Part Time</button>
-     	<button class="btn btn-outline-primary" onclick="filterSelection('remote')">Remote</button> 
+       <button class="btn btn-outline-primary" onclick="filterSelection('Full Time')" >Full Time</button>
+        <button class="btn btn-outline-primary" onclick="filterSelection('Part Time')">Part Time</button>
+     	<button class="btn btn-outline-primary" onclick="filterSelection('Remote')">Remote</button> 
 
       </div>
     </div>
     <br>
     <div class="row">
-          <div class="col-lg-4 mb-4 grid-margin full-time filterDiv">
+      <c:forEach var="tempJob" items="${jobContent}">
+          <div class="col-lg-4 mb-4 grid-margin ${tempJob.type} filterDiv">
             <div class="card border-0 shadow rounded-lg">
             <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/yahoo.com"  onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">${tempJob.type}</div>
+              <img src="data:image/jpg;base64,${tempJob.encodedImage}"  onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5>Web Developer</h5>
+                <h5>${tempJob.title}</h5>
               </div>
                 <hr>
                 <div class="box-alignment">
-                	<p class="text-black">Yahoo<p>
+                	<p class="text-black">${tempJob.companyname}<p>
 				  	<ul class="box-inline">
           				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
+         				<li class="box-inline-item"><p>${tempJob.address}</p></li>
           			</ul> 
           		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-               <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
+                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold"><i class="fa fa-rupee"></i> ${tempJob.salary}</h4></div>
+               <div class="apply-btn-alignment"><a href="${tempJob.link}" target="_blank" class="btn btn-outline-primary button-size">
                 Apply Now</a></div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/google.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Google<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-               <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/hexaware.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Hexaware<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-               <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/hcl.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">HCL<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-               <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin full-time filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/tcs.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">TCS<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-                <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/fidelity.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Fidelity<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-                <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/capgemini.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Capgemini<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-                <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin remote filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/adobe.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Adobe<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-                <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 grid-margin part-time filterDiv">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-            <div class="grid-pos-right bg-info-gradiant p-2 d-inline-block text-center rounded text-black position-absolute">Full Time</div>
-              <img src="//logo.clearbit.com/yahoo.com" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5>Web Developer</h5>
-              </div>
-                <hr>
-                <div class="box-alignment">
-                	<p class="text-black">Yahoo<p>
-				  	<ul class="box-inline">
-          				<li class="box-inline-item"><i class="fa fa-map-marker unique-color"></i></li>
-         				<li class="box-inline-item"><p>Address Here </p></li>
-          			</ul> 
-          		</div>	   
-                <div class="salary-grid-alignment d-inline-block text-center text-black position-absolute"><h4 font-weight:bold">$10,000</h4></div>
-                <div class="apply-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Apply Now</a></div>
-            </div>
-          </div>
-        </div>
+        </c:forEach>
+       </div>
       </div>
 </section>
 

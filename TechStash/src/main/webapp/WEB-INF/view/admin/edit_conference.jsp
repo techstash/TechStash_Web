@@ -606,7 +606,7 @@
                    	Conference Location
                   </div>
                   <div class="col-6">
-                    <form:input path="location" type="text" id="browserTitle" class="form-control"/>
+                    <form:input path="location" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
@@ -615,7 +615,7 @@
                    	Conference Link
                   </div>
                   <div class="col-6">
-                    <form:input path="link" type="text" id="browserTitle" class="form-control"/>
+                    <form:input path="link" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>

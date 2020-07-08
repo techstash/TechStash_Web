@@ -10,13 +10,16 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="conference")
-public class Conference {
+@Table(name="jobs")
+public class Jobs {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	
+	@Column(name="companyname")
+	private String companyname;
 	
 	@Column(name="title")
 	private String title;
@@ -25,20 +28,20 @@ public class Conference {
 	@Column(name="image")
 	private byte[] image;
 	
-	@Column(name="description")
-	private String description;
+	@Column(name="address")
+	private String address;
 	
-	@Column(name="location")
-	private String location;
+	@Column(name="salary")
+	private String salary;
 	
-	@Column(name="date")
-	private String date;
-	
-	@Column(name="status")
-	private boolean status;
+	@Column(name="type")
+	private String type;
 	
 	@Column(name="link")
 	private String link;
+	
+	@Column(name="status")
+	private boolean status;
 	
 	@Transient
     private String encodedImage;
@@ -46,17 +49,17 @@ public class Conference {
 	public int getId() {
 		return id;
 	}
-	
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getCompanyname() {
+		return companyname;
+	}
+
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
 	}
 
 	public String getTitle() {
@@ -65,14 +68,6 @@ public class Conference {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
 	}
 
 	public byte[] getImage() {
@@ -83,27 +78,43 @@ public class Conference {
 		this.image = image;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getDate() {
-		return date;
+	public String getSalary() {
+		return salary;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 
-	public Boolean getStatus() {
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public boolean isStatus() {
 		return status;
 	}
 
-	public void setStatus(Boolean status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 

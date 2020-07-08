@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -17,10 +16,8 @@ import org.springframework.stereotype.Repository;
 
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
-import com.TechStash.entity.Conference_setting;
-import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
-import com.TechStash.entity.Keys_details;
+import com.TechStash.entity.Jobs;
 
 @Repository
 public class ContentDAOImpl implements ContentDAO {
@@ -124,7 +121,6 @@ public class ContentDAOImpl implements ContentDAO {
 			String link, String date) {
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		currentSession.getTransaction().begin();
-		System.out.println(image);
 		Date conferenceDate;
 		try {
 			conferenceDate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
@@ -369,6 +365,127 @@ public class ContentDAOImpl implements ContentDAO {
 		Query theQuery=currentSession.createQuery("from Header_section where id=:id");
 		theQuery.setParameter("id", id);
 		List<Header_section> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Jobs> jobContent() {
+
+		byte[] image=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Jobs order by id",Jobs.class);
+		List<Jobs> result = theQuery.getResultList();
+		
+		for(Jobs dbresult : result) {
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
+        }
+		
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void saveJob(Jobs jobs) {
+
+		Boolean status=false;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		jobs.setStatus(status);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into jobs (id,companyname,title,image,address,salary,type,link,status) values (:1,:2,:3,:4,:5,:6,:7,:8,:9)");
+		theQuery.setParameter("1", jobs.getId());
+		theQuery.setParameter("2", jobs.getCompanyname());
+		theQuery.setParameter("3", jobs.getTitle());
+		theQuery.setParameter("4", jobs.getImage());
+		theQuery.setParameter("5", jobs.getAddress());
+		theQuery.setParameter("6", jobs.getSalary());
+		theQuery.setParameter("7", jobs.getType());
+		theQuery.setParameter("8", jobs.getLink());
+		theQuery.setParameter("9", jobs.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public void jobContentUpdate(int id, String companyname, String title, byte[] image, String address, String salary,
+			String type, String link) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE jobs set companyname=:1,title=:2,image=:3,address=:4,salary=:5,type=:6,link=:7 where id=:8");
+		theQuery.setParameter("1", companyname);
+		theQuery.setParameter("2", title);
+		theQuery.setParameter("3", image);
+		theQuery.setParameter("4", address);
+		theQuery.setParameter("5", salary);
+		theQuery.setParameter("6", type);
+		theQuery.setParameter("7", link);
+		theQuery.setParameter("8", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	}
+
+	@Override
+	public void deleteJob(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from jobs where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public void jobStatusUpdate(int id, String status) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE jobs set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public Jobs jobEditResult(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Jobs dbresult=currentSession.get(Jobs.class,id);
+		return dbresult;
+	}
+
+	@Override
+	public List<Jobs> getJobImage(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Jobs where id=:id");
+		theQuery.setParameter("id", id);
+		List<Jobs> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Jobs> jobsWebsiteContent() {
+
+		byte[] profileImage=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Jobs where status=1 order by id desc",Jobs.class);
+		List<Jobs> result = theQuery.getResultList();
+		
+		for(Jobs dbresult : result) {
+			profileImage=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+        }
 		currentSession.close();
 		return result;
 	}

@@ -10,6 +10,7 @@ import com.TechStash.dao.ContentDAO;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
+import com.TechStash.entity.Jobs;
 
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -113,14 +114,55 @@ public class ContentServiceImpl implements ContentService {
 		contentDAO.headerSectionUpdate(id, headerImage, title, subtitle, backgroundImage);
 	}
 
-	@Override
+	@Transactional
 	public List<Header_section> getSectionHeaderImage(int id) {
 		return contentDAO.getSectionHeaderImage(id);
 	}
 
-	@Override
+	@Transactional
 	public List<Header_section> getSectionBackgroundImage(int id) {
 		return contentDAO.getSectionBackgroundImage(id);
+	}
+
+	@Transactional
+	public List<Jobs> jobContent() {
+		return contentDAO.jobContent();
+	}
+
+	@Transactional
+	public void saveJob(Jobs jobs) {
+		contentDAO.saveJob(jobs);
+	}
+
+	@Transactional
+	public void jobContentUpdate(int id, String companyname, String title, byte[] image, String address, String salary,
+			String type, String link) {
+		contentDAO.jobContentUpdate(id, companyname, title, image, address, salary, type, link);
+	}
+
+	@Transactional
+	public void deleteJob(int id) {
+		contentDAO.deleteJob(id);
+	}
+
+	@Transactional
+	public void jobStatusUpdate(int id, String status) {
+		contentDAO.jobStatusUpdate(id, status);
+	}
+
+	@Transactional
+	public Jobs jobEditResult(int id) {
+		return contentDAO.jobEditResult(id);
+	}
+
+	@Transactional
+	public List<Jobs> getJobImage(int id) {
+		return contentDAO.getJobImage(id);
+	}
+
+	@Transactional
+	public List<Jobs> jobsWebsiteContent() {
+		return contentDAO.jobsWebsiteContent();
 	}
 
 }

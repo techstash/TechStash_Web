@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Jobs Content</title>
+  <title>TechStash Edit Job</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
   
@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
    
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  
+  <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -549,135 +551,49 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Jobs Content</h1>
+            <h1>Edit Job</h1>
           </div>
         </div>
       </div>
     </section>
 
-<form:form action="newjob" method="POST" modelAttribute="jobs" enctype="multipart/form-data">
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Jobs</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Company Name
-                  </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="companyname" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Title
-                  </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="title" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Image
-                  </div>
-                  <div class="col-8">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Company Address
-                  </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="address" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Salary
-                  </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="salary" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Type
-                  </div>
-                  <div class="col-8">
-                    <div class="form-group">
-                        <form:select class="custom-select" path="type" required="required">
-                          <option value="">Select</option>
-                          <option>Full Time</option>
-                          <option>Part Time</option>
-                          <option>Remote</option>
-                        </form:select>
-                      </div>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Job Link
-                  </div>
-                  <div class="col-8">
-                    <form:textarea path="link" class="form-control" rows="2" required="required"></form:textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form:form>
-	<form:form action="saveheadersectionjob" method="POST" modelAttribute="header_section" enctype="multipart/form-data">
     <section class="content">
+    <form:form action="jobeditupdate" modelAttribute="jobs" method="POST" enctype="multipart/form-data">
       <div class="card">
-          <div class="card-header">
-            	<h4>Header</h4>
-          </div>
               <div class="card-body">
               <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
-                  <div class="col-2">
-                    Header Image
+                  <div class="col-3">
+                    Company Name
                   </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedHeaderimage}" width="100" height="72">
-                  </c:forEach>
+                  <div class="col-6">
+                   <form:input path="companyname" type="text" class="form-control"/>
                   </div>
-                  <div class="col-5">
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Job Title
+                  </div>
+                  <div class="col-6">
+                   <form:input path="title" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Job Image
+                  </div>
+                  <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="headerImage" name="headerImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
+                         <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm editHeaderImage" href="#">
+                          <a class="btn btn-info btn-sm editImage" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -687,59 +603,39 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header Title
+                   	Company Address
                   </div>
-                  <div class="col-5">
-                    <form:input path="title" type="text" id="title" class="form-control" readonly="true"/>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editTitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                  <div class="col-6">
+                    <form:input path="address" type="address" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header Subtitle
+                   	Salary
                   </div>
-                  <div class="col-5">
-                    <form:textarea path="subtitle" class="form-control" id="subtitle" rows="3" readonly="true"></form:textarea>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editSubtitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                  <div class="col-6">
+                    <form:input path="salary" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-2">
-                    Background Image
-                  </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedBackgroundimage}" width="100" height="72">
-                  </c:forEach>
-                  </div>
-                  <div class="col-5">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="backgroundImage" name="backgroundImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm editBackgroundImage" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                   	Job Type
+                  </div>
+                  <div class="col-6">
+                   <form:select path="type" class="custom-select">
+                    		<form:options items="${jobtype}"/>            
+                		</form:select>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Job Link
+                  </div>
+                  <div class="col-6">
+                    <form:textarea path="link" class="form-control" rows="3"></form:textarea>
                   </div>
                 </div>
               </div>
@@ -751,86 +647,7 @@
         </div>
       <div class="col-5"></div>
       </div>
-    </section>
-    </form:form>
-    <br>
-    <section class="content">
-      <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Jobs
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Jobs
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-              </div>
-              <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Company Name</th>
-                    <th>Job Title</th>
-                    <th>Job Image</th>
-                    <th>Company Address</th>
-                    <th>Salary</th>
-                    <th>Job Type</th>
-                    <th>Job Link</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Visible</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  
-                  <c:forEach var="tempJob" items="${jobContent}">
-                  <c:url var="deleteLink" value="/admin/admindashboard/deletejob" >
-						<c:param name="id" value="${tempJob.id}" />
-					</c:url>
-				   <c:url var="editLink" value="/admin/admindashboard/editjob" >
-						<c:param name="id" value="${tempJob.id}" />
-					</c:url>
-					<c:url var="changeStatus" value="/admin/admindashboard/editjobstatus" >
-						<c:param name="id" value="${tempJob.id}" />
-						<c:param name="status" value="${tempJob.status}" />
-					</c:url>	
-                  
-                  <tr>
-                   <td>${tempJob.companyname}</td>
-                   <td>${tempJob.title}</td>
-                     <td><img src="data:image/jpg;base64,${tempJob.encodedImage}" width="100" height="72"></td>
-                    <td>${tempJob.address}</td>
-                    <td><i class="fas fa-rupee-sign"></i> ${tempJob.salary}</td>
-                    <td>${tempJob.type}</td>
-                    <td>${tempJob.link}</td>
-                    <td><a class="btn btn-info btn-sm" href="${editLink}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <c:choose>
-                    <c:when test="${tempJob.status=='true'}">
-                    <td> <a href="${changeStatus}"> Enabled </a>
-                    </c:when>
-                    </c:choose>
-                    <c:choose>
-                    <c:when test="${tempJob.status=='false'}">
-                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
-                    </c:when>
-                    </c:choose>
-                  </tr>
-                  </c:forEach>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
+      \</form:form>
     </section>
   </div>
 
@@ -865,41 +682,23 @@
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
+<script src="/admin/plugins/moment/moment.min.js"></script>
+
+<script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+  $(function () {
+    $('#reservationdate').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+
+  })
+</script>
+
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>
-
-<script type="text/javascript">
-$(function(){
-	$(".editHeaderImage").click(function(){
-    	$("#headerImage").prop("disabled",false); 
-    	return false;
-    });
-    $(".editTitle").click(function(){
-    	$("#title").prop("readonly",false);
-    	return false;
-    });
-    $(".editSubtitle").click(function(){
-    	$("#subtitle").prop("readonly",false);
-    	return false;
-    });
-    
-    $(".editBackgroundImage").click(function(){
-    	$("#backgroundImage").prop("disabled",false); 
-    	return false;
-    });
-})
 </script>
 
 <script type='text/javascript'>
@@ -918,6 +717,16 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false);
+    	return false;
+    });
+})
 </script>
 
 </body>
