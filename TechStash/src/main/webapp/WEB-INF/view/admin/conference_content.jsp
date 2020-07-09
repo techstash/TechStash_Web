@@ -804,7 +804,7 @@
 					
                   <tr>
                     <td>${tempConference.title}</td>
-                     <td><img src="data:image/jpg;base64,${tempConference.encodedImage}" width="100" height="72"></td>
+                    <td><img src="data:image/jpg;base64,${tempConference.encodedImage}" width="100" height="72"></td>
                     <td>${tempConference.description}</td>
                     <td>${tempConference.location}</td>
                     <td>${tempConference.link}</td>

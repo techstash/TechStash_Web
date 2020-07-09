@@ -557,6 +557,7 @@
       </div>
     </section>
 
+<form:form action="newcommunity" method="POST" modelAttribute="communities" enctype="multipart/form-data">
 <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -573,7 +574,7 @@
                     Community Title
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="title" type="text" required="required"/>
                   </div>
                 </div>
                 <br>
@@ -584,7 +585,7 @@
                   <div class="col-8">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
@@ -597,7 +598,7 @@
                   </div>
                   <div class="col-8">
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                        <form:input type="text" path="date" class="form-control datetimepicker-input" data-target="#reservationdate" required="required"/>
                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
@@ -610,18 +611,28 @@
                     Community Address
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="address" type="text" required="required"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-4">
+                    Community Link
+                  </div>
+                  <div class="col-8">
+                    <form:textarea path="link" class="form-control" rows="2" required="required"></form:textarea>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
       </div>
+    </form:form>  
 	
     <form:form action="saveheadersectioncommunity" method="POST" modelAttribute="header_section" enctype="multipart/form-data">
     <section class="content">
@@ -744,125 +755,56 @@
                 <table id="searchtable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Community Title</th>
                     <th>Community Image</th>
                     <th>Community Date</th>
                     <th>Community Address</th>
+                    <th>Community Link</th>
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>Visible</th>
                   </tr>
                   </thead>
                   <tbody>
+                  
+                  <c:forEach var="tempCommunity" items="${communitiesContent}">
+                  <c:url var="deleteLink" value="/admin/admindashboard/deletecommunity" >
+						<c:param name="id" value="${tempCommunity.id}" />
+					</c:url>
+				   <c:url var="editLink" value="/admin/admindashboard/editcommunity" >
+						<c:param name="id" value="${tempCommunity.id}" />
+					</c:url>
+					<c:url var="changeStatus" value="/admin/admindashboard/editcommunitystatus" >
+						<c:param name="id" value="${tempCommunity.id}" />
+						<c:param name="status" value="${tempCommunity.status}" />
+					</c:url>
+                  
                   <tr>
-                    <td>1</td>
-                    <td>Title Here</td>
-                    <td><img src="images/community/chennai.webp" width="100" height="72"></td>
-                    <td>Technology</td>
-                    <td>Chennai</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
+                    <td>${tempCommunity.title}</td>
+                    <td><img src="data:image/jpg;base64,${tempCommunity.encodedImage}" width="100" height="72"></td>
+                    <td>${tempCommunity.date}</td>
+                    <td>${tempCommunity.address}</td>
+                    <td>${tempCommunity.link}</td>
+                    <td><a class="btn btn-info btn-sm" href="${editLink}">
                               <i class="fas fa-pencil-alt">
                               </i>
                           </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
+                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
                               <i class="fas fa-trash">
                               </i>
                           </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
+                    <c:choose>
+                    <c:when test="${tempCommunity.status=='true'}">
+                    <td> <a href="${changeStatus}"> Enabled </a>
+                    </c:when>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${tempCommunity.status=='false'}">
+                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
+                    </c:when>
+                    </c:choose>
                   </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Few Contents Here</td>
-                    <td><img src="images/community/chennai.webp" width="100" height="72"></td>
-                    <td>Few Contents Here</td>
-                    <td>Delhi</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Few Contents Here</td>
-                    <td><img src="images/community/chennai.webp" width="100" height="72"></td>
-                    <td>Few Contents Here</td>
-                    <td>Pune</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Few Contents Here</td>
-                    <td><img src="images/community/chennai.webp" width="100" height="72"></td>
-                    <td>Few Contents Here</td>
-                    <td>Kolkata</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Few Contents Here</td>
-                    <td><img src="images/community/chennai.webp" width="100" height="72"></td>
-                    <td>Few Contents Here</td>
-                    <td>Pune</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Few Contents Here</td>
-                    <td><img src="images/community/delhi.jpg" width="100" height="72"></td>
-                    <td>Few Contents Here</td>
-                    <td>Pune</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>
@@ -909,7 +851,7 @@
 <script>
   $(function () {
     $('#reservationdate').datetimepicker({
-        format: 'L'
+    	format: 'DD/MM/YYYY'
     });
 
   })

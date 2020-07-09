@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Edit Conference</title>
+  <title>TechStash Edit Community</title>
   
    <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -128,7 +128,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link">
               <i class="nav-icon fas fa-handshake"></i>
               <p>
                 Conferences
@@ -149,7 +149,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="conference_content" class="nav-link active">
+                <a href="conference_content" class="nav-link">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Conference Content</p>
                 </a>
@@ -271,7 +271,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Communities
@@ -286,7 +286,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="community_content" class="nav-link">
+                <a href="community_content" class="nav-link active">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Community Content</p>
                 </a>
@@ -558,13 +558,13 @@
     </section>
 
     <section class="content">
-    <form:form action="conferenceeditupdate" modelAttribute="conference" method="POST" enctype="multipart/form-data">
+    <form:form action="communityeditupdate" modelAttribute="communities" method="POST" enctype="multipart/form-data">
       <div class="card">
               <div class="card-body">
               <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
                   <div class="col-3">
-                    Conference Title
+                    Community Title
                   </div>
                   <div class="col-6">
                    <form:input path="title" type="text" class="form-control"/>
@@ -573,7 +573,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Conference Image
+                    Community Image
                   </div>
                   <div class="col-6">
                     <div class="input-group">
@@ -594,34 +594,7 @@
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Conference Description
-                  </div>
-                  <div class="col-6">
-                    <form:textarea path="description" class="form-control" rows="3"></form:textarea>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                   	Conference Location
-                  </div>
-                  <div class="col-6">
-                    <form:input path="location" type="text" class="form-control"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                   	Conference Link
-                  </div>
-                  <div class="col-6">
-                    <form:textarea path="link" class="form-control" rows="2"></form:textarea>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                   	Conference Date
+                   	Community Date
                   </div>
                   <div class="col-2">
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
@@ -633,6 +606,23 @@
                   </div>
                 </div>
                 <br>
+                <div class="row">
+                  <div class="col-3">
+                    Community Address
+                  </div>
+                  <div class="col-6">
+                    <form:input path="address" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                   	Community Link
+                  </div>
+                  <div class="col-6">
+                    <form:textarea path="link" class="form-control" rows="2"></form:textarea>
+                  </div>
+                </div>
               </div>
             </div>
       <div class="row">

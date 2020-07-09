@@ -52,71 +52,18 @@
     </div>
     <div class="row">
         	<div class="band">
+        	  <c:forEach var="tempCommunity" items="${communitiesContent}">
     			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/chennai.webp), url(images/placehoder.jpg);"></div>
+            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(data:image/jpg;base64,${tempCommunity.encodedImage}), url(images/placehoder.jpg);"></div>
             			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here</h6>
+             			<h5>${tempCommunity.title}</h5>
+             			<h6 class="word-fontweight">${tempCommunity.date}</h6>
+             			<h6 class="word-fontweight">${tempCommunity.address}</h6>
             			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
+            			<div class="community-btn-alignment"><a href="${tempCommunity.link}" target="_blank" class="btn btn-outline-primary button-size">
                 Read More</a></div>
     			</div>
-    			
-				<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
-            			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here </h6>
-            			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Read More</a></div>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
-            			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here </h6>
-            			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Read More</a></div>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
-            			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here </h6>
-            			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Read More</a></div>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
-            			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here </h6>
-            			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Read More</a></div>
-    			</div>
-    			
-    			<div class="card-grid border-0 shadow rounded-lg">
-            			<div class="thumb img-fluid card-img-top rounded-top-lg" style="background-image: url(images/community/delhi.jpg), url(images/placehoder.jpg);"></div>
-            			<article class="text-center">
-             			<h5>Few Wordings Here </h5>
-             			<h6 class="word-fontweight">29/04/2020</h6>
-             			<h6 class="word-fontweight">Few Wordings Here </h6>
-            			</article>
-            			<div class="community-btn-alignment"><a href="#" class="btn btn-outline-primary button-size">
-                Read More</a></div>
-    			</div>
+    		  </c:forEach>	
     		</div>
     	</div>
     </div>

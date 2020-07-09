@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.TechStash.entity.Communities;
 import com.TechStash.entity.Community_setting;
+import com.TechStash.entity.Conference;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
@@ -47,6 +49,9 @@ public class CommunityController {
 		
 		List<Header_section> result=contentService.headerContentAdminList(4);
 		theModel.addAttribute("header_section", result);
+		
+		List<Communities> communitiesResult=contentService.communityWebsiteContent();
+		theModel.addAttribute("communitiesContent", communitiesResult);
 		
 		return "community";
 	}

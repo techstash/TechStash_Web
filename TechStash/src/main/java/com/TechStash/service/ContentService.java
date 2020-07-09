@@ -3,6 +3,7 @@ package com.TechStash.service;
 import java.util.List;
 
 import com.TechStash.entity.Carousel;
+import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Conference_setting;
 import com.TechStash.entity.Footer;
@@ -58,5 +59,15 @@ public interface ContentService {
 	public Resources resourceEditResult(int id);
 	public void resourceContentUpdate(int id,String name,String link);
 	public List<Resources> resourcesWebsiteContent();
+	
+	// Communities
+	public List<Communities> communitiesContent();
+	public void saveCommunity(Communities communities);
+	public void deleteCommunity(int id);
+	public List<Communities> getCommunityImage(int id);
+	public void communityStatusUpdate(int id,String status);
+	public Communities communityEditResult(int id);
+	public void communityContentUpdate(int id,String title, byte[] image, String date, String address, String link);
+	public List<Communities> communityWebsiteContent();
 	
 }

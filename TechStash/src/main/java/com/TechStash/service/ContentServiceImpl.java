@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.TechStash.dao.ContentDAO;
 import com.TechStash.entity.Carousel;
+import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
@@ -199,6 +200,46 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public List<Resources> resourcesWebsiteContent() {
 		return contentDAO.resourcesWebsiteContent();
+	}
+
+	@Transactional
+	public List<Communities> communitiesContent() {
+		return contentDAO.communitiesContent();
+	}
+
+	@Transactional
+	public void saveCommunity(Communities communities) {
+		contentDAO.saveCommunity(communities);
+	}
+
+	@Transactional
+	public void deleteCommunity(int id) {
+		contentDAO.deleteCommunity(id);
+	}
+
+	@Transactional
+	public List<Communities> getCommunityImage(int id) {
+		return contentDAO.getCommunityImage(id);
+	}
+
+	@Transactional
+	public void communityStatusUpdate(int id, String status) {
+		contentDAO.communityStatusUpdate(id, status);
+	}
+
+	@Transactional
+	public Communities communityEditResult(int id) {
+		return contentDAO.communityEditResult(id);
+	}
+
+	@Transactional
+	public void communityContentUpdate(int id, String title, byte[] image, String date, String address, String link) {
+		contentDAO.communityContentUpdate(id, title, image, date, address, link);
+	}
+
+	@Transactional
+	public List<Communities> communityWebsiteContent() {
+		return contentDAO.communityWebsiteContent();
 	}
 
 }

@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.TechStash.entity.Carousel;
+import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
@@ -58,15 +59,15 @@ public class ContentDAOImpl implements ContentDAO {
 
 	@Override
 	public List<Conference> conferenceContent() {
-		byte[] profileImage=null;
+		byte[] image=null;
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		Query theQuery = currentSession.createQuery("from Conference order by date",Conference.class);
 		List<Conference> result = theQuery.getResultList();
 		
 		for(Conference dbresult : result) {
-			profileImage=dbresult.getImage();
-			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
-			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
 			
 			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			try {
@@ -568,6 +569,180 @@ public class ContentDAOImpl implements ContentDAO {
 		List<Resources> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
+	}
+
+	@Override
+	public List<Communities> communitiesContent() {
+		byte[] image=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Communities order by date",Communities.class);
+		List<Communities> result = theQuery.getResultList();
+		
+		for(Communities dbresult : result) {
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
+			
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				Date date = format.parse(dbresult.getDate());
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+				String strDate = dateFormat.format(date);  
+				dbresult.setDate(strDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+		
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void saveCommunity(Communities communities) {
+
+		Boolean status=false;
+		try {
+		
+		Date communityDate=new SimpleDateFormat("dd/MM/yyyy").parse(communities.getDate());
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		communities.setStatus(status);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into communities (id, title,image,date,address,link,status) values (:1,:2,:3,:4,:5,:6,:7)");
+		theQuery.setParameter("1", communities.getId());
+		theQuery.setParameter("2", communities.getTitle());
+		theQuery.setParameter("3", communities.getImage());
+		theQuery.setParameter("4", communityDate);
+		theQuery.setParameter("5", communities.getAddress());
+		theQuery.setParameter("6", communities.getLink());
+		theQuery.setParameter("7", communities.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		
+	
+	}
+
+	@Override
+	public void deleteCommunity(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from communities where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Communities> getCommunityImage(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Communities where id=:id");
+		theQuery.setParameter("id", id);
+		List<Communities> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void communityStatusUpdate(int id, String status) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE communities set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	
+	}
+
+	@Override
+	public Communities communityEditResult(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Communities dbresult=currentSession.get(Communities.class,id);
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			Date date = format.parse(dbresult.getDate());
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+			String strDate = dateFormat.format(date);  
+			dbresult.setDate(strDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		currentSession.close();
+		return dbresult;
+	
+	}
+
+	@Override
+	public void communityContentUpdate(int id, String title, byte[] image, String date, String address, String link) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Date communityDate;
+		try {
+			communityDate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+		
+		Query theQuery = currentSession.createNativeQuery("UPDATE communities set title=:1,image=:2,date=:3,address=:4,link=:5 where id=:6");
+		theQuery.setParameter("1", title);
+		theQuery.setParameter("2", image);
+		theQuery.setParameter("3", communityDate);
+		theQuery.setParameter("4", address);
+		theQuery.setParameter("5", link);
+		theQuery.setParameter("6", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+	}
+
+	@Override
+	public List<Communities> communityWebsiteContent() {
+
+		byte[] profileImage=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Communities where status=1 order by date",Communities.class);
+		List<Communities> result = theQuery.getResultList();
+		
+		for(Communities dbresult : result) {
+			profileImage=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
+			
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				Date date = format.parse(dbresult.getDate());
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+				String strDate = dateFormat.format(date);  
+				dbresult.setDate(strDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+        }
+		currentSession.close();
+		return result;
+	
 	}
 
 }
