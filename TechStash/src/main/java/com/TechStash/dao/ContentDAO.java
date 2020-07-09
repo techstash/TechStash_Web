@@ -6,6 +6,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Resources;
 
 public interface ContentDAO {
 	
@@ -41,4 +42,12 @@ public interface ContentDAO {
 	public Jobs jobEditResult(int id);
 	public List<Jobs> getJobImage(int id);
 	public List<Jobs> jobsWebsiteContent();
+	
+	public List<Resources> resourceContent();
+	public void saveResource(Resources resources);
+	public void deleteResource(int id);
+	public void resourceStatusUpdate(int id,String status);
+	public Resources resourceEditResult(int id);
+	public void resourceContentUpdate(int id,String name,String link);
+	public List<Resources> resourcesWebsiteContent();
 }

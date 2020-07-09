@@ -11,6 +11,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Resources;
 
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -163,6 +164,41 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public List<Jobs> jobsWebsiteContent() {
 		return contentDAO.jobsWebsiteContent();
+	}
+
+	@Transactional
+	public List<Resources> resourceContent() {
+		return contentDAO.resourceContent();
+	}
+
+	@Transactional
+	public void saveResource(Resources resources) {
+		contentDAO.saveResource(resources);
+	}
+
+	@Transactional
+	public void deleteResource(int id) {
+		contentDAO.deleteResource(id);
+	}
+
+	@Transactional
+	public void resourceStatusUpdate(int id, String status) {
+		contentDAO.resourceStatusUpdate(id, status);
+	}
+
+	@Transactional
+	public Resources resourceEditResult(int id) {
+		return contentDAO.resourceEditResult(id);
+	}
+
+	@Transactional
+	public void resourceContentUpdate(int id, String name, String link) {
+		contentDAO.resourceContentUpdate(id, name, link);
+	}
+
+	@Transactional
+	public List<Resources> resourcesWebsiteContent() {
+		return contentDAO.resourcesWebsiteContent();
 	}
 
 }

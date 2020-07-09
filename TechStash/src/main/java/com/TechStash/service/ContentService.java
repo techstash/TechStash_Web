@@ -9,6 +9,7 @@ import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Resources;
 
 public interface ContentService {
 	
@@ -39,7 +40,7 @@ public interface ContentService {
 	public List<Header_section> getSectionHeaderImage(int id);
 	public List<Header_section> getSectionBackgroundImage(int id);
 	
-	// jobs
+	// Jobs
 	public List<Jobs> jobContent();
 	public void saveJob(Jobs jobs);
 	public void jobContentUpdate(int id,String companyname,String title, byte[] image, String address, String salary, String type, String link);
@@ -48,5 +49,14 @@ public interface ContentService {
 	public Jobs jobEditResult(int id);
 	public List<Jobs> getJobImage(int id);
 	public List<Jobs> jobsWebsiteContent();
+	
+	// Resources
+	public List<Resources> resourceContent();
+	public void saveResource(Resources resources);
+	public void deleteResource(int id);
+	public void resourceStatusUpdate(int id,String status);
+	public Resources resourceEditResult(int id);
+	public void resourceContentUpdate(int id,String name,String link);
+	public List<Resources> resourcesWebsiteContent();
 	
 }

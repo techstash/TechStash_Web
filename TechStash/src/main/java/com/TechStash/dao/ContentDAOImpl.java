@@ -18,6 +18,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Resources;
 
 @Repository
 public class ContentDAOImpl implements ContentDAO {
@@ -486,6 +487,85 @@ public class ContentDAOImpl implements ContentDAO {
 			byte[] encode = java.util.Base64.getEncoder().encode(profileImage);
 			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(profileImage)));
         }
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public List<Resources> resourceContent() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Resources order by id",Resources.class);
+		List<Resources> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void saveResource(Resources resources) {
+		Boolean status=false;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		resources.setStatus(status);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into resources (id,name,link,status) values (:1,:2,:3,:4)");
+		theQuery.setParameter("1", resources.getId());
+		theQuery.setParameter("2", resources.getName());
+		theQuery.setParameter("3", resources.getLink());
+		theQuery.setParameter("4", resources.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	}
+
+	@Override
+	public void deleteResource(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from resources where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	}
+
+	@Override
+	public void resourceStatusUpdate(int id, String status) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE resources set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public Resources resourceEditResult(int id) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Resources dbresult=currentSession.get(Resources.class,id);
+		return dbresult;
+	}
+
+	@Override
+	public void resourceContentUpdate(int id, String name, String link) {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE resources set name=:1,link=:2 where id=:3");
+		theQuery.setParameter("1", name);
+		theQuery.setParameter("2", link);
+		theQuery.setParameter("3", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Resources> resourcesWebsiteContent() {
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Resources where status=1 order by id desc",Resources.class);
+		List<Resources> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
 	}

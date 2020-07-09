@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Resources Content</title>
+  <title>TechStash Edit Resource</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
   
@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
    
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  
+  <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -72,7 +74,7 @@
 
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
-     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
         <img src="data:image/jpg;base64,${image}" class="elevation-2" alt="User Image">
         </div>
@@ -339,7 +341,7 @@
                   <p>Volunteer Content</p>
                 </a>
               </li>
-              <c:choose>
+             <c:choose>
 				<c:when test="${designation=='Founder/CEO/Admin'}">
               <li class="nav-item">
                 <a href="volunteer_details" class="nav-link">
@@ -549,140 +551,32 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Resources Content</h1>
+            <h1>Edit Job</h1>
           </div>
         </div>
       </div>
     </section>
 
-<form:form action="newresource" method="POST" modelAttribute="resources">
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Resources</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Resources Name
-                  </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="name" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Resources Link
-                  </div>
-                  <div class="col-8">
-                   	<form:textarea class="form-control" path="link" rows="2" required="required"></form:textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-</form:form>	
-    <form:form action="saveheadersectionresource" method="POST" modelAttribute="header_section" enctype="multipart/form-data">
     <section class="content">
+    <form:form action="resourceeditupdate" modelAttribute="resources" method="POST">
       <div class="card">
-          <div class="card-header">
-            	<h4>Header</h4>
-          </div>
               <div class="card-body">
               <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
-                  <div class="col-2">
-                    Header Image
-                  </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedHeaderimage}" width="100" height="72">
-                  </c:forEach>
-                  </div>
-                  <div class="col-5">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="headerImage" name="headerImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
                   <div class="col-3">
-                          <a class="btn btn-info btn-sm editHeaderImage" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                    Resources Name
+                  </div>
+                  <div class="col-6">
+                   <form:input path="name" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header Title
+                    Resources Link
                   </div>
-                  <div class="col-5">
-                    <form:input path="title" type="text" id="title" class="form-control" readonly="true"/>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editTitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                    Header Subtitle
-                  </div>
-                  <div class="col-5">
-                    <form:textarea path="subtitle" class="form-control" id="subtitle" rows="3" readonly="true"></form:textarea>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editSubtitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-2">
-                    Background Image
-                  </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedBackgroundimage}" width="100" height="72">
-                  </c:forEach>
-                  </div>
-                  <div class="col-5">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="backgroundImage" name="backgroundImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editBackgroundImage" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                  <div class="col-6">
+                   <form:input path="link" type="text" class="form-control"/>
                   </div>
                 </div>
               </div>
@@ -694,84 +588,14 @@
         </div>
       <div class="col-5"></div>
       </div>
-    </section>
-    </form:form>
-    <br>
-    <section class="content">
-      <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Resources
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Resources
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-              </div>
-              <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Resources Name</th>
-                    <th>Resources Link</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Visible</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  
-                  <c:forEach var="tempResource" items="${resourceContent}">
-                  <c:url var="deleteLink" value="/admin/admindashboard/deleteresource" >
-						<c:param name="id" value="${tempResource.id}" />
-					</c:url>
-				   <c:url var="editLink" value="/admin/admindashboard/editresource" >
-						<c:param name="id" value="${tempResource.id}" />
-					</c:url>
-					<c:url var="changeStatus" value="/admin/admindashboard/editresourcestatus" >
-						<c:param name="id" value="${tempResource.id}" />
-						<c:param name="status" value="${tempResource.status}" />
-					</c:url>	
-                  
-                  <tr>
-                    <td>1</td>
-                    <td>${tempResource.name}</td>
-                    <td>${tempResource.link}</td>
-                     <td><a class="btn btn-info btn-sm" href="${editLink}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <c:choose>
-                    <c:when test="${tempResource.status=='true'}">
-                    <td> <a href="${changeStatus}"> Enabled </a>
-                    </c:when>
-                    </c:choose>
-                    <c:choose>
-                    <c:when test="${tempResource.status=='false'}">
-                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
-                    </c:when>
-                    </c:choose>
-                  </tr>
-                  </c:forEach>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+      \</form:form>
     </section>
   </div>
 
   <aside class="control-sidebar control-sidebar-dark">
   </aside>
   
- <footer class="main-footer">
+  <footer class="main-footer">
     <strong>Copyright &copy;  <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear +',')
@@ -799,41 +623,23 @@
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
+<script src="/admin/plugins/moment/moment.min.js"></script>
+
+<script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+  $(function () {
+    $('#reservationdate').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+
+  })
+</script>
+
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>
-
-<script type="text/javascript">
-$(function(){
-	$(".editHeaderImage").click(function(){
-    	$("#headerImage").prop("disabled",false); 
-    	return false;
-    });
-    $(".editTitle").click(function(){
-    	$("#title").prop("readonly",false);
-    	return false;
-    });
-    $(".editSubtitle").click(function(){
-    	$("#subtitle").prop("readonly",false);
-    	return false;
-    });
-    
-    $(".editBackgroundImage").click(function(){
-    	$("#backgroundImage").prop("disabled",false); 
-    	return false;
-    });
-})
 </script>
 
 <script type='text/javascript'>
@@ -852,6 +658,16 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false);
+    	return false;
+    });
+})
 </script>
 
 </body>
