@@ -57,15 +57,6 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12  text-center mb-3 mb-md-0">
-          <p class="mb-0 text-light clearbit-logo clearbit-disable">
-          <a href="https://clearbit.com" class="unique-color" target="_blank">Logos provided by Clearbit</a>
-           </p> 
-        </div>
-      </div>
-    </div>
   </section>
 </footer>
 
@@ -73,14 +64,4 @@
   var CurrentYear = new Date().getFullYear()  
   var copyright = document.getElementById("copyright");
   copyright.innerHTML = "<p class='mb-0 text-light'>Copyright &copy;"+CurrentYear+", made with <span class='copyright-color'> <i class='fa fa-heart' style='color:red'></i></span> by <a href='https://twitter.com/techstashin' target='_blank'><strong class='unique-color'>TechStash.</strong></a> All Rights Reserved.</p>";
-
-  $(document).ready(function() {
-		var pathname = window.location.pathname;
-		
-		if(pathname == "/jobs")
-			{
-		 		$(".clearbit-logo").removeClass("clearbit-disable");
-		 		$(".clearbit-logo").addClass("clearbit-enable");
-			}
-	})
 </script>
