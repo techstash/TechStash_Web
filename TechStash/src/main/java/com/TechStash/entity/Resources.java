@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="resources")
@@ -24,7 +25,10 @@ public class Resources {
 	
 	@Column(name="status")
 	private boolean status;
-
+	
+	@Transient
+	private String color;
+	
 	public int getId() {
 		return id;
 	}
@@ -57,4 +61,12 @@ public class Resources {
 		this.status = status;
 	}
 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
 }

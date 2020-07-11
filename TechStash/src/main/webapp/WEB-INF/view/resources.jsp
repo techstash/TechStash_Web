@@ -53,69 +53,22 @@
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Resources</h2>
     </div>
     <div class="row">
+      <c:forEach var="tempResource" items="${resourceContent}">
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg, #ffdde1 0%, #ee9ca7 52%);">
+            <a target="_blank" href="${tempResource.link}">
+            <div class="card border-0 shadow resource-round" style="background: ${tempResource.color}">
             <br>
-              <!--<img src="//logo.clearbit.com/udemy.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
               <div class="text-center">
               <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">Udemy</a></h3>
+                <h3 style="padding-bottom: 22px;" class="text-white">${tempResource.name}</h3>
               </div>
             </div>
+            </a>
           </div>
-          <div class="col-lg-4 col-sm-6  mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg,#FF5F6D  0%, #FFC371  52%);">
-            <br>
-              <!--<img src="//logo.clearbit.com/coursera.org" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
-              <div class="text-center">
-              <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">Coursera</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg, #91EAE4 0%, #7F7FD5 52%);">
-            <br>
-              <!--<img src="//logo.clearbit.com/edx.org" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
-              <div class="text-center">
-              <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">Linkedin</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg, #91EAE4 0%, #CF8BF3 52%);">
-            <br>
-              <!--<img src="//logo.clearbit.com/creativelive.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
-              <div class="text-center">
-              <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">CreativeLive</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg, #B3FFAB 0%, #12FFF7 52%);">
-            <br>
-              <!--<img src="//logo.clearbit.com/coach.me" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
-              <div class="text-center">
-              <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">Coach.me</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow resource-round" style="background: linear-gradient(315deg, #BB377D 0%, #FBD3E9 52%)">
-            <br>
-              <!--<img src="//logo.clearbit.com/linkedin.com" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">-->
-              <div class="text-center">
-              <br>
-                <h3 style="padding-bottom: 22px;"><a class="text-white" href="#">Linkedin</a></h3>
-              </div>
-            </div>
-          </div>
-            </div>
-          </div>
-          </div>
+         </c:forEach>
+        </div>
+       </div>
+      </div>
 </section>
 
 
