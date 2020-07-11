@@ -10,12 +10,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.TechStash.entity.Blogs;
+import com.TechStash.entity.Communities;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.service.ContentService;
@@ -50,8 +53,13 @@ public class BlogContentController {
 				List<Header_section> result=contentService.headerContentAdminList(2);
 				theModel.addAttribute("headerimage", result);
 				
+				Blogs blogs = new Blogs();
+				theModel.addAttribute("blogs", blogs);
+				
+				List<Blogs> blogcontent=contentService.blogContent();
+				theModel.addAttribute("blogsContent", blogcontent);
+				
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return "admin/blog_content";
@@ -61,6 +69,129 @@ public class BlogContentController {
 			return "admin/popup_sessioninvalid";
 		}
 		
+	}
+	
+	@PostMapping("/admin/admindashboard/newblog")
+	public String saveBlog(@ModelAttribute("blogs") Blogs blogs,HttpServletRequest request, @RequestParam MultipartFile photo) {
+		
+		try {
+			byte[] photoBytes = photo.getBytes();
+			blogs.setImage(photoBytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String createLink = ""; 
+        
+        for (int i = 0; i < blogs.getTitle().length(); ++i) { 
+      
+            if (blogs.getTitle().charAt(i) == ' ')  
+            	createLink += '-'; 
+              
+            else
+            	createLink += blogs.getTitle().charAt(i); 
+              
+        } 
+        
+        blogs.setLink(createLink);
+		
+		contentService.saveBlog(blogs);
+		return "redirect:/admin/admindashboard/blog_content";
+	}
+	
+	@GetMapping("/admin/admindashboard/deleteblog")
+	public String deleteBlog(@RequestParam("id") int id){
+
+		contentService.deleteBlog(id);
+		return "redirect:/admin/admindashboard/blog_content";
+	}
+	
+	@GetMapping("/admin/admindashboard/editblog")
+	public String editBlog(HttpServletRequest request, @RequestParam("id") int id, Model theModel)
+	  {
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		HttpSession session = request.getSession();
+		String sessionValue=(String) session.getAttribute("session"); 
+		if(sessionValue != null){
+			String sessionName=(String) session.getAttribute("name");
+			byte[] image=(byte[]) session.getAttribute("image");
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			try {
+				theModel.addAttribute("image", new String(encode, "UTF-8"));
+				theModel.addAttribute("name", sessionName);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			
+			Blogs dbresult=contentService.blogEditResult(id);
+			theModel.addAttribute("blogs", dbresult);
+			
+			return "admin/edit_blog";
+		}
+		else
+		{
+			return "admin/popup_sessioninvalid";
+		}
+		
+	  }
+	
+	@GetMapping("/admin/admindashboard/editblogstatus")
+	public String editCommunityStatus(HttpServletRequest request, @RequestParam("id") int id,@RequestParam("status") String status, Model theModel)
+	  {
+		
+		if(status.equals("true")){
+			  status="0";
+			  contentService.blogStatusUpdate(id,status);
+			  return "redirect:/admin/admindashboard/blog_content";
+		  }
+		  else
+		  {
+			  status="1";
+			  contentService.blogStatusUpdate(id,status);
+			  return "redirect:/admin/admindashboard/blog_content";
+		  }
+		
+	  }	
+	
+	@PostMapping("/admin/admindashboard/blogeditupdate")
+	public String editCommunityUpdate(@ModelAttribute("blogs") Blogs blogs, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+	byte[] image=null;
+	try {
+		if(photo!=null){
+		byte[] photoBytes = photo.getBytes();
+		blogs.setImage(photoBytes);
+		}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+	
+	if(photo==null){
+		List<Blogs> result=contentService.getBlogImage(blogs.getId());
+		  for(Blogs dbresult : result) {
+			  image=dbresult.getImage();
+	        }
+		  blogs.setImage(image);
+	}
+	
+	String createLink = ""; 
+    
+    for (int i = 0; i < blogs.getTitle().length(); ++i) { 
+  
+        if (blogs.getTitle().charAt(i) == ' ')  
+        	createLink += '-'; 
+          
+        else
+        	createLink += blogs.getTitle().charAt(i); 
+          
+    } 
+    
+    blogs.setLink(createLink);
+	
+	contentService.blogContentUpdate(blogs.getId(), blogs.getTitle(),blogs.getImage(), blogs.getAuthor(),blogs.getDate(),blogs.getCategory(),blogs.getDescription(),blogs.getLink());
+				
+	return "redirect:/admin/admindashboard/blog_content";
+			
 	}
 	
 	@PostMapping("/admin/admindashboard/saveheadersectionblog")

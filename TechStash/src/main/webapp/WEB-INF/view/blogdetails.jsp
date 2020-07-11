@@ -22,15 +22,16 @@
 
 <jsp:include page="header.jsp"/>
 
-<section class="page-title page-blog-overlay bg-cover overflow-hidden" data-background="images/blog/blog-post-9.jpg">
+<c:forEach var="tempBlogDetail" items="${blogdetail}">
+<section class="page-title page-blog-overlay bg-cover overflow-hidden" data-background="data:image/jpg;base64,${tempBlogDetail.encodedImage}">
     <div class="container">
     <div class="col-lg-12 text-center">
-        <h2 class="section-title text-white position-relative" data-aos="fade-up" data-aos-delay="100">Blog Title</h2>
+        <h2 class="section-title text-white position-relative" data-aos="fade-up" data-aos-delay="100">${tempBlogDetail.title}</h2>
     </div>
     </div>
     <div class="container">
     <div class="col-lg-12 text-center">
-        <h2 class="section-title text-white position-relative" data-aos="fade-up" data-aos-delay="100">Few Content Here</h2>
+        <h4 class="section-title text-white position-relative" data-aos="fade-up" data-aos-delay="100">${tempBlogDetail.author}</h4>
     </div>
     </div>
 </section>
@@ -43,26 +44,16 @@
             <br>
               <div class="text-left blog-alignment">
               <br>
-                <p class="text-black">Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically 
-                route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last.
-                
-                
-Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people’s desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last.
-Broadly speaking, Information Technology (IT) includes everything having to do with computers, 
-
-Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people’s desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last. Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last. Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people’s desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last.               
-               
-  Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people’s desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last. Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last. Broadly speaking, Information Technology (IT) includes everything having to do with computers, from the machines on people’s desks to the servers and network equipment used to tie it all together. This can include non intuitive links, like computerized telephones that cause a customers information to automatically appear on a users screen when they accept a call, and phone systems that automatically route calls to particular users depending on identifying information entered by the user, which is used to determine which employee talked to that user last.             
-               
-               
+                <p class="text-black">
+               ${tempBlogDetail.description}
                </p>
                 </div>
             </div>
           </div>
           </div>
           </div>
-          </section>
-
+</section>
+</c:forEach>
 <section class="subscription bg-white">
   <div class="container">
     <div class="subscription-wrapper">

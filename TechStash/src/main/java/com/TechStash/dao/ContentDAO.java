@@ -2,6 +2,7 @@ package com.TechStash.dao;
 
 import java.util.List;
 
+import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
@@ -60,4 +61,14 @@ public interface ContentDAO {
 	public Communities communityEditResult(int id);
 	public void communityContentUpdate(int id,String title, byte[] image, String date, String address, String link);
 	public List<Communities> communityWebsiteContent();
+	
+	public List<Blogs> blogContent();
+	public void saveBlog(Blogs blogs);
+	public void deleteBlog(int id);
+	public List<Blogs> getBlogImage(int id);
+	public void blogStatusUpdate(int id,String status);
+	public Blogs blogEditResult(int id);
+	public void blogContentUpdate(int id,String title, byte[] image, String author, String date, String category, String description, String link);
+	public List<Blogs> blogWebsiteContent();
+	public List<Blogs> blogDetailResult(String link);
 }

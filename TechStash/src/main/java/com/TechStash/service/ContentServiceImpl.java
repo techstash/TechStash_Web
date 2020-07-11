@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.TechStash.dao.ContentDAO;
+import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
@@ -240,6 +241,52 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public List<Communities> communityWebsiteContent() {
 		return contentDAO.communityWebsiteContent();
+	}
+
+	@Override
+	public List<Blogs> blogContent() {
+		return contentDAO.blogContent();
+	}
+
+	@Override
+	public void saveBlog(Blogs blogs) {
+		contentDAO.saveBlog(blogs);
+	}
+
+	@Override
+	public void deleteBlog(int id) {
+		contentDAO.deleteBlog(id);
+	}
+
+	@Override
+	public List<Blogs> getBlogImage(int id) {
+		return contentDAO.getBlogImage(id);
+	}
+
+	@Override
+	public void blogStatusUpdate(int id, String status) {
+		contentDAO.blogStatusUpdate(id, status);
+	}
+
+	@Override
+	public Blogs blogEditResult(int id) {
+		return contentDAO.blogEditResult(id);
+	}
+
+	@Override
+	public void blogContentUpdate(int id, String title, byte[] image, String author, String date, String category,
+			String description, String link) {
+		contentDAO.blogContentUpdate(id, title, image, author, date, category, description, link);
+	}
+
+	@Override
+	public List<Blogs> blogWebsiteContent() {
+		return contentDAO.blogWebsiteContent();
+	}
+
+	@Override
+	public List<Blogs> blogDetailResult(String link) {
+		return contentDAO.blogDetailResult(link);
 	}
 
 }

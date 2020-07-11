@@ -52,181 +52,22 @@
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Latest Blogs</h2>
     </div>
     <div class="row masonry-container">
+    <c:forEach var="tempBlog" items="${blogsContent}">
       <div class="col-lg-4 col-sm-6 mb-5">
       <div class="card border-0 shadow rounded-lg">
         <article class="text-center">
           <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-1.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
+              <img src="data:image/jpg;base64,${tempBlog.encodedImage}" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
               <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-          <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p class="text-uppercase mb-2">${tempBlog.category}</p>
+          	  <h4 class="title-border"><a class="text-dark" href="${tempBlog.link}" target="_blank">${tempBlog.title}</a></h4>
+          	  <p class="blog-alignment">${tempBlog.description}</p>
               </div>
             </div>
         </article>
         </div>
       </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-2.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                   <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-     <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-3.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                    <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-4.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-          <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-5.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-          <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-6.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                    <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-7.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                 <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-8.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                   <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-              <img src="images/blog/blog-post-9.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                   <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-         <img src="images/blog/blog-post-10.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-          <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                    <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <img src="images/blog/blog-post-3.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-          <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                   <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-             <img src="images/blog/blog-post-6.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                    <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card border-0 shadow rounded-lg">
-        <article class="text-center">
-          <div class="card border-0 shadow rounded-lg">
-             <img src="images/blog/blog-post-2.jpg" onerror="this.src='images/placehoder.jpg'" class="img-fluid card-img-top rounded-top-lg" alt="post-thumb">
-              <div class="card-body">
-              <p class="text-uppercase mb-2">TRAVEL</p>
-          <h4 class="title-border"><a class="text-dark" href="">Charming Evening Field</a></h4>
-                   <p class="blog-alignment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-        </article>
-        </div>
-      </div>
+      </c:forEach>
     </div>
   </div>
   </div>

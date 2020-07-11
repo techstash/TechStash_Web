@@ -14,6 +14,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
@@ -159,7 +160,7 @@ public class ContentDAOImpl implements ContentDAO {
 	public List<Conference> conferenceTable() {
 		byte[] profileImage=null;
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Conference where status=1 order by date",Conference.class);
+		Query theQuery = currentSession.createQuery("from Conference where status=1 order by date desc",Conference.class);
 		List<Conference> result = theQuery.getResultList();
 		
 		for(Conference dbresult : result) {
@@ -719,7 +720,7 @@ public class ContentDAOImpl implements ContentDAO {
 
 		byte[] profileImage=null;
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		Query theQuery = currentSession.createQuery("from Communities where status=1 order by date",Communities.class);
+		Query theQuery = currentSession.createQuery("from Communities where status=1 order by date desc",Communities.class);
 		List<Communities> result = theQuery.getResultList();
 		
 		for(Communities dbresult : result) {
@@ -739,6 +740,215 @@ public class ContentDAOImpl implements ContentDAO {
 			}
 			
 			
+        }
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public List<Blogs> blogContent() {
+
+		byte[] image=null;
+		String cuttedvalue =null;
+		int maxLength = 245;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Blogs order by date",Blogs.class);
+		List<Blogs> result = theQuery.getResultList();
+		
+		for(Blogs dbresult : result) {
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
+			
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				Date date = format.parse(dbresult.getDate());
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+				String strDate = dateFormat.format(date);  
+				dbresult.setDate(strDate);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (dbresult.getDescription().length() > maxLength)
+			{
+				cuttedvalue = dbresult.getDescription().substring(0, maxLength);
+				dbresult.setDescription(cuttedvalue);
+			}
+        }
+		
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void saveBlog(Blogs blogs) {
+
+		Boolean status=false;
+		try {
+		
+		Date blogdate=new SimpleDateFormat("dd/MM/yyyy").parse(blogs.getDate());
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		blogs.setStatus(status);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into blogs (id, title,image,author,date,category,description,link,status) values (:1,:2,:3,:4,:5,:6,:7,:8,:9)");
+		theQuery.setParameter("1", blogs.getId());
+		theQuery.setParameter("2", blogs.getTitle());
+		theQuery.setParameter("3", blogs.getImage());
+		theQuery.setParameter("4", blogs.getAuthor());
+		theQuery.setParameter("5", blogdate);
+		theQuery.setParameter("6", blogs.getCategory());
+		theQuery.setParameter("7", blogs.getDescription());
+		theQuery.setParameter("8", blogs.getLink());
+		theQuery.setParameter("9", blogs.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		
+	}
+
+	@Override
+	public void deleteBlog(int id) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from blogs where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Blogs> getBlogImage(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Blogs where id=:id");
+		theQuery.setParameter("id", id);
+		List<Blogs> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void blogStatusUpdate(int id, String status) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE blogs set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	
+	}
+
+	@Override
+	public Blogs blogEditResult(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Blogs dbresult=currentSession.get(Blogs.class,id);
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			Date date = format.parse(dbresult.getDate());
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+			String strDate = dateFormat.format(date);  
+			dbresult.setDate(strDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		currentSession.close();
+		return dbresult;
+	
+	}
+
+	@Override
+	public void blogContentUpdate(int id, String title, byte[] image, String author, String date, String category,
+			String description, String link) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Date blogDate;
+	try {
+		blogDate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+		
+		Query theQuery = currentSession.createNativeQuery("UPDATE blogs set title=:1,image=:2,author=:3,date=:4,category=:5,description=:6,link=:7 where id=:8");
+		theQuery.setParameter("1", title);
+		theQuery.setParameter("2", image);
+		theQuery.setParameter("3", author);
+		theQuery.setParameter("4", blogDate);
+		theQuery.setParameter("5", category);
+		theQuery.setParameter("6", description);
+		theQuery.setParameter("7", link);
+		theQuery.setParameter("8", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	
+	}
+
+	@Override
+	public List<Blogs> blogWebsiteContent() {
+
+		byte[] photo=null;
+		String cuttedvalue =null;
+		int maxLength = 245;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Blogs where status=1 order by date desc",Blogs.class);
+		List<Blogs> result = theQuery.getResultList();
+		
+		for(Blogs dbresult : result) {
+			photo=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(photo);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
+			
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			try {
+				Date date = format.parse(dbresult.getDate());
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+				String strDate = dateFormat.format(date);  
+				dbresult.setDate(strDate);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+			if (dbresult.getDescription().length() > maxLength)
+			{
+				cuttedvalue = dbresult.getDescription().substring(0, maxLength);
+				dbresult.setDescription(cuttedvalue);
+			}
+				
+        }
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public List<Blogs> blogDetailResult(String link) {
+
+		byte[] photo=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Blogs where link=:link");
+		theQuery.setParameter("link", link);
+		List<Blogs> result = theQuery.getResultList();
+		
+		for(Blogs dbresult : result) {
+			photo=dbresult.getImage();
+			byte[] encode1 = java.util.Base64.getEncoder().encode(photo);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
         }
 		currentSession.close();
 		return result;

@@ -60,7 +60,6 @@ public class CommunityContentController {
 				theModel.addAttribute("communitiesContent", communitycontent);
 				
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return "admin/community_content";

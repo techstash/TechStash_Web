@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.TechStash.entity.Blog_setting;
+import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
@@ -48,7 +50,32 @@ public class BlogController {
 		List<Header_section> result=contentService.headerContentAdminList(2);
 		theModel.addAttribute("header_section", result);
 		
+		List<Blogs> blogsResult=contentService.blogWebsiteContent();
+		theModel.addAttribute("blogsContent", blogsResult);
+		
 		return "blogs";
+	}
+	
+	@RequestMapping("/{link}")
+	public String blogDetails(Model theModel,@PathVariable("link") String link){
+		
+		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
+		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
+		theModel.addAttribute("footerContent", dbResultFooter);
+		
+		List<Blogs> result=contentService.blogDetailResult(link);
+		
+		boolean value = result.isEmpty(); 
+		
+		if(value==true ){
+			return "error";
+		}
+		
+		theModel.addAttribute("blogdetail", result);
+		
+		return "blogdetails";
 	}
 	
 }

@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Blog Content</title>
+  <title>TechStash Edit Blog</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
   
@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
    
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  
+  <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
@@ -72,7 +74,7 @@
 
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
-     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
         <img src="data:image/jpg;base64,${image}" class="elevation-2" alt="User Image">
         </div>
@@ -81,7 +83,7 @@
         </div>
       </div>
 
-     <nav class="mt-2">
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" id="table" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -227,7 +229,7 @@
                   <p>Blog Settings</p>
                 </a>
               </li>
-			<li class="nav-item">
+              <li class="nav-item">
                 <a href="postblog_setting" class="nav-link">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Post Blog Settings</p>
@@ -549,61 +551,61 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blog Content</h1>
+            <h1>Edit Conference</h1>
           </div>
         </div>
       </div>
     </section>
 
-<form:form action="newblog" method="POST" modelAttribute="blogs" enctype="multipart/form-data">
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Blogs</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+    <section class="content">
+    <form:form action="blogeditupdate" modelAttribute="blogs" method="POST" enctype="multipart/form-data">
+      <div class="card">
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Blog Title
                   </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="title" type="text" required="required"/>
+                  <div class="col-6">
+                   <form:input path="title" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Blog Image
                   </div>
-                   <div class="col-8">
+                  <div class="col-6">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
+                         <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="200" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
+                    </div>
                   </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editImage" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Author
                   </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="author" type="text" required="required"/>
+                  <div class="col-6">
+                   <form:input path="author" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
-                    Date
+                  <div class="col-3">
+                   	Date
                   </div>
-                  <div class="col-8">
+                  <div class="col-2">
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         <form:input type="text" path="date" class="form-control datetimepicker-input" data-target="#reservationdate" required="required"/>
                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -614,124 +616,20 @@
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-3">
                     Blog Category
                   </div>
-                  <div class="col-8">
-                    <form:input class="form-control" path="category" type="text" required="required"/>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-4">
-                    Blog Description
-                  </div>
-                  <div class="col-8">
-                    <div class="form-group">
-                        <form:textarea path="description" class="form-control" rows="7" required="required"></form:textarea>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form:form>
-	
-   <form:form action="saveheadersectionblog" method="POST" modelAttribute="header_section" enctype="multipart/form-data">
-    <section class="content">
-      <div class="card">
-          <div class="card-header">
-            	<h4>Header</h4>
-          </div>
-              <div class="card-body">
-              <form:input path="id" type="hidden" class="form-control"/>
-                <div class="row">
-                  <div class="col-2">
-                    Header Image
-                  </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedHeaderimage}" width="100" height="72">
-                  </c:forEach>
-                  </div>
-                  <div class="col-5">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="headerImage" name="headerImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editHeaderImage" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                  <div class="col-6">
+                    <form:input path="category" type="text" class="form-control"/>
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-3">
-                    Header Title
+                   	Blog Description
                   </div>
-                  <div class="col-5">
-                    <form:input path="title" type="text" id="title" class="form-control" readonly="true"/>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editTitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                    Header Subtitle
-                  </div>
-                  <div class="col-5">
-                    <form:textarea path="subtitle" class="form-control" id="subtitle" rows="3" readonly="true"></form:textarea>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editSubtitle" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-2">
-                    Background Image
-                  </div>
-                  <div class="col-1">
-                  <c:forEach var="tempHeader" items="${headerimage}">
-                  <img src="data:image/jpg;base64,${tempHeader.encodedBackgroundimage}" width="100" height="72">
-                  </c:forEach>
-                  </div>
-                  <div class="col-5">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="backgroundImage" name="backgroundImage" accept=".png, .jpg, .jpeg" size="50" disabled required/>
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                          <a class="btn btn-info btn-sm editBackgroundImage" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
+                  <div class="col-9">
+                    <form:textarea path="description" class="form-control" rows="15"></form:textarea>
                   </div>
                 </div>
               </div>
@@ -743,84 +641,7 @@
         </div>
       <div class="col-5"></div>
       </div>
-    </section>
-    </form:form>
-    <br>
-    <section class="content">
-      <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Blogs
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-default">
-                  Add Blogs
-                </button></small>
-                  </h4>
-                </div>
-              </div>
-              </div>
-              <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Blog Title</th>
-                    <th>Blog Image</th>
-                    <th>Author</th>
-                    <th>Date</th>
-                    <th>Blog Category</th>
-                    <th>Blog Description</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Visible</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  
-                  <c:forEach var="tempBlog" items="${blogsContent}">
-                  <c:url var="deleteLink" value="/admin/admindashboard/deleteblog" >
-						<c:param name="id" value="${tempBlog.id}" />
-					</c:url>
-				   <c:url var="editLink" value="/admin/admindashboard/editblog" >
-						<c:param name="id" value="${tempBlog.id}" />
-					</c:url>
-					<c:url var="changeStatus" value="/admin/admindashboard/editblogstatus" >
-						<c:param name="id" value="${tempBlog.id}" />
-						<c:param name="status" value="${tempBlog.status}" />
-					</c:url>
-                  
-                  <tr>
-                    <td>${tempBlog.title}</td>
-                    <td><img src="data:image/jpg;base64,${tempBlog.encodedImage}" width="100" height="72"></td>
-                    <td>${tempBlog.author}</td>
-                    <td>${tempBlog.date}</td>
-                    <td>${tempBlog.category}</td>
-                    <td>${tempBlog.description}</td>
-                    <td><a class="btn btn-info btn-sm" href="${editLink}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <c:choose>
-                    <c:when test="${tempBlog.status=='true'}">
-                    <td> <a href="${changeStatus}"> Enabled </a>
-                    </c:when>
-                    </c:choose>
-                    <c:choose>
-                    <c:when test="${tempBlog.status=='false'}">
-                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
-                    </c:when>
-                    </c:choose>
-                  </tr>
-                  </c:forEach>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
+      \</form:form>
     </section>
   </div>
 
@@ -851,8 +672,6 @@
 
 <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 
-<link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-
 <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
@@ -876,37 +695,6 @@ $(document).ready(function () {
 });
 </script>
 
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>
-
-<script type="text/javascript">
-$(function(){
-	$(".editHeaderImage").click(function(){
-    	$("#headerImage").prop("disabled",false); 
-    	return false;
-    });
-    $(".editTitle").click(function(){
-    	$("#title").prop("readonly",false);
-    	return false;
-    });
-    $(".editSubtitle").click(function(){
-    	$("#subtitle").prop("readonly",false);
-    	return false;
-    });
-    
-    $(".editBackgroundImage").click(function(){
-    	$("#backgroundImage").prop("disabled",false); 
-    	return false;
-    });
-})
-</script>
-
 <script type='text/javascript'>
 
 $( document ).ready(function() {
@@ -923,6 +711,16 @@ $( document ).ready(function() {
 	});
 	
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false);
+    	return false;
+    });
+})
 </script>
 
 </body>
