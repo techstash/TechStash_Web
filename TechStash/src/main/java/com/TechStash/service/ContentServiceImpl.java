@@ -14,6 +14,7 @@ import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
+import com.TechStash.entity.Speakers;
 
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -204,8 +205,8 @@ public class ContentServiceImpl implements ContentService {
 	}
 
 	@Transactional
-	public List<Communities> communitiesContent() {
-		return contentDAO.communitiesContent();
+	public List<Communities> communityContent() {
+		return contentDAO.communityContent();
 	}
 
 	@Transactional
@@ -243,50 +244,96 @@ public class ContentServiceImpl implements ContentService {
 		return contentDAO.communityWebsiteContent();
 	}
 
-	@Override
+	@Transactional
 	public List<Blogs> blogContent() {
 		return contentDAO.blogContent();
 	}
 
-	@Override
+	@Transactional
 	public void saveBlog(Blogs blogs) {
 		contentDAO.saveBlog(blogs);
 	}
 
-	@Override
+	@Transactional
 	public void deleteBlog(int id) {
 		contentDAO.deleteBlog(id);
 	}
 
-	@Override
+	@Transactional
 	public List<Blogs> getBlogImage(int id) {
 		return contentDAO.getBlogImage(id);
 	}
 
-	@Override
+	@Transactional
 	public void blogStatusUpdate(int id, String status) {
 		contentDAO.blogStatusUpdate(id, status);
 	}
 
-	@Override
+	@Transactional
 	public Blogs blogEditResult(int id) {
 		return contentDAO.blogEditResult(id);
 	}
 
-	@Override
+	@Transactional
 	public void blogContentUpdate(int id, String title, byte[] image, String author, String date, String category,
 			String description, String link) {
 		contentDAO.blogContentUpdate(id, title, image, author, date, category, description, link);
 	}
 
-	@Override
+	@Transactional
 	public List<Blogs> blogWebsiteContent() {
 		return contentDAO.blogWebsiteContent();
 	}
 
-	@Override
+	@Transactional
 	public List<Blogs> blogDetailResult(String link) {
 		return contentDAO.blogDetailResult(link);
+	}
+
+	@Transactional
+	public List<Speakers> speakerContent() {
+		return contentDAO.speakerContent();
+	}
+
+	@Transactional
+	public void saveSpeaker(Speakers speakers) {
+		contentDAO.saveSpeaker(speakers);
+	}
+
+	@Transactional
+	public void deleteSpeaker(int id) {
+		contentDAO.deleteSpeaker(id);
+	}
+
+	@Transactional
+	public List<Speakers> getSpeakerImage(int id) {
+		return contentDAO.getSpeakerImage(id);
+	}
+
+	@Transactional
+	public void speakerStatusUpdate(int id, String status) {
+		contentDAO.speakerStatusUpdate(id, status);
+	}
+
+	@Transactional
+	public Speakers speakerEditResult(int id) {
+		return contentDAO.speakerEditResult(id);
+	}
+
+	@Transactional
+	public void speakerContentUpdate(int id, String name, byte[] image, String location, String category, String bio,
+			String facebook, String twitter, String github, String latitude, String longitude, String link) {
+		contentDAO.speakerContentUpdate(id, name, image, location, category, bio, facebook, twitter, github, latitude, longitude, link);
+	}
+
+	@Transactional
+	public List<Speakers> speakerWebsiteContent() {
+		return contentDAO.speakerWebsiteContent();
+	}
+
+	@Transactional
+	public List<Speakers> speakerDetailResult(String link) {
+		return contentDAO.speakerDetailResult(link);
 	}
 
 }

@@ -24,12 +24,41 @@
   
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
+  <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
+  
   <c:forEach var="tempMetaDetails" items="${homeSetting}">
 	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
 	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
 	</c:forEach>
   
 </head>
+
+<style type="text/css">
+            body {
+                margin: 0;
+            }
+            #map {
+                width: 0;
+                height: 0;
+                background-color:transparent;
+                display: hidden;
+            }
+            #search-box {
+                width: 800px;
+            }
+            #result {
+                padding-left: 20px;
+                padding-top: 20px;
+            }
+            .leaflet-locationiq-results{
+                padding-top: 45px;
+            }
+
+        </style>
 <body class="hold-transition sidebar-mini layout-fixed">
 
 <div class="wrapper">
@@ -555,6 +584,7 @@
       </div>
     </section>
 
+<form:form action="newspeaker" method="POST" modelAttribute="speakers" enctype="multipart/form-data" id="frmMain">
 <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -571,7 +601,7 @@
                     Speaker Name
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="name" type="text" required="required"/>
                   </div>
                 </div>
                 <br>
@@ -582,10 +612,10 @@
                   <div class="col-8">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
-                    </div>
+                  </div>
                   </div>
                 </div>
                 <br>
@@ -594,7 +624,22 @@
                     Speaker Location
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                  	<div id="map"></div>
+                    <div id="search-box"></div>
+                    <div id="result"></div>
+                    <form:input path="location" type="hidden" id="location"/>
+                    <form:input path="longitude" type="hidden" id="longitude"/>
+                    <form:input path="latitude" type="hidden" id="latitude"/>
+                  </div>
+                </div>
+                
+                <br>
+                <div class="row">
+                  <div class="col-4">
+                    Speaker Category
+                  </div>
+                  <div class="col-8">
+                    <form:input class="form-control" path="category" type="text" required="required"/>
                   </div>
                 </div>
                 <br>
@@ -604,7 +649,7 @@
                   </div>
                   <div class="col-8">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder=""></textarea>
+                        <form:textarea path="bio" class="form-control" rows="7" required="required"></form:textarea>
                       </div>
                   </div>
                 </div>
@@ -614,7 +659,7 @@
                     Speaker Facebook
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="facebook" type="text" required="required"/>
                   </div>
                 </div>
                 <br>
@@ -623,7 +668,7 @@
                     Speaker Twitter
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="twitter" type="text" required="required"/>
                   </div>
                 </div>
                 <br>
@@ -632,18 +677,19 @@
                     Speaker GitHub
                   </div>
                   <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input class="form-control" path="github" type="text" required="required"/>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </div>
         </div>
       </div>
+	</form:form>
 	
     <section class="content">
       <div class="card">
@@ -660,13 +706,13 @@
               </div>
               </div>
               <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
+                <table id="horizontal" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Speaker Name</th>
                     <th>Speaker Image</th>
                     <th>Speaker Location</th>
+                    <th>Speaker Category</th>
                     <th>Speaker Bio</th>
                     <th>Speaker Facebook</th>
                     <th>Speaker Twitter</th>
@@ -677,90 +723,48 @@
                   </tr>
                   </thead>
                   <tbody>
+                  
+                  <c:forEach var="tempSpeaker" items="${speakersContent}">
+                  <c:url var="deleteLink" value="/admin/admindashboard/deletespeaker" >
+						<c:param name="id" value="${tempSpeaker.id}" />
+					</c:url>
+				   <c:url var="editLink" value="/admin/admindashboard/editspeaker" >
+						<c:param name="id" value="${tempSpeaker.id}" />
+					</c:url>
+					<c:url var="changeStatus" value="/admin/admindashboard/editspeakerstatus" >
+						<c:param name="id" value="${tempSpeaker.id}" />
+						<c:param name="status" value="${tempSpeaker.status}" />
+					</c:url>
+                  
                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td><img src="images/speakers/speaker-3.jpg" width="100" height="72"></td>
-                    <td>Chennai</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
+                    <td>${tempSpeaker.name}</td>
+                    <td><img src="data:image/jpg;base64,${tempSpeaker.encodedImage}" width="100" height="72"></td>
+                    <td>${tempSpeaker.location}</td>
+                    <td>${tempSpeaker.category}</td>
+                    <td>${tempSpeaker.bio}</td>
+                    <td>${tempSpeaker.facebook}</td>
+                    <td>${tempSpeaker.twitter}</td>
+                    <td>${tempSpeaker.github}</td>
+                    <td><a class="btn btn-info btn-sm" href="${editLink}">
                               <i class="fas fa-pencil-alt">
                               </i>
                           </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
+                    <td> <a class="btn btn-danger btn-sm" href="${deleteLink}" onclick="if(!(confirm('Do you want to delete this record ?'))) return false">
                               <i class="fas fa-trash">
                               </i>
                           </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
+                    <c:choose>
+                    <c:when test="${tempSpeaker.status=='true'}">
+                    <td> <a href="${changeStatus}"> Enabled </a>
+                    </c:when>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${tempSpeaker.status=='false'}">
+                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Disabled </a>
+                    </c:when>
+                    </c:choose>
                   </tr>
-                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td><img src="images/speakers/speaker-3.jpg" width="100" height="72"></td>
-                    <td>Chennai</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td><img src="images/speakers/speaker-3.jpg" width="100" height="72"></td>
-                    <td>Chennai</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td><img src="images/speakers/speaker-3.jpg" width="100" height="72"></td>
-                    <td>Gujarat</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td>Few Contents here</td>
-                    <td><a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                          </a></td>
-                    <td> <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                          </a></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>
@@ -815,23 +819,76 @@ $(document).ready(function () {
   });
 </script>
 
-<script type='text/javascript'>
+<script>
 
-$( document ).ready(function() {
-	
-	var $rows = $('#table li');
-	$('#search').keyup(function() {
-		 $("li").addClass("menu-open");
-	    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-	    
-	    $rows.show().filter(function() {
-	        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-	        return !~text.indexOf(val);
-	    }).hide();
+$(document).ready(function () {
+	$('#horizontal').DataTable({
+	"scrollX": true
 	});
-	
-});
+	$('.dataTables_length').addClass('bs-select');
+	});
+
 </script>
+
+<script>
+  var frmMain = document.getElementById("frmMain");
+  frmMain.onsubmit = function() {
+    var requiredDiv = document.getElementById("result");
+    if (requiredDiv.innerHTML.trim().length == 0) {
+      alert("Please Enter Location of the Speaker");
+      return false;
+    }
+  };
+</script>
+
+
+<script type="text/javascript">
+        // Initialize an empty map without layers (invisible map)
+        var map = L.map('map', {
+            center: [40.7259, -73.9805], // Map loads with this location as center
+            zoom: 12,
+            scrollWheelZoom: true,
+            zoomControl: false,
+            attributionControl: false,
+        });
+        
+        //Geocoder options
+        var geocoderControlOptions = {
+            bounds: false,          //To not send viewbox
+            markers: false,         //To not add markers when we geocoder
+            attribution: null,      //No need of attribution since we are not using maps
+            expanded: true,         //The geocoder search box will be initialized in expanded mode
+            panToPoint: false,       //Since no maps, no need to pan the map to the geocoded-selected location
+            params: {               //Set dedupe parameter to remove duplicate results from Autocomplete
+                    dedupe: 1,
+                }
+        }
+
+        //Initialize the geocoder
+        var geocoderControl = new L.control.geocoder('pk.967b33e67b902f7de9a27aedc032417e', geocoderControlOptions).addTo(map).on('select', function (e) {
+            displayLatLon(e.feature.feature.display_name, e.latlng.lat, e.latlng.lng);
+        });
+
+        //Get the "search-box" div
+        var searchBoxControl = document.getElementById("search-box");
+        //Get the geocoder container from the leaflet map
+        var geocoderContainer = geocoderControl.getContainer();
+        //Append the geocoder container to the "search-box" div
+        searchBoxControl.appendChild(geocoderContainer);        
+
+        //Displays the geocoding response in the "result" div
+        function displayLatLon(display_name, lat, lng) {
+            var resultString = "Lat: " + lat + " & Lon: " + lng;
+            document.getElementById("result").innerHTML = resultString;
+            
+            document.getElementById("location").value = display_name;
+            document.getElementById("latitude").value = lat;
+            document.getElementById("longitude").value = lng;
+            
+        }
+	
+
+        </script>
 
 </body>
 

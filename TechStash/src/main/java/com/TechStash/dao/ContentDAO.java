@@ -9,6 +9,7 @@ import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
+import com.TechStash.entity.Speakers;
 
 public interface ContentDAO {
 	
@@ -53,7 +54,7 @@ public interface ContentDAO {
 	public void resourceContentUpdate(int id,String name,String link);
 	public List<Resources> resourcesWebsiteContent();
 	
-	public List<Communities> communitiesContent();
+	public List<Communities> communityContent();
 	public void saveCommunity(Communities communities);
 	public void deleteCommunity(int id);
 	public List<Communities> getCommunityImage(int id);
@@ -71,4 +72,14 @@ public interface ContentDAO {
 	public void blogContentUpdate(int id,String title, byte[] image, String author, String date, String category, String description, String link);
 	public List<Blogs> blogWebsiteContent();
 	public List<Blogs> blogDetailResult(String link);
+	
+	public List<Speakers> speakerContent();
+	public void saveSpeaker(Speakers speakers);
+	public void deleteSpeaker(int id);
+	public List<Speakers> getSpeakerImage(int id);
+	public void speakerStatusUpdate(int id,String status);
+	public Speakers speakerEditResult(int id);
+	public void speakerContentUpdate(int id,String name, byte[] image, String location, String category, String bio, String facebook, String twitter, String github, String latitude, String longitude, String link);
+	public List<Speakers> speakerWebsiteContent();
+	public List<Speakers> speakerDetailResult(String link);
 }

@@ -23,29 +23,27 @@
   
 <jsp:include page="header_nontransparent.jsp"/> 
 
-
+<c:forEach var="tempSpeakerDetail" items="${speakerdetail}">
 <section class="page-alignment-speakers-details section-lg-bottom">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" alt="Speaker 1" class="img-fluid img-alignment-speakers img-circle">
+            <img src="data:image/jpg;base64,${tempSpeakerDetail.encodedImage}" onerror="this.src='images/placehoder.jpg'" alt="Speaker" class="img-fluid img-alignment-speakers img-circle">
           </div>
-<div class="col-lg-12 text-center">
+	<div class="col-lg-12 text-center">
 <br>
-        <h2 class="section-title">Speaker Name</h2>
+        <h2 class="section-title">${tempSpeakerDetail.name}</h2>
         
         <ul class="list-inline social-icons">
-            <li class="list-inline-item"><a href="#" target="_blank"><i style="color: black;" class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank"><i style="color: black;" class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="${tempSpeakerDetail.facebook}" target="_blank"><i style="color: black;" class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="${tempSpeakerDetail.twitter}" target="_blank"><i style="color: black;" class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" target="_blank"><i style="color: black;" class="fa fa-youtube"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank"><i style="color: black;" class="fa fa-github"></i></a></li>
+            <li class="list-inline-item"><a href="${tempSpeakerDetail.github}" target="_blank"><i style="color: black;" class="fa fa-github"></i></a></li>
           </ul>
     </div>
           <div class="col-md-12">
               
-              <p class="text-black">Monica is the Innovation Lead for Collaboration and Workplace Automation at Roche where she helps translate ambiguity into a vision for transformative Enterprise Solutions that have superior demonstrable business value. Roche is a Swiss multinational with a mission to create innovative medicines and diagnostic tests that help millions of patients globally. She has been the Chief Evangelist for G Suite since she started on this journey in 2009 as Technical Lead for the migration of Genentech Mail/Calendar to G Suite. Genentech was the first US biotech to move to the cloud very early and at that time G Suite’s biggest customer. After the acquisition of Genentech by Roche in 2009, the two companies had several platform interoperability issues since Roche was on MSFT Exchange. In order to enable seamless collaboration across the global organization, Roche migrated 90,000 employees to G Suite in 2013. Monica was instrumental in transitioning the organization towards a new way of working by listening, understanding the pain points and helping teams across the various business groups become more productive by working closely with leadership and change management organization to build trust and know-how for the new cloud solutions. She was selected from Roche to be part Google’s G Suite Product Strategists team as a consultant to give their product teams feedback on what they could do to make their products a better fit for large enterprises, meet business and compliance demands and offer a better user experience. She has led several initiatives within a very large global enterprise like Roche, including pioneering new ways of working and developing applications to build the adoption of G Suite, help change mindsets and navigate a highly regulated environment while still keeping a great customer experience at the heart of it all. Monica passion for solving problems, natural ability to work with technical and business communities and in-depth knowledge of G Suite apps, has enabled her to identify opportunities for applying G Suite's power and its extensions as well as other Google Cloud Platform technologies to improve, 
-              redesign and transform existing business solutions. Monica has a background in Mechanical Engineering, 
-              </p>
+              <p class="text-black">${tempSpeakerDetail.bio}</p>
               
             </div>
           </div>
@@ -53,6 +51,7 @@
         </div>
 
     </section>
+  </c:forEach>
     
     <section class="subscription bg-white">
   <div class="container">

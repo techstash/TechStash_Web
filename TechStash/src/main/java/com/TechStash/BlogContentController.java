@@ -92,7 +92,7 @@ public class BlogContentController {
             	createLink += blogs.getTitle().charAt(i); 
               
         } 
-        
+        createLink=createLink.toLowerCase();
         blogs.setLink(createLink);
 		
 		contentService.saveBlog(blogs);
@@ -137,7 +137,7 @@ public class BlogContentController {
 	  }
 	
 	@GetMapping("/admin/admindashboard/editblogstatus")
-	public String editCommunityStatus(HttpServletRequest request, @RequestParam("id") int id,@RequestParam("status") String status, Model theModel)
+	public String editBlogStatus(HttpServletRequest request, @RequestParam("id") int id,@RequestParam("status") String status, Model theModel)
 	  {
 		
 		if(status.equals("true")){
@@ -155,7 +155,7 @@ public class BlogContentController {
 	  }	
 	
 	@PostMapping("/admin/admindashboard/blogeditupdate")
-	public String editCommunityUpdate(@ModelAttribute("blogs") Blogs blogs, @RequestParam(required = false, value = "photo") MultipartFile photo) {
+	public String editBlogUpdate(@ModelAttribute("blogs") Blogs blogs, @RequestParam(required = false, value = "photo") MultipartFile photo) {
 	byte[] image=null;
 	try {
 		if(photo!=null){

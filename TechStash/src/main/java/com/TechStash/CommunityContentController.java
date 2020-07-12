@@ -56,7 +56,7 @@ public class CommunityContentController {
 				Communities communities = new Communities();
 				theModel.addAttribute("communities", communities);
 				
-				List<Communities> communitycontent=contentService.communitiesContent();
+				List<Communities> communitycontent=contentService.communityContent();
 				theModel.addAttribute("communitiesContent", communitycontent);
 				
 			} catch (UnsupportedEncodingException e) {

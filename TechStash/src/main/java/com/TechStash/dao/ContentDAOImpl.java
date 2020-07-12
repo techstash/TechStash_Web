@@ -21,6 +21,7 @@ import com.TechStash.entity.Conference;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
+import com.TechStash.entity.Speakers;
 
 @Repository
 public class ContentDAOImpl implements ContentDAO {
@@ -573,7 +574,7 @@ public class ContentDAOImpl implements ContentDAO {
 	}
 
 	@Override
-	public List<Communities> communitiesContent() {
+	public List<Communities> communityContent() {
 		byte[] image=null;
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		Query theQuery = currentSession.createQuery("from Communities order by date",Communities.class);
@@ -750,7 +751,7 @@ public class ContentDAOImpl implements ContentDAO {
 	public List<Blogs> blogContent() {
 
 		byte[] image=null;
-		String cuttedvalue =null;
+		String cuttedValue =null;
 		int maxLength = 245;
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		Query theQuery = currentSession.createQuery("from Blogs order by date",Blogs.class);
@@ -774,8 +775,8 @@ public class ContentDAOImpl implements ContentDAO {
 			
 			if (dbresult.getDescription().length() > maxLength)
 			{
-				cuttedvalue = dbresult.getDescription().substring(0, maxLength);
-				dbresult.setDescription(cuttedvalue);
+				cuttedValue = dbresult.getDescription().substring(0, maxLength);
+				dbresult.setDescription(cuttedValue);
 			}
         }
 		
@@ -947,7 +948,172 @@ public class ContentDAOImpl implements ContentDAO {
 		
 		for(Blogs dbresult : result) {
 			photo=dbresult.getImage();
-			byte[] encode1 = java.util.Base64.getEncoder().encode(photo);
+			byte[] encode = java.util.Base64.getEncoder().encode(photo);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
+        }
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public List<Speakers> speakerContent() {
+
+		byte[] image=null;
+		String cuttedValue =null;
+		int maxLength = 245;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Speakers order by id",Speakers.class);
+		List<Speakers> result = theQuery.getResultList();
+		
+		for(Speakers dbresult : result) {
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
+			
+			if (dbresult.getBio().length() > maxLength)
+			{
+				cuttedValue = dbresult.getBio().substring(0, maxLength);
+				dbresult.setBio(cuttedValue);
+			}
+        }
+		
+		currentSession.close();
+		return result;
+	}
+
+	@Override
+	public void saveSpeaker(Speakers speakers) {
+
+		Boolean status=false;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		speakers.setStatus(status);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into speakers (id,name,image,location,category,bio,facebook,twitter,github,latitude,longitude,link,status) values (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13)");
+		theQuery.setParameter("1", speakers.getId());
+		theQuery.setParameter("2", speakers.getName());
+		theQuery.setParameter("3", speakers.getImage());
+		theQuery.setParameter("4", speakers.getLocation());
+		theQuery.setParameter("5", speakers.getCategory());
+		theQuery.setParameter("6", speakers.getBio());
+		theQuery.setParameter("7", speakers.getFacebook());
+		theQuery.setParameter("8", speakers.getTwitter());
+		theQuery.setParameter("9", speakers.getGithub());
+		theQuery.setParameter("10", speakers.getLatitude());
+		theQuery.setParameter("11", speakers.getLongitude());
+		theQuery.setParameter("12", speakers.getLink());
+		theQuery.setParameter("13", speakers.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	}
+
+	@Override
+	public void deleteSpeaker(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("delete from speakers where id=:id");
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Speakers> getSpeakerImage(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Speakers where id=:id");
+		theQuery.setParameter("id", id);
+		List<Speakers> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void speakerStatusUpdate(int id, String status) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE speakers set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+	
+	}
+
+	@Override
+	public Speakers speakerEditResult(int id) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Speakers dbresult=currentSession.get(Speakers.class,id);
+		currentSession.close();
+		return dbresult;
+	
+	}
+
+	@Override
+	public void speakerContentUpdate(int id, String name, byte[] image, String location, String category, String bio,
+			String facebook, String twitter, String github, String latitude, String longitude, String link) {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE speakers set name=:1,image=:2,location=:3,category=:4,bio=:5,facebook=:6,twitter=:7,github=:8,latitude=:9,longitude=:10,link=:11 where id=:12");
+		theQuery.setParameter("1", name);
+		theQuery.setParameter("2", image);
+		theQuery.setParameter("3", location);
+		theQuery.setParameter("4", category);
+		theQuery.setParameter("5", bio);
+		theQuery.setParameter("6", facebook);
+		theQuery.setParameter("7", twitter);
+		theQuery.setParameter("8", github);
+		theQuery.setParameter("9", latitude);
+		theQuery.setParameter("10", longitude);
+		theQuery.setParameter("11", link);
+		theQuery.setParameter("12", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Speakers> speakerWebsiteContent() {
+
+		byte[] photo=null;
+		String cuttedvalue =null;
+		int maxLength = 245;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Speakers where status=1 order by id desc",Speakers.class);
+		List<Speakers> result = theQuery.getResultList();
+		
+		for(Speakers dbresult : result) {
+			photo=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(photo);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
+        }
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public List<Speakers> speakerDetailResult(String link) {
+
+		byte[] photo=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Speakers where link=:link");
+		theQuery.setParameter("link", link);
+		List<Speakers> result = theQuery.getResultList();
+		
+		for(Speakers dbresult : result) {
+			photo=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(photo);
 			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
         }
 		currentSession.close();

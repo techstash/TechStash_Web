@@ -6,9 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TechStash Volunteer Content</title>
+  <title>TechStash Edit Speaker</title>
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
   
@@ -22,7 +22,15 @@
    
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   
+  <link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
+  <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
   
   <c:forEach var="tempMetaDetails" items="${homeSetting}">
 	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
@@ -30,6 +38,30 @@
 	</c:forEach>
   
 </head>
+
+<style type="text/css">
+            body {
+                margin: 0;
+            }
+            #map {
+                width: 0;
+                height: 0;
+                background-color:transparent;
+                display: hidden;
+            }
+            #search-box {
+                width: 800px;
+            }
+            #result {
+                padding-left: 20px;
+                padding-top: 20px;
+            }
+            .leaflet-locationiq-results{
+                padding-top: 45px;
+            }
+
+        </style>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 
 <div class="wrapper">
@@ -81,7 +113,7 @@
         </div>
       </div>
 
-     <nav class="mt-2">
+      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" id="table" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -188,7 +220,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-microphone"></i>
               <p>
                 Speakers
@@ -203,7 +235,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="speakers_content" class="nav-link">
+                <a href="speakers_content" class="nav-link active">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Speaker Content</p>
                 </a>
@@ -319,7 +351,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item ">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link">
               <i class="nav-icon fas fa-fist-raised"></i>
               <p>
                 Volunteer
@@ -334,7 +366,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="volunteer_content" class="nav-link active">
+                <a href="volunteer_content" class="nav-link">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Volunteer Content</p>
                 </a>
@@ -549,128 +581,115 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Volunteer Content</h1>
+            <h1>Edit Conference</h1>
           </div>
         </div>
       </div>
     </section>
 
     <section class="content">
+    <form:form action="speakereditupdate" modelAttribute="speakers" method="POST" enctype="multipart/form-data">
       <div class="card">
-              <div class="card-header">
-              <div class="row">
-                <div class="col-12">
-                  <h4>
-                    Volunteer
-                  </h4>
+              <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
+                <div class="row">
+                  <div class="col-3">
+                    Speaker Name
+                  </div>
+                  <div class="col-6">
+                   <form:input path="name" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Speaker Image
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <div class="custom-file">
+                         <input type="file" name="photo" class="custom-file-input" id="image" accept=".png, .jpg, .jpeg" size="200" disabled required/>
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                          <a class="btn btn-info btn-sm editImage" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Speaker Location
+                  </div>
+                  <div class="col-6">
+                  <div id="map"></div>
+                    <div id="search-box"></div>
+                    <div id="result"></div>
+                    <form:input path="location" type="hidden" id="location"/>
+                    <form:input path="longitude" type="hidden" id="longitude"/>
+                    <form:input path="latitude" type="hidden" id="latitude"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    Speaker Category
+                  </div>
+                  <div class="col-6">
+                    <form:input path="category" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                   	Speaker Bio
+                  </div>
+                  <div class="col-6">
+                     <form:textarea path="bio" class="form-control" rows="7"></form:textarea>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                   	Speaker Facebook
+                  </div>
+                  <div class="col-6">
+                    <form:input path="facebook" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                   	Speaker Twitter
+                  </div>
+                  <div class="col-6">
+                    <form:input path="twitter" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                   	Speaker GitHub
+                  </div>
+                  <div class="col-6">
+                    <form:input path="github" type="text" class="form-control"/>
+                  </div>
                 </div>
               </div>
-              </div>
-              <div class="card-body">
-                <table id="horizontal" class="table table-striped table-bordered table-sm" >
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email Address</th>
-                    <th>City</th>
-                    <th>Gender</th>
-                    <th>Highest Level of Education</th>
-                    <th>Specialization</th>
-                    <th>How many hours</th>
-                    <th>Few details about you</th>
-                    <th>Linkedin</th>
-                    <th>Github</th>
-                    <th>Twitter</th>
-                    <th>Personal Protofolio</th>
-                    <th>Photo</th>
-                    <th>How did you hear about TechStash</th>
-                    <th>Any ideas would like to share</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo fds gds ggdsgd dgdsg</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
             </div>
+      <div class="row">
+      <div class="col-5"></div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
+        </div>
+      <div class="col-5"></div>
+      </div>
+      \</form:form>
     </section>
   </div>
 
@@ -705,30 +724,23 @@
 
 <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
+<script src="/admin/plugins/moment/moment.min.js"></script>
+
+<script src="/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+  $(function () {
+    $('#reservationdate').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+
+  })
+</script>
+
 <script type="text/javascript">
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
-</script>
-
-<script>
-  $(function () {
-    $("#searchtable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>
-
-<script>
-
-$(document).ready(function () {
-	$('#horizontal').DataTable({
-	"scrollX": true
-	});
-	$('.dataTables_length').addClass('bs-select');
-	});
-
 </script>
 
 <script type='text/javascript'>
@@ -748,6 +760,68 @@ $( document ).ready(function() {
 	
 });
 </script>
+
+<script type="text/javascript">
+$(function(){
+	
+    $(".editImage").click(function(){
+    	$("#image").prop("disabled",false);
+    	return false;
+    });
+})
+</script>
+
+<script type="text/javascript">
+        // Initialize an empty map without layers (invisible map)
+        var map = L.map('map', {
+            center: [40.7259, -73.9805], // Map loads with this location as center
+            zoom: 12,
+            scrollWheelZoom: true,
+            zoomControl: false,
+            attributionControl: false,
+        });
+        
+        //Geocoder options
+        var geocoderControlOptions = {
+            bounds: false,          //To not send viewbox
+            markers: false,         //To not add markers when we geocoder
+            attribution: null,      //No need of attribution since we are not using maps
+            expanded: true,         //The geocoder search box will be initialized in expanded mode
+            panToPoint: false,       //Since no maps, no need to pan the map to the geocoded-selected location
+            params: {               //Set dedupe parameter to remove duplicate results from Autocomplete
+                    dedupe: 1,
+                }
+        }
+
+        //Initialize the geocoder
+        var geocoderControl = new L.control.geocoder('pk.967b33e67b902f7de9a27aedc032417e', geocoderControlOptions).addTo(map).on('select', function (e) {
+            displayLatLon(e.feature.feature.display_name, e.latlng.lat, e.latlng.lng);
+        });
+
+        //Get the "search-box" div
+        var searchBoxControl = document.getElementById("search-box");
+        //Get the geocoder container from the leaflet map
+        var geocoderContainer = geocoderControl.getContainer();
+        //Append the geocoder container to the "search-box" div
+        searchBoxControl.appendChild(geocoderContainer);        
+
+        //Displays the geocoding response in the "result" div
+        function displayLatLon(display_name, lat, lng) {
+            var resultString = "Lat: " + lat + " & Lon: " + lng;
+            document.getElementById("result").innerHTML = resultString;
+            
+            document.getElementById("location").value = display_name;
+            document.getElementById("latitude").value = lat;
+            document.getElementById("longitude").value = lng;
+            
+        }
+	
+        var result = document.getElementById("location").value;
+        document.getElementById("search-box").value = result;
+		
+        document.getElementsByClassName('leaflet-locationiq-input')[0].value = result;
+        
+        </script>
 
 </body>
 

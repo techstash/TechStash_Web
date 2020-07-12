@@ -35,163 +35,22 @@
     </div>
   <div class="container">
     <div class="row">
+      <c:forEach var="tempSpeaker" items="${speakersContent}">
           <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
             <div class="card border-0 shadow rounded-lg">
             <br>
-              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
+              <img src="data:image/jpg;base64,${tempSpeaker.encodedImage}" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
+                <h5><a class="title-color" href="speaker/${tempSpeaker.link}" target="_blank">${tempSpeaker.name}</a></h5>
+                <p class="speakers-city-alignment">${tempSpeaker.location}</p>
                 <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
+                <p class="text-black">${tempSpeaker.category}</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                 <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-3.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-               <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-4.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                 <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-5.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                 <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-3.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-               <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-4.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-5.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-               <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-1.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 grid-margin">
-            <div class="card border-0 shadow rounded-lg">
-            <br>
-              <img src="images/speakers/speaker-2.jpg" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
-              <div class="text-center">
-              <br>
-                <h5><a class="title-color" href="#">Speaker Name</a></h5>
-                <p class="speakers-city-alignment">Delhi</p>
-                <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
-                <p class="text-black">Google Cloud Platform</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </c:forEach>
+       </div>
       </div>
 </section>
 
@@ -236,7 +95,7 @@
 
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
 <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-<script src="http://maximeh.github.io/leaflet.bouncemarker/bouncemarker.js"></script>
+<script src="https://maximeh.github.io/leaflet.bouncemarker/bouncemarker.js"></script>
 <script src="https://unpkg.com/leaflet-gesture-handling"></script>
    <script>
    
