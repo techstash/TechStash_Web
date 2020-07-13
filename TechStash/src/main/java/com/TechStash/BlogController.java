@@ -13,6 +13,7 @@ import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
+import com.TechStash.entity.Speakers;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
@@ -54,28 +55,6 @@ public class BlogController {
 		theModel.addAttribute("blogsContent", blogsResult);
 		
 		return "blogs";
-	}
-	
-	@RequestMapping("/{link}")
-	public String blogDetails(Model theModel,@PathVariable("link") String link){
-		
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		
-		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
-		theModel.addAttribute("footerContent", dbResultFooter);
-		
-		List<Blogs> result=contentService.blogDetailResult(link);
-		
-		boolean value = result.isEmpty(); 
-		
-		if(value==true ){
-			return "error";
-		}
-		
-		theModel.addAttribute("blogdetail", result);
-		
-		return "blogdetails";
 	}
 	
 }

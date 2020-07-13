@@ -42,7 +42,7 @@
               <img src="data:image/jpg;base64,${tempSpeaker.encodedImage}" onerror="this.src='images/placehoder.jpg'" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">
               <div class="text-center">
               <br>
-                <h5><a class="title-color" href="speaker/${tempSpeaker.link}" target="_blank">${tempSpeaker.name}</a></h5>
+                <h5><a class="title-color" href="${tempSpeaker.link}" target="_blank">${tempSpeaker.name}</a></h5>
                 <p class="speakers-city-alignment">${tempSpeaker.location}</p>
                 <p class="speakers-lineheight"><span class="speakers-category-alignment">Category</span></p>
                 <p class="text-black">${tempSpeaker.category}</p>
@@ -128,23 +128,22 @@
    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
      attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
    }).addTo(map);
-
-   var marker1= new L.Marker([17.385044, 78.486671], {bounceOnAdd: true,icon: Icon}).addTo(map);
-   var popup1 = marker1.bindPopup(template);
    
-   var marker2= new L.Marker([28.610001, 77.230003], {bounceOnAdd: true,icon: Icon}).addTo(map);
-   var popup2 = marker2.bindPopup(template);
+   <c:forEach items="${speakersContent}" var="tempSpeaker">
    
-   var marker3= new L.Marker([22.5726, 88.3639], {bounceOnAdd: true,icon: Icon}).addTo(map);
-   var popup3 = marker3.bindPopup(template);
+   var id${tempSpeaker.id} = '<br">\
+	   <img src="data:image/jpg;base64,${tempSpeaker.encodedImage}" class="card-img-top rounded-top-lg img-alignment img-circle" alt="post-thumb">\
+	   <div class="text-center">\
+	   <br>\
+	   <h5><a class="title-color" href="${tempSpeaker.link}">${tempSpeaker.name}</a></h5>\
+	   <p class="popup-city-alignment">${tempSpeaker.location}</p>\
+	   <p class="popup-category-alignment"><span class="speakers-category-alignment">Category</span></p>\
+	   <p class="text-black">${tempSpeaker.category}</p>\
+	   </div>';
    
-   var marker4= new L.Marker([19.0760, 72.8777], {bounceOnAdd: true,icon: Icon}).addTo(map);
-   var popup4 = marker4.bindPopup(template);
+   var popup = new L.Marker([${tempSpeaker.latitude}, ${tempSpeaker.longitude}], {bounceOnAdd: true,icon: Icon}).addTo(map).bindPopup(id${tempSpeaker.id});
    
-   var marker5= new L.Marker([22.2587, 71.1924], {bounceOnAdd: true,icon: Icon}).addTo(map);
-   var popup5 = marker5.bindPopup(template);
-   
-   
+   </c:forEach>
    
    //popup.openPopup();
    

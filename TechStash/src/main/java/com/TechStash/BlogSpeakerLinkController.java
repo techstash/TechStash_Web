@@ -8,17 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Footer;
-import com.TechStash.entity.Speakers;
 import com.TechStash.entity.Home_setting;
-import com.TechStash.entity.Speaker_setting;
+import com.TechStash.entity.Speakers;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.SettingService;
 
 @Controller
-public class SpeakerController {
+public class BlogSpeakerLinkController {
 	
 	@Autowired
 	private SettingService settingService;
@@ -31,24 +31,36 @@ public class SpeakerController {
 	
 	@Autowired
 	private ContentService contentService;
-	
-	@RequestMapping("/speakers")
-	public String Speakers(Model theModel){
-		List<Speaker_setting> dbResultSpeakerSetting = settingService.speakerResultWebsite();
-		
-		theModel.addAttribute("speakerSetting", dbResultSpeakerSetting);
+
+	@RequestMapping("/{link}")
+	public String BlogSpeakerLink(Model theModel,@PathVariable("link") String link){
 		
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
 		
 		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
-		theModel.addAttribute("footerContent", dbResultFooter);	
+		theModel.addAttribute("footerContent", dbResultFooter);
 		
-		List<Speakers> speakersResult=contentService.speakerWebsiteContent();
-		theModel.addAttribute("speakersContent", speakersResult);
+		List<Blogs> blogresult=contentService.blogDetailResult(link);
+		theModel.addAttribute("blogdetail", blogresult);
 		
-		return "speakers";
+		List<Speakers> speakerresult=contentService.speakerDetailResult(link);
+		theModel.addAttribute("speakerdetail", speakerresult);
+		
+		boolean blogvalue = blogresult.isEmpty(); 
+		boolean speakervalue = speakerresult.isEmpty(); 
+		
+		
+		if(blogvalue==true && speakervalue==true){
+			return "error";
+		}
+		
+		else if (blogvalue!=true){
+			return "blogdetails";
+		}
+		else {
+			return "speakerdetails";
+		}
+		
 	}
-	
 }
