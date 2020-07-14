@@ -5,7 +5,13 @@
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
-
+	
+	<c:forEach var="tempSpeakerDetail" items="${speakerdetail}">
+	<meta name="title" content="TechStash Speaker Detail - ${tempSpeakerDetail.name}" />
+	<meta name="description" content="${tempSpeakerDetail.bio}" />
+	<title>TechStash Speaker Detail - ${tempSpeakerDetail.name}</title>
+	</c:forEach>
+	
 	<c:forEach var="tempMetaDetails" items="${homeSetting}">
 	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
 	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
@@ -18,8 +24,6 @@
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader" class="img-fluid">
   </div>
-  
-<input type="hidden" id="speakerdetails" name="speakerdetails" value="speakerdetails">
   
 <jsp:include page="header_nontransparent.jsp"/> 
 

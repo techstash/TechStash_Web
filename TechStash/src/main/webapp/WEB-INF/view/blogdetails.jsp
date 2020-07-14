@@ -5,6 +5,12 @@
 <head>
 
 	<link href="css/main.css" rel="stylesheet">
+	
+	<c:forEach var="tempBlogDetail" items="${blogdetail}">
+	<meta name="title" content="TechStash Blog Detail - ${tempBlogDetail.title}" />
+	<meta name="description" content="${tempBlogDetail.description}" />
+	<title>TechStash Blog Detail - ${tempBlogDetail.title}</title>
+	</c:forEach>
 
 	<c:forEach var="tempMetaDetails" items="${homeSetting}">
 	<link rel="shortcut icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">

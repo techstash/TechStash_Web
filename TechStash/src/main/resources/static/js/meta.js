@@ -81,8 +81,6 @@
 		var speakers=$("#speakers").val();
 		var podcast=$("#podcast").val();
 		var subscribe=$("#subscribe").val();
-		var blogdetails=$("#blogdetails").val();
-		var speakerdetails=$("#speakerdetails").val();
 		var volunteer=$("#volunteer").val();
 		var postblog=$("#postblog").val();
 		var postjob=$("#postjob").val();
@@ -145,18 +143,6 @@
 			$('head').append('<meta name="title" content="'+metaTitleIndexSubscribe+'" />');
 			$('head').append('<meta name="description" content="'+metaDescriptionSubscribe+'" />');
 			document.title = documentTitleIndexSubscribe;
-		}
-		
-		if(blogdetails == 'blogdetails'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Blog Details'; 
-		}
-		
-		if(speakerdetails == 'speakerdetails'){
-			$('head').append('<meta name="title" content="TechStash - One stop for tech resources|TechStash" />');
-			$('head').append('<meta name="description" content="One stop point for tech resources from events, conferences, blogs, jobs, communicty, podcast" />');
-		 	document.title = 'TechStash Speaker Details';
 		}
 		
 		if(volunteer == 'volunteer'){
