@@ -13,6 +13,7 @@ import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Volunteers;
 
 public interface ContentService {
 	
@@ -94,4 +95,8 @@ public interface ContentService {
 	public List<Speakers> speakerWebsiteContent();
 	public List<Speakers> speakerDetailResult(String link);
 	
+	// Volunteer
+	public List<Volunteers> volunteerContent();
+	public void saveVolunteer(Volunteers volunteer);
+	public void volunteerStatusUpdate(int id,String status);
 }

@@ -562,75 +562,38 @@
                 <table id="searchtable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Profile image</th>
                     <th>Email address</th>
-                    <th>Location</th>
+                    <th>City</th>
                     <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <c:forEach var="tempVolunteer" items="${volunteerContent}">
+                  
+					<c:url var="changeStatus" value="/admin/admindashboard/editvolunteerstatus" >
+						<c:param name="id" value="${tempVolunteer.id}" />
+						<c:param name="status" value="${tempVolunteer.status}" />
+					</c:url>
+                  
                   <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
+                    <td>${tempVolunteer.firstname}</td>
+                    <td><img src="data:image/jpg;base64,${tempVolunteer.encodedImage}" width="100" height="72"></td>
+                    <td>${tempVolunteer.email}</td>
+                    <td>${tempVolunteer.city}</td>
+                    <c:choose>
+                    <c:when test="${tempVolunteer.status=='true'}">
+                    <td> <a href="${changeStatus}"> Activated </a>
+                    </c:when>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${tempVolunteer.status=='false'}">
+                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> Deactivated </a>
+                    </c:when>
+                    </c:choose>
                   </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Blog Title</td>
-                     <td><img src="images/blog/blog-post-2.jpg" width="100" height="72"></td>
-                    <td>Blog Title</td>
-                    <td>Technology</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

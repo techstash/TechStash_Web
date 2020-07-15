@@ -10,6 +10,7 @@ import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Volunteers;
 
 public interface ContentDAO {
 	
@@ -82,4 +83,8 @@ public interface ContentDAO {
 	public void speakerContentUpdate(int id,String name, byte[] image, String location, String category, String bio, String facebook, String twitter, String github, String latitude, String longitude, String link);
 	public List<Speakers> speakerWebsiteContent();
 	public List<Speakers> speakerDetailResult(String link);
+	
+	public List<Volunteers> volunteerContent();
+	public void saveVolunteer(Volunteers volunteer);
+	public void volunteerStatusUpdate(int id,String status);
 }

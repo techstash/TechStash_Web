@@ -570,7 +570,6 @@
                 <table id="horizontal" class="table table-striped table-bordered table-sm" >
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email Address</th>
@@ -590,82 +589,26 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <c:forEach var="tempVolunteer" items="${volunteerContent}">
                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo fds gds ggdsgd dgdsg</td>
+                    <td>${tempVolunteer.firstname}</td>
+                    <td>${tempVolunteer.lastname}</td>
+                    <td>${tempVolunteer.email}</td>
+                    <td>${tempVolunteer.city}</td>
+                    <td>${tempVolunteer.gender}</td>
+                    <td>${tempVolunteer.education}</td>
+                    <td>${tempVolunteer.specialization}</td>
+                    <td>${tempVolunteer.hours}</td>
+                    <td>${tempVolunteer.details}</td>
+                    <td>${tempVolunteer.linkedin}</td>
+                    <td>${tempVolunteer.github}</td>
+                    <td>${tempVolunteer.twitter}</td>
+                    <td>${tempVolunteer.portfolio}</td>
+                    <td><img src="data:image/jpg;base64,${tempVolunteer.encodedImage}" width="100" height="72"></td>
+                    <td>${tempVolunteer.hear_about_techstash}</td>
+                    <td>${tempVolunteer.ideas_to_techstash}</td>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td><img src="//logo.clearbit.com/yahoo.com" width="100" height="72"></td>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

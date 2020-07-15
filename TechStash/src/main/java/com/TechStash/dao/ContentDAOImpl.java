@@ -22,6 +22,7 @@ import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Volunteers;
 
 @Repository
 public class ContentDAOImpl implements ContentDAO {
@@ -1119,6 +1120,49 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.close();
 		return result;
 	
+	}
+
+	@Override
+	public List<Volunteers> volunteerContent() {
+
+		byte[] image=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Volunteers order by id",Volunteers.class);
+		List<Volunteers> result = theQuery.getResultList();
+		
+		for(Volunteers dbresult : result) {
+			image=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(image);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(image)));
+        }
+		
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void saveVolunteer(Volunteers volunteer) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		volunteer.setStatus(false);
+		currentSession.saveOrUpdate(volunteer);
+		currentSession.close();
+		
+	}
+
+	@Override
+	public void volunteerStatusUpdate(int id, String status) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE volunteers set status=:status where id=:id");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
 	}
 
 }

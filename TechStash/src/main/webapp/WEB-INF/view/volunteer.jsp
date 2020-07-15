@@ -27,6 +27,7 @@
 
 <jsp:include page="header_nontransparent.jsp"/> 
 
+<form:form action="newvolunteer" method="POST" modelAttribute="volunteer" enctype="multipart/form-data" id="frmMain">
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">
 <div class="page-wrapper p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
@@ -35,18 +36,17 @@
         <h2 class="section-title">Join Volunteer Membership</h2>
     			</div>
                 <div class="card-body card border-0 shadow rounded-lg">
-                    <form method="POST">
                         <div class="form-row">
                             <div class="name">First Name <span class="required-color"> * </span></div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="name" placeholder="" required>
+                                <form:input class="input--style-6" path="firstname" type="text" required="required"/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Last Name <span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="lastname" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             <div class="name">Email Address <span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="email" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="email" type="email" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="name">City<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="city" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -71,13 +71,13 @@
                              <div class="value">
                               <div class="form-group col-md-6">
                                   
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose ...</option>
+                                  <form:select id="inputState" class="form-control" path="gender" required="required">
+                                    <option value="">Choose</option>
                                     <option> Male</option>
                                     <option> Female</option>
                                     <option> Other</option>
                                     <option> Decline to State</option>
-                                  </select>
+                                   </form:select>
                         </div>
                         </div>
                         </div>
@@ -86,8 +86,8 @@
                              <div class="value">
                               <div class="form-group col-md-6">
                                   
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose ...</option>
+                                  <form:select id="inputState" class="form-control" path="education" required="required">
+                                    <option value="">Choose</option>
                                     <option> Primary education</option>
                                     <option> Secondary education</option>
                                     <option> Associate degree</option>
@@ -98,7 +98,7 @@
                                     <option> Non-standardized education: self-taught</option>
                                     <option> Bootcamp</option>
                                     <option> Other</option>
-                                  </select>
+                                  </form:select>
                         </div>
                         </div>
                         </div>
@@ -106,7 +106,7 @@
                             <div class="name">Specialization?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="Specialization" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             <div class="name">How many hours?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="hours" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                             <div class="name">Few details about you?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
+                                    <form:textarea class="textarea--style-6" path="details" rows="3" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             <div class="name">Linkedin<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="linkedin" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                             <div class="name">Github<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="github" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -146,26 +146,27 @@
                             <div class="name">Twitter<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="twitter" type="text" required="required"/>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Personal Protofolio?<span class="required-color"> * </span></div>
+                            <div class="name">Personal portfolio?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
+                                    <form:textarea class="textarea--style-6" path="portfolio" rows="3" required="required"/>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Photo to upload <span class="required-color"> * </span></div>
                             <div class="value">
-                                <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="file_cv" id="file">
-                                    <label class="label--file" for="file">Choose file</label>
-                                    <span class="input-file__info">No file chosen</span>
-                                </div>
+                                <div class="input-group">
+                      			<div class="custom-file">
+                        		<input type="file" name="photo" class="custom-file-input" id="exampleInputFile" accept=".png, .jpg, .jpeg" size="50" required="required"/>
+                        		<label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      			</div>
+                  				</div>
                                 <div class="label--desc">Upload the image. Max file size 3 MB</div>
                             </div>
                         </div>
@@ -173,7 +174,7 @@
                             <div class="name">How did you hear about TechStash?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
+                                    <form:textarea class="textarea--style-6" path="hear_about_techstash" rows="3" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +182,7 @@
                             <div class="name">Any ideas that you would like to share?<span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
+                                    <form:textarea class="textarea--style-6" path="ideas_to_techstash" rows="3" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -189,8 +190,6 @@
                     <button class="btn btn-outline-primary" type="submit" >Submit</button>
                     </div>
                 
-                    </form>
-                    
                 </div>
                 
             </div>
@@ -198,7 +197,7 @@
     </div>
 
 </section>
-
+</form:form>
 
 <section class="subscription bg-white">
   <div class="container">
@@ -235,6 +234,8 @@
 
 <script src="js/form.js"></script>
 
+<script src="admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
 <script src="https://www.google.com/recaptcha/api.js?render=6LdSVvEUAAAAAEz4LL4fwEhjb5TxLBh7hnuJ4FXJ"></script>
 <script>
 grecaptcha.ready(function() {
@@ -242,6 +243,12 @@ grecaptcha.ready(function() {
        
     });
 });    
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
 </script>
 
 </body>
