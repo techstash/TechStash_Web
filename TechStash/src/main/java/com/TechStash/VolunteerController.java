@@ -59,8 +59,8 @@ public class VolunteerController {
 		return "volunteer";
 	}
 	
-	@PostMapping("/newvolunteer")
-	public String saveConference(@ModelAttribute("volunteer") Volunteers volunteer,HttpServletRequest request, @RequestParam MultipartFile photo) {
+	@PostMapping("/savevolunteer")
+	public String saveVolunteer(@ModelAttribute("volunteer") Volunteers volunteer,HttpServletRequest request, @RequestParam MultipartFile photo) {
 		try {
 			byte[] photoBytes = photo.getBytes();
 			volunteer.setImage(photoBytes);

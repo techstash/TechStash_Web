@@ -7,6 +7,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Conference_setting;
+import com.TechStash.entity.Contact;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
@@ -99,4 +100,9 @@ public interface ContentService {
 	public List<Volunteers> volunteerContent();
 	public void saveVolunteer(Volunteers volunteer);
 	public void volunteerStatusUpdate(int id,String status);
+	
+	// Contact
+	public List<Contact> contactContent();
+	public void saveContact(Contact contact);
+	public void contactStatusUpdate(int id,String responded);
 }

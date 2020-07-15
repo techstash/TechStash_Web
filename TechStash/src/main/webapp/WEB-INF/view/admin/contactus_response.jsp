@@ -561,7 +561,6 @@
                 <table id="searchtable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Full Name</th>
                     <th>Email Address</th>
                     <th>Message</th>
@@ -569,60 +568,31 @@
                   </tr>
                   </thead>
                   <tbody>
+                  
+                  <c:forEach var="tempContact" items="${contactContent}">
+                  
+                  <c:url var="changeStatus" value="/admin/admindashboard/editcontactstatus" >
+						<c:param name="id" value="${tempContact.id}" />
+						<c:param name="responded" value="${tempContact.responded}" />
+				  </c:url>
+                  
                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
+                    <td>${tempContact.fullname}</td>
+                    <td>${tempContact.email}</td>
+                    <td>${tempContact.message}</td>
+                    <c:choose>
+                    <c:when test="${tempContact.responded=='true'}">
+                    <td> <a href="${changeStatus}"> Yes </a>
+                    </c:when>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${tempContact.responded=='false'}">
+                    <td> <a href="${changeStatus}" style="background-color: #FFFF00"> No </a>
+                    </c:when>
+                    </c:choose>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>Senior Software Engineer</td>
-                    <td>Chennai</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
+                  
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

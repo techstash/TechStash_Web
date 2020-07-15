@@ -27,7 +27,7 @@
 
 <jsp:include page="header_nontransparent.jsp"/> 
 
-<form:form action="newvolunteer" method="POST" modelAttribute="volunteer" enctype="multipart/form-data" id="frmMain">
+<form:form action="savevolunteer" method="POST" modelAttribute="volunteer" enctype="multipart/form-data" >
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">
 <div class="page-wrapper p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">

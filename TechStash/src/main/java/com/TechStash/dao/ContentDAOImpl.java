@@ -18,6 +18,7 @@ import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
+import com.TechStash.entity.Contact;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
@@ -1158,6 +1159,41 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.getTransaction().begin();
 		Query theQuery = currentSession.createNativeQuery("UPDATE volunteers set status=:status where id=:id");
 		theQuery.setParameter("status", status);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Contact> contactContent() {
+
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Contact order by id",Contact.class);
+		List<Contact> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+	
+	}
+
+	@Override
+	public void saveContact(Contact contact) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		contact.setResponded(false);
+		currentSession.saveOrUpdate(contact);
+		currentSession.close();
+		
+	}
+
+	@Override
+	public void contactStatusUpdate(int id, String responded) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE contact set responded=:responded where id=:id");
+		theQuery.setParameter("responded", responded);
 		theQuery.setParameter("id", id);
 		theQuery.executeUpdate();
 		currentSession.getTransaction().commit();

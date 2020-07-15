@@ -6,6 +6,7 @@ import com.TechStash.entity.Blogs;
 import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
+import com.TechStash.entity.Contact;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
@@ -87,4 +88,8 @@ public interface ContentDAO {
 	public List<Volunteers> volunteerContent();
 	public void saveVolunteer(Volunteers volunteer);
 	public void volunteerStatusUpdate(int id,String status);
+	
+	public List<Contact> contactContent();
+	public void saveContact(Contact contact);
+	public void contactStatusUpdate(int id,String responded);
 }

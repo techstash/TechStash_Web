@@ -30,6 +30,7 @@
 
 <jsp:include page="header_nontransparent.jsp"/>  
 
+<form:form action="savecontact" method="POST" modelAttribute="contact" >
 <section class="page-alignment-speakers bg-cover section-lg-bottom overflow-hidden section-color">
 <div class="page-wrapper p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
@@ -42,14 +43,14 @@
                         <div class="form-row">
                             <div class="name">Full Name <span class="required-color"> * </span></div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="name" placeholder="" required>
+                                <form:input class="input--style-6" path="fullname" type="text" required="required"/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Email Address <span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="email" name="topics" placeholder="" required>
+                                    <form:input class="input--style-6" path="email" type="email" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +58,7 @@
                             <div class="name">Message <span class="required-color"> * </span></div>
                             <div class="value">
                                 <div class="input-group">
-                                    <textarea class="textarea--style-6" name="description" placeholder="" required></textarea>
+                                    <form:textarea class="textarea--style-6" path="message" rows="3" required="required"/>
                                 </div>
                             </div>
                         </div>
@@ -74,6 +75,7 @@
     </div>
 
 </section>
+</form:form>
 
 <section class="subscription bg-white">
   <div class="container">
