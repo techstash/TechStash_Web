@@ -23,6 +23,7 @@ import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Subscriber;
 import com.TechStash.entity.Volunteers;
 
 @Repository
@@ -1198,6 +1199,73 @@ public class ContentDAOImpl implements ContentDAO {
 		theQuery.executeUpdate();
 		currentSession.getTransaction().commit();
 		currentSession.close();
+		
+	}
+
+	@Override
+	public List<Subscriber> subscriberContent() {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Subscriber order by id",Subscriber.class);
+		List<Subscriber> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+		
+	}
+
+	@Override
+	public void saveSubscriber(Subscriber subscriber) {
+		
+		subscriber.setStatus(true);
+		try {
+		
+		if(subscriber.getJobs()==null){
+			subscriber.setJobs("No");
+		}
+		
+		if(subscriber.getEvents()==null){
+			subscriber.setEvents("No");
+		}
+		
+		if(subscriber.getPodcast()==null){
+			subscriber.setPodcast("No");
+		}
+			
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Date date = new Date();  
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
+		String strDate= formatter.format(date);  
+		Date subscribedDate=new SimpleDateFormat("dd/MM/yyyy").parse(strDate);
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("insert into subscriber (id,email,fullname,jobs,events,podcast,date,location,latitude,longitude,status) values (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)");
+		theQuery.setParameter("1", subscriber.getId());
+		theQuery.setParameter("2", subscriber.getEmail());
+		theQuery.setParameter("3", subscriber.getFullname());
+		theQuery.setParameter("4", subscriber.getJobs());
+		theQuery.setParameter("5", subscriber.getEvents());
+		theQuery.setParameter("6", subscriber.getPodcast());
+		theQuery.setParameter("7", subscribedDate);
+		theQuery.setParameter("8", subscriber.getLocation());
+		theQuery.setParameter("9", subscriber.getLatitude());
+		theQuery.setParameter("10", subscriber.getLongitude());
+		theQuery.setParameter("11", subscriber.isStatus());
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		
+	}
+
+	@Override
+	public Long subscriberCount() {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("select count(*) from Subscriber where status=1");
+		Long result = (long) theQuery.getSingleResult();
+		currentSession.close();
+		return result;
 		
 	}
 

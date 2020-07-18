@@ -11,6 +11,12 @@
 	<link rel="icon" href="data:image/jpg;base64,${tempMetaDetails.encodedImage}" type="image/jpg">
 	</c:forEach>
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
+  <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
+
 </head>
 
 <body id="body">
@@ -48,40 +54,51 @@
     <div class="col-lg-3"></div>
           <div class="col-lg-6 mb-4 grid-margin" >
             <div class="card border-0 shadow rounded-lg">
-<form class="text-center border border-light p-5 section-color" name="subscribeform" action="#" >
+<form:form class="text-center border border-light p-5 section-color" action="newsubscribe" modelAttribute="subscriber" method="POST" id="frmMain">
 
     <div class="col-lg-12 text-center">
         <h2 class="section-title">Join Us!</h2>
     </div>
 
-    <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail" required>
+    <form:input type="email" path="email" class="form-control mb-4" placeholder="E-mail" required="required"/>
 
-    <input type="text" id="name"  name="name" class="form-control mb-4" placeholder="Full Name" required >
+    <form:input type="text" path="fullname" class="form-control mb-4" placeholder="Full Name" required="required" />
+    
+   <div class="col-lg-12 text-center">
+        <label class="text-black">Enter your Location</label>
+    </div>
+    <div class="form-control" style="background-color:transparent!important">
+    	<div id="map"></div>
+    	<div id="search-box"></div>
+    	<div id="result" style="color:transparent!important"></div>
+    				<form:input path="location" type="hidden" id="location"/>
+        			<form:input path="longitude" type="hidden" id="longitude"/>
+                    <form:input path="latitude" type="hidden" id="latitude"/>
+    </div>
     
     <div class="subscribe-alignment">
     
-
     <div class="d-flex justify-content-around">
         <div>
             <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribejobs">
+                <form:checkbox path="jobs" class="custom-control-input" value="Yes" id="subscribejobs"/>
                 <label class="custom-control-label text-black" for="subscribejobs">Subscribe to Jobs</label>
             </div>
             
             <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribeevents">
+                <form:checkbox path="events" class="custom-control-input" value="Yes" id="subscribeevents"/>
                 <label class="custom-control-label text-black" for="subscribeevents">Subscribe to events, hackthons, conference</label>
             </div>
             
             <div class="checkbox-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="subscribepodcast">
+                <form:checkbox path="podcast" class="custom-control-input" value="Yes" id="subscribepodcast"/>
                 <label class="custom-control-label text-black" for="subscribepodcast">Subscribe to podcast </label>
             </div>
         </div>
     </div>
     </div>
 	<button class="btn btn-outline-primary my-4" type="submit">Subscribe</button>
-	</form>
+	</form:form>
 </div>
 </div>
 <div class="col-lg-3"></div>
@@ -112,6 +129,67 @@
 <script src="js/master.js"></script>
 
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea458c39ad3eb0012e1642f&product=sticky-share-buttons&cms=website' async='async'></script>
+
+
+<script>
+  var frmMain = document.getElementById("frmMain");
+  frmMain.onsubmit = function() {
+    var requiredDiv = document.getElementById("result");
+    if (requiredDiv.innerHTML.trim().length == 0) {
+      alert("Please Enter your Location");
+      return false;
+    }
+  };
+</script>
+
+<script type="text/javascript">
+
+
+        // Initialize an empty map without layers (invisible map)
+        var map = L.map('map', {
+            center: [40.7259, -73.9805], // Map loads with this location as center
+            zoom: 12,
+            scrollWheelZoom: true,
+            zoomControl: false,
+            attributionControl: false,
+        });
+        
+        //Geocoder options
+        var geocoderControlOptions = {
+            bounds: false,          //To not send viewbox
+            markers: false,         //To not add markers when we geocoder
+            attribution: null,      //No need of attribution since we are not using maps
+            expanded: true,         //The geocoder search box will be initialized in expanded mode
+            panToPoint: false,       //Since no maps, no need to pan the map to the geocoded-selected location
+            params: {               //Set dedupe parameter to remove duplicate results from Autocomplete
+                    dedupe: 1,
+                }
+        }
+
+        //Initialize the geocoder
+        var geocoderControl = new L.control.geocoder('pk.967b33e67b902f7de9a27aedc032417e', geocoderControlOptions).addTo(map).on('select', function (e) {
+            displayLatLon(e.feature.feature.display_name, e.latlng.lat, e.latlng.lng);
+        });
+
+        //Get the "search-box" div
+        var searchBoxControl = document.getElementById("search-box");
+        //Get the geocoder container from the leaflet map
+        var geocoderContainer = geocoderControl.getContainer();
+        //Append the geocoder container to the "search-box" div
+        searchBoxControl.appendChild(geocoderContainer);        
+
+        //Displays the geocoding response in the "result" div
+        function displayLatLon(display_name, lat, lng) {
+            var resultString = "Lat: " + lat + " & Lon: " + lng;
+            document.getElementById("result").innerHTML = resultString;
+            
+            document.getElementById("location").value = display_name;
+            document.getElementById("latitude").value = lat;
+            document.getElementById("longitude").value = lng;
+            
+        }
+	
+        </script>
 
 </body>
 </html>

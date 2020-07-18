@@ -59,18 +59,19 @@
     <div class="subscription-wrapper">
       <div class="d-flex position-relative mx-5 justify-content-between align-items-center flex-column flex-md-row text-center">
         <h3 class="flex-fill">Subscribe <br> to our newsletter</h3>
-        <form action="#" class="row flex-fill">
+        <form:form action="subscribewithus" method="GET" class="row flex-fill">
           <div class="col-lg-7 my-md-2 my-2">
-            <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Your Email" name="email">
+            <input type="email" class="form-control px-4 border-0 w-100 text-center text-md-left" id="email" placeholder="Your Email" name="email" required>
           </div>
           <div class="col-lg-5 my-md-2 my-2">
             <button type="submit" class="btn btn-primary btn-lg border-0 w-100">Subscribe Now</button>
           </div>
-        </form>
+        </form:form>
       </div>
     </div>
   </div>
 </section>
+
 <jsp:include page="footer.jsp"/> 
 
 <script src="plugins/jQuery/jquery.min.js"></script>

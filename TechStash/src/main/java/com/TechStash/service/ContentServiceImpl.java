@@ -16,6 +16,7 @@ import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Subscriber;
 import com.TechStash.entity.Volunteers;
 
 @Service
@@ -366,6 +367,21 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public void contactStatusUpdate(int id, String responded) {
 		contentDAO.contactStatusUpdate(id, responded);
+	}
+
+	@Transactional
+	public List<Subscriber> subscriberContent() {
+		return contentDAO.subscriberContent();
+	}
+
+	@Transactional
+	public void saveSubscriber(Subscriber subscriber) {
+		contentDAO.saveSubscriber(subscriber);
+	}
+
+	@Transactional
+	public Long subscriberCount() {
+		return contentDAO.subscriberCount();
 	}
 
 }

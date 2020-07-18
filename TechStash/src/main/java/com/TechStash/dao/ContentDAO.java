@@ -11,6 +11,7 @@ import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Subscriber;
 import com.TechStash.entity.Volunteers;
 
 public interface ContentDAO {
@@ -92,4 +93,8 @@ public interface ContentDAO {
 	public List<Contact> contactContent();
 	public void saveContact(Contact contact);
 	public void contactStatusUpdate(int id,String responded);
+	
+	public List<Subscriber> subscriberContent();
+	public void saveSubscriber(Subscriber subscriber);
+	public Long subscriberCount();
 }

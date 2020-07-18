@@ -14,6 +14,7 @@ import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
+import com.TechStash.entity.Subscriber;
 import com.TechStash.entity.Volunteers;
 
 public interface ContentService {
@@ -105,4 +106,9 @@ public interface ContentService {
 	public List<Contact> contactContent();
 	public void saveContact(Contact contact);
 	public void contactStatusUpdate(int id,String responded);
+	
+	// Subscriber
+	public List<Subscriber> subscriberContent();
+	public void saveSubscriber(Subscriber subscriber);
+	public Long subscriberCount();
 }

@@ -564,7 +564,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>500</h3>
+                <h3>${subscriberCount}</h3>
                 <p>Final Subscribe Count</p>
               </div>
             </div>
@@ -588,7 +588,6 @@
                 <table id="searchtable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Subscriber Email address</th>
                     <th>Subscriber Full Name</th>
                     <th>Subscriber to jobs checkbox</th>
@@ -597,76 +596,15 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <c:forEach var="tempSubscribeList" items="${subscriberList}">
                   <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>1</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
+                    <td>${tempSubscribeList.email}</td>
+                    <td>${tempSubscribeList.fullname}</td>
+                    <td>${tempSubscribeList.jobs}</td>
+                    <td>${tempSubscribeList.events}</td>
+                    <td>${tempSubscribeList.podcast}</td>
                   </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>1</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>1</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                 <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>1</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Yahoo</td>
-                    <td>1</td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                    <td><div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                        </div></td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

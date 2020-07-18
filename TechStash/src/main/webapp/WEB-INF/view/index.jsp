@@ -342,6 +342,7 @@
 </section>
 
 <!-- Newsletter -->
+<form:form action="subscribewithus" method="GET">
 <c:forEach var="tempnewslettersection" items="${newslettersection}">
 <c:if test="${tempnewslettersection.status}">
 <section class="bg-triangles bg-gradient-primary overflow-hidden">
@@ -371,6 +372,7 @@
 </section>
 </c:if>
 </c:forEach>
+</form:form>
 
 <jsp:include page="footer.jsp"/>
 

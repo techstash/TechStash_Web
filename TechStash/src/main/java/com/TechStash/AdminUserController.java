@@ -25,7 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Home_setting;
+import com.TechStash.entity.Speakers;
 import com.TechStash.mail.SignupMail;
+import com.TechStash.service.ContentService;
 import com.TechStash.service.DashboardUserService;
 import com.TechStash.service.HomeSettingService;
 
@@ -34,6 +36,9 @@ public class AdminUserController {
 	
 	@Autowired
 	private HomeSettingService homeSettingService;
+	
+	@Autowired
+	private ContentService contentService;
 	
 	@Autowired
 	private DashboardUserService dashboardUserService;
@@ -99,6 +104,10 @@ public class AdminUserController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			Long subscriberCount=contentService.subscriberCount();
+			theModel.addAttribute("subscriberCount", subscriberCount);
+			
 			theModel.addAttribute("userdetails", dbresultModel);
 			return "admin/index";
 		}
@@ -115,6 +124,10 @@ public class AdminUserController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			Long subscriberCount=contentService.subscriberCount();
+			theModel.addAttribute("subscriberCount", subscriberCount);
+			
 			theModel.addAttribute("userdetails", dbresultModel);
 			return "admin/index";
 		}

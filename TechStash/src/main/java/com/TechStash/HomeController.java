@@ -22,32 +22,6 @@ public class HomeController {
 	@Autowired
 	private HomeSettingService homeSettingService;
 	
-	@Autowired
-	private FooterService footerService;
-	
-	@RequestMapping("/blogdetails")
-	public String BlogDetail(Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		
-		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
-		theModel.addAttribute("footerContent", dbResultFooter);
-		
-		return "blogdetails";
-	}
-	
-	@RequestMapping("/speakerdetails")
-	public String SpeakerDetail(Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		
-		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
-		theModel.addAttribute("footerContent", dbResultFooter);
-		
-		return "speakerdetails";
-	}
-	
-	// ********Navigation into the requested url TechStash Admin******** //
 	
 	@RequestMapping("/admin/admindashboard/faq_content")
 	public String FaqContent(HttpServletRequest request, Model theModel){
@@ -103,32 +77,6 @@ public class HomeController {
 		}
 		else if(!sessiondesignation.equals("Founder/CEO/Admin")) {
 			return "admin/popup_notfound";
-		}
-		else
-		{
-			return "admin/popup_sessioninvalid";
-		}
-		
-	}
-	
-	@RequestMapping("/admin/admindashboard/subscribe_list")
-	public String SubscribeList(HttpServletRequest request, Model theModel){
-		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
-		theModel.addAttribute("homeSetting", dbResultHomeSetting);
-		HttpSession session = request.getSession();
-		String sessionValue=(String) session.getAttribute("session"); 
-		if(sessionValue != null){
-			String sessionName=(String) session.getAttribute("name");
-			byte[] image=(byte[]) session.getAttribute("image");
-			byte[] encode = java.util.Base64.getEncoder().encode(image);
-			try {
-				theModel.addAttribute("image", new String(encode, "UTF-8"));
-				theModel.addAttribute("name", sessionName);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "admin/subscribe_list";
 		}
 		else
 		{
