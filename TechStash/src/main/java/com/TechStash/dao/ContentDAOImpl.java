@@ -1269,4 +1269,37 @@ public class ContentDAOImpl implements ContentDAO {
 		
 	}
 
+	@Override
+	public List<Subscriber> subscriberLocations() {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Subscriber where status=1");
+		List<Subscriber> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+		
+	}
+
+	@Override
+	public Long unSubscriberCount() {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("select count(*) from Subscriber where status=0");
+		Long result = (long) theQuery.getSingleResult();
+		currentSession.close();
+		return result;
+		
+	}
+
+	@Override
+	public Long organizerCount() {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("select count(*) from Dashboard_users where status='true' and designation!='Founder/CEO/Admin'");
+		Long result = (long) theQuery.getSingleResult();
+		currentSession.close();
+		return result;
+		
+	}
+
 }

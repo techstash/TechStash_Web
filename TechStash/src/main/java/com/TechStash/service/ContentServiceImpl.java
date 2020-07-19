@@ -384,4 +384,19 @@ public class ContentServiceImpl implements ContentService {
 		return contentDAO.subscriberCount();
 	}
 
+	@Transactional
+	public List<Subscriber> subscriberLocations() {
+		return contentDAO.subscriberLocations();
+	}
+
+	@Transactional
+	public Long unSubscriberCount() {
+		return contentDAO.unSubscriberCount();
+	}
+
+	@Transactional
+	public Long organizerCount() {
+		return contentDAO.organizerCount();
+	}
+
 }

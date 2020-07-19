@@ -110,5 +110,10 @@ public interface ContentService {
 	// Subscriber
 	public List<Subscriber> subscriberContent();
 	public void saveSubscriber(Subscriber subscriber);
+	public List<Subscriber> subscriberLocations();
+	
+	// Count calculate
 	public Long subscriberCount();
+	public Long unSubscriberCount();
+	public Long organizerCount();
 }

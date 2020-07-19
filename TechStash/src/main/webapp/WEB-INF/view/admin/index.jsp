@@ -588,7 +588,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>0</h3>
+                <h3>${unSubscriberCount}</h3>
 
                 <p>Unsubscribed list</p>
               </div>
@@ -602,9 +602,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>${organizerCount}</h3>
 
-                <p>Some Count here</p>
+                <p>Organizer</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -704,29 +704,12 @@
 
 <script>
 
-var addressPoints = [
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [12.9010, 80.2279],
-                     [9.9252, 78.1198],
-                     [9.9252, 78.1198],
-                     [28.7041, 77.1025],
-                     [28.7041, 77.1025],
-                     [22.2587,71.1924],
-                     [22.2587,71.1924],
-                     [22.2587,71.1924],
-                   ]
 
+
+var addressPoints = [ <c:forEach items="${subscriberLocation}" var="tempSubscriber">
+                     [${tempSubscriber.latitude}, ${tempSubscriber.longitude}],
+                     </c:forEach>
+                   ]
 	var map = L.map('map', {
     	center: [21.0000, 78.0000],
     	zoom: 4,

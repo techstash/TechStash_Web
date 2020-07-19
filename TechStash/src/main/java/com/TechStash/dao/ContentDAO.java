@@ -96,5 +96,9 @@ public interface ContentDAO {
 	
 	public List<Subscriber> subscriberContent();
 	public void saveSubscriber(Subscriber subscriber);
+	public List<Subscriber> subscriberLocations();
+	
 	public Long subscriberCount();
+	public Long unSubscriberCount();
+	public Long organizerCount();
 }
