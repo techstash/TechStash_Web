@@ -775,7 +775,7 @@
               </div>
               </div>
               <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
+                <table id="horizontal" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Conference Title</th>
@@ -885,6 +885,17 @@
 function myFunction(id) {
 		document.getElementById(id).removeAttribute('disabled');
 	}
+</script>
+
+<script>
+
+$(document).ready(function () {
+	$('#horizontal').DataTable({
+	"scrollX": true
+	});
+	$('.dataTables_length').addClass('bs-select');
+	});
+
 </script>
 
 <script type="text/javascript">

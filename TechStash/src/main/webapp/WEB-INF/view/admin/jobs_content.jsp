@@ -769,7 +769,7 @@
               </div>
               </div>
               <div class="card-body">
-                <table id="searchtable" class="table table-bordered table-striped">
+                <table id="horizontal" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Company Name</th>
@@ -900,6 +900,17 @@ $(function(){
     	return false;
     });
 })
+</script>
+
+<script>
+
+$(document).ready(function () {
+	$('#horizontal').DataTable({
+	"scrollX": true
+	});
+	$('.dataTables_length').addClass('bs-select');
+	});
+
 </script>
 
 <script type='text/javascript'>
