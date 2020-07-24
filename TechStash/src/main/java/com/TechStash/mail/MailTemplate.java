@@ -122,7 +122,7 @@ public class MailTemplate {
 	       		+ "\nFew details about you? : " + details + "\nLinkedin : "+ linkedin +" \nGithub : " + github + "\nTwitter : "+ twitter + "\nPersonal portfolio? : " + portfolio +" \nHow did you hear about TechStash? : " + hear_about_techstash +" \nAny ideas that you would like to share? : " + ideas_to_techstash +  "\n\nPlease use below url to Accept"
 	       	+ "\nhttps://techstash.in/volunteerapprove/"+email+"/2f1c1999c8897d77224133cfabei3f59c708e6f8f05872efa0e584e633db15/true"
 	       	+ "\n\nPlease use below url to Reject"
-	        + "\nhttps://techstash.in/volunteerreject/"+email+"/2f1c1999c8897d77224133cfabei3f59c708e6f8f05872efa0e584e633db15/false";
+	        + "\nhttps://techstash.in/volunteerapprove/"+email+"/2f1c1999c8897d77224133cfabei3f59c708e6f8f05872efa0e584e633db15/false";
 	        
 		 InternetHeaders headers = new InternetHeaders();
         headers.addHeader("Content-type", "text/html; charset=UTF-8");
