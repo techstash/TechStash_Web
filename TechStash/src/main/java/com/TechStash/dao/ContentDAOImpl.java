@@ -1166,6 +1166,20 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.close();
 		
 	}
+	
+	@Override
+	public void volunteerAcceptRejectInputFromCEO(String email, String status) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE volunteers set status=:status where email=:email");
+		theQuery.setParameter("status", status);
+		theQuery.setParameter("email", email);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();
+		
+	}
 
 	@Override
 	public List<Contact> contactContent() {

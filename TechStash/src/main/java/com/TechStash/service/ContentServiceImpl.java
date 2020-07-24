@@ -353,6 +353,11 @@ public class ContentServiceImpl implements ContentService {
 	public void volunteerStatusUpdate(int id, String status) {
 		contentDAO.volunteerStatusUpdate(id, status);
 	}
+	
+	@Transactional
+	public void volunteerAcceptRejectInputFromCEO(String email, String status) {
+		contentDAO.volunteerAcceptRejectInputFromCEO(email, status);
+	}
 
 	@Transactional
 	public List<Contact> contactContent() {

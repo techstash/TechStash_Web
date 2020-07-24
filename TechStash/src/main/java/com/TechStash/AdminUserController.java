@@ -25,9 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Home_setting;
-import com.TechStash.entity.Speakers;
 import com.TechStash.entity.Subscriber;
-import com.TechStash.mail.SignupMail;
+import com.TechStash.mail.MailTemplate;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.DashboardUserService;
 import com.TechStash.service.HomeSettingService;
@@ -179,7 +178,7 @@ public class AdminUserController {
 		
 		if(result.isEmpty()){
 			dashboardUserService.saveUsers(dashboard_users);
-			SignupMail.ApproveMail(dashboard_users.getName(), dashboard_users.getEmail(), dashboard_users.getPhone(), dashboard_users.getLocation(), dashboard_users.getBio(), dashboard_users.getDesignation(), dashboard_users.getLinkedin(), dashboard_users.getGithub(), dashboard_users.getTwitter(), dashboard_users.getFacebook());
+			MailTemplate.ApproveMail(dashboard_users.getName(), dashboard_users.getEmail(), dashboard_users.getPhone(), dashboard_users.getLocation(), dashboard_users.getBio(), dashboard_users.getDesignation(), dashboard_users.getLinkedin(), dashboard_users.getGithub(), dashboard_users.getTwitter(), dashboard_users.getFacebook());
 			return "redirect:/admin/admindashboard/thanks_signup";
 		}
 		else{
@@ -211,8 +210,8 @@ public class AdminUserController {
 		            profilename=dashboard_users.getName();
 		            userpass=dashboard_users.getPassword();
 		        }
-			  SignupMail.WelcomeMail(useremail, profilename);
-			  SignupMail.LoginDetails(profilename,useremail, userpass);
+			  MailTemplate.WelcomeUser(useremail, profilename);
+			  MailTemplate.LoginDetails(profilename,useremail, userpass);
 			  return "Profile Approved";
 		  }
 		  else
@@ -266,7 +265,7 @@ public class AdminUserController {
 		            userstatus=dbresult.getStatus();
 		        }
 			if(userstatus.equals("true")){ 
-			SignupMail.ForgotPassword(profilename,useremail, userpass); 
+			MailTemplate.ForgotPassword(profilename,useremail, userpass); 
 			return "redirect:/admin/admindashboard/thanks_forgot";
 			}
 			else

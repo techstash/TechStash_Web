@@ -19,6 +19,7 @@ import com.TechStash.entity.Contact;
 import com.TechStash.entity.Footer;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Volunteers;
+import com.TechStash.mail.MailTemplate;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
@@ -62,8 +63,12 @@ public class ContactusController {
 	@PostMapping("/savecontact")
 	public String saveContact(@ModelAttribute("contact") Contact contact,HttpServletRequest request) {
 		
+		MailTemplate.contactMailtoCEO(contact.getFullname(),contact.getEmail(),contact.getMessage());
+		
+		MailTemplate.contactMailUser(contact.getEmail());
+		
 		contentService.saveContact(contact);
-		return "redirect:/";
+		return "thankscontact";
 		
 	}
 }

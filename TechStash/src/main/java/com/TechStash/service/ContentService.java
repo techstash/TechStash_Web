@@ -101,6 +101,7 @@ public interface ContentService {
 	public List<Volunteers> volunteerContent();
 	public void saveVolunteer(Volunteers volunteer);
 	public void volunteerStatusUpdate(int id,String status);
+	public void volunteerAcceptRejectInputFromCEO(String email,String status);
 	
 	// Contact
 	public List<Contact> contactContent();
