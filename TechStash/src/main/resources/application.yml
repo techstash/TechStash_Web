@@ -3,6 +3,6 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/techstash_database
     username: techstash
-    password: uryda5uda
+    password: y3ytetega
     type: org.apache.tomcat.jdbc.pool.DataSource
     maxIdle: 1
