@@ -116,7 +116,7 @@ public class MailTemplate {
 	public static void  volunteerMail(String firstname, String lastname, String email, String city, String gender, String education, String specialization, 
 			String hours, String details, String linkedin, String github, String twitter, String portfolio, String hear_about_techstash, String ideas_to_techstash){
 		  
-		 String subject = "Required Approval: New Volunteer Submitted";
+		 String subject = "Volunteer Submission";
 	        
 	        String html = "First Name : " + firstname + "\nLast Name : "+ lastname +" \nEmail Address : " + email + "\nCity : "+ city + "\nGender : " + gender +" \nHighest Level of Education : " + education + "\nSpecialization? : "+ specialization + "\nHow many hours? : " + hours +""
 	       		+ "\nFew details about you? : " + details + "\nLinkedin : "+ linkedin +" \nGithub : " + github + "\nTwitter : "+ twitter + "\nPersonal portfolio? : " + portfolio +" \nHow did you hear about TechStash? : " + hear_about_techstash +" \nAny ideas that you would like to share? : " + ideas_to_techstash +  "\n\nPlease use below url to Accept"
@@ -193,7 +193,7 @@ public static void  contactMailUser(String email){
 
 public static void  contactMailtoCEO(String fullname, String email, String message){
 	  
-	 String subject = "User Submitted Contact Form";
+	 String subject = "Contact request";
        
      String html = "Full Name : " + fullname + "\nEmail Address : "+ email +" \nMessage : " + message +"";
        

@@ -19,6 +19,7 @@ import com.TechStash.entity.Carousel;
 import com.TechStash.entity.Communities;
 import com.TechStash.entity.Conference;
 import com.TechStash.entity.Contact;
+import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
 import com.TechStash.entity.Resources;
@@ -1180,6 +1181,18 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.close();
 		
 	}
+	
+	@Override
+	public List<Volunteers> validateVolunteer(String email) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Volunteers where email=:email");
+		theQuery.setParameter("email", email);
+		List<Volunteers> result = theQuery.getResultList();
+		currentSession.close();
+		return result;
+		
+	}
 
 	@Override
 	public List<Contact> contactContent() {
@@ -1293,13 +1306,25 @@ public class ContentDAOImpl implements ContentDAO {
 		return result;
 		
 	}
-
+	
 	@Override
 	public Long unSubscriberCount() {
 		
 		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
 		Query theQuery = currentSession.createQuery("select count(*) from Subscriber where status=0");
 		Long result = (long) theQuery.getSingleResult();
+		currentSession.close();
+		return result;
+		
+	}
+	
+	@Override
+	public List<Subscriber> validateSubscriber(String email) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery = currentSession.createQuery("from Subscriber where email=:email");
+		theQuery.setParameter("email", email);
+		List<Subscriber> result = theQuery.getResultList();
 		currentSession.close();
 		return result;
 		

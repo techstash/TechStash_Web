@@ -71,10 +71,21 @@ public class VolunteerController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		List<Volunteers> validateVolunteer = contentService.validateVolunteer(volunteer.getEmail());
+		
+		boolean value = validateVolunteer.isEmpty();
+		
+		if(value==false ){
+			return "popup_voluteer_validation";
+		}
+		else {
+		
 		contentService.saveVolunteer(volunteer);
 		MailTemplate.volunteerMail(volunteer.getFirstname(), volunteer.getLastname(), volunteer.getEmail(), volunteer.getCity(), volunteer.getGender(), volunteer.getEducation(), volunteer.getSpecialization(), 
 				volunteer.getHours(), volunteer.getDetails(), volunteer.getLinkedin(), volunteer.getGithub(), volunteer.getTwitter(), volunteer.getPortfolio(), volunteer.getHear_about_techstash(), volunteer.getIdeas_to_techstash());
 			return "thanksvolunteer";
+		}
 		}
 	
 	@GetMapping("/volunteerapprove/{email}/{key}/{status}")

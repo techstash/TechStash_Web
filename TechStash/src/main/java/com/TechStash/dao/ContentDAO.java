@@ -90,6 +90,7 @@ public interface ContentDAO {
 	public void saveVolunteer(Volunteers volunteer);
 	public void volunteerStatusUpdate(int id,String status);
 	public void volunteerAcceptRejectInputFromCEO(String email,String status);
+	public List<Volunteers> validateVolunteer(String email);
 	
 	public List<Contact> contactContent();
 	public void saveContact(Contact contact);
@@ -98,6 +99,7 @@ public interface ContentDAO {
 	public List<Subscriber> subscriberContent();
 	public void saveSubscriber(Subscriber subscriber);
 	public List<Subscriber> subscriberLocations();
+	public List<Subscriber> validateSubscriber(String email);
 	
 	public Long subscriberCount();
 	public Long unSubscriberCount();

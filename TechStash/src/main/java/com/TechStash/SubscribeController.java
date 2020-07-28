@@ -19,6 +19,7 @@ import com.TechStash.entity.Footer;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Subscribe_setting;
 import com.TechStash.entity.Subscriber;
+import com.TechStash.entity.Volunteers;
 import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
@@ -61,9 +62,21 @@ public class SubscribeController {
 	@PostMapping("/newsubscribe")
 	public String saveConference(@ModelAttribute("subscriber") Subscriber subscriber,HttpServletRequest request) {
 		
+		
+    List<Subscriber> validateSubscriber = contentService.validateSubscriber(subscriber.getEmail());
+		
+		boolean value = validateSubscriber.isEmpty();
+		
+		if(value==false ){
+			return "popup_subscriber_validation";
+		}
+		else {
+		
 		contentService.saveSubscriber(subscriber);
 		
 		return "redirect:/";
+		
+		}
 		
 	}
 	

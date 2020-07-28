@@ -102,6 +102,7 @@ public interface ContentService {
 	public void saveVolunteer(Volunteers volunteer);
 	public void volunteerStatusUpdate(int id,String status);
 	public void volunteerAcceptRejectInputFromCEO(String email,String status);
+	public List<Volunteers> validateVolunteer(String email);
 	
 	// Contact
 	public List<Contact> contactContent();
@@ -112,6 +113,7 @@ public interface ContentService {
 	public List<Subscriber> subscriberContent();
 	public void saveSubscriber(Subscriber subscriber);
 	public List<Subscriber> subscriberLocations();
+	public List<Subscriber> validateSubscriber(String email);
 	
 	// Count calculate
 	public Long subscriberCount();

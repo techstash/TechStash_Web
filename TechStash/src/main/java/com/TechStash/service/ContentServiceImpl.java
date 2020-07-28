@@ -360,6 +360,11 @@ public class ContentServiceImpl implements ContentService {
 	}
 
 	@Transactional
+	public List<Volunteers> validateVolunteer(String email) {
+		return contentDAO.validateVolunteer(email);
+	}
+	
+	@Transactional
 	public List<Contact> contactContent() {
 		return contentDAO.contactContent();
 	}
@@ -393,6 +398,11 @@ public class ContentServiceImpl implements ContentService {
 	public List<Subscriber> subscriberLocations() {
 		return contentDAO.subscriberLocations();
 	}
+	
+	@Transactional
+	public List<Subscriber> validateSubscriber(String email) {
+		return contentDAO.validateSubscriber(email);
+	}
 
 	@Transactional
 	public Long unSubscriberCount() {
@@ -403,5 +413,6 @@ public class ContentServiceImpl implements ContentService {
 	public Long organizerCount() {
 		return contentDAO.organizerCount();
 	}
+
 
 }
