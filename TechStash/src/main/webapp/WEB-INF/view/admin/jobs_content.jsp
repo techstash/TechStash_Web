@@ -690,7 +690,7 @@
                     Header Title
                   </div>
                   <div class="col-5">
-                    <form:input path="title" type="text" id="title" class="form-control" readonly="true"/>
+                    <form:input path="title" type="text" id="headertitle" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-3">
                           <a class="btn btn-info btn-sm editTitle" href="#">
@@ -706,7 +706,7 @@
                     Header Subtitle
                   </div>
                   <div class="col-5">
-                    <form:textarea path="subtitle" class="form-control" id="subtitle" rows="3" readonly="true"></form:textarea>
+                    <form:textarea path="subtitle" class="form-control" id="headersubtitle" rows="3" readonly="true"></form:textarea>
                   </div>
                   <div class="col-3">
                           <a class="btn btn-info btn-sm editSubtitle" href="#">
@@ -887,11 +887,11 @@ $(function(){
     	return false;
     });
     $(".editTitle").click(function(){
-    	$("#title").prop("readonly",false);
+    	$("#headertitle").prop("readonly",false);
     	return false;
     });
     $(".editSubtitle").click(function(){
-    	$("#subtitle").prop("readonly",false);
+    	$("#headersubtitle").prop("readonly",false);
     	return false;
     });
     
