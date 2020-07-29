@@ -22,6 +22,7 @@ import com.TechStash.entity.Contact;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Pricing_details;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
 import com.TechStash.entity.Subscriber;
@@ -1339,6 +1340,52 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.close();
 		return result;
 		
+	}
+
+	@Override
+	public Pricing_details pricingDetailContent(int id) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Pricing_details result=currentSession.get(Pricing_details.class,id);
+		currentSession.close();
+		return result;
+		
+	}
+
+	@Override
+	public void updatePricingDetail(int id, String planname, byte[] image, String planprice, String planservice) {
+		
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		currentSession.getTransaction().begin();
+		Query theQuery = currentSession.createNativeQuery("UPDATE pricing_details set planname=:planname,image=:image,planprice=:planprice,planservice=:planservice where id=:id");
+		theQuery.setParameter("planname", planname);
+		theQuery.setParameter("image", image);
+		theQuery.setParameter("planprice", planprice);
+		theQuery.setParameter("planservice", planservice);
+		theQuery.setParameter("id", id);
+		theQuery.executeUpdate();
+		currentSession.getTransaction().commit();
+		currentSession.close();	
+		
+	}
+
+	@Override
+	public List<Pricing_details> getPricingDetailsContent(int id) {
+		
+		byte[] photo=null;
+		Session currentSession = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Query theQuery=currentSession.createQuery("from Pricing_details where id=:id");
+		theQuery.setParameter("id", id);
+		List<Pricing_details> result = theQuery.getResultList();
+		
+		for(Pricing_details dbresult : result) {
+			photo=dbresult.getImage();
+			byte[] encode = java.util.Base64.getEncoder().encode(photo);
+			dbresult.setEncodedImage(new String(java.util.Base64.getEncoder().encode(photo)));
+        }
+		
+		currentSession.close();
+		return result;
 	}
 
 }

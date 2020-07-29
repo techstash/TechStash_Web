@@ -557,96 +557,7 @@
       </div>
     </section>
     
-<div class="modal fade" id="modal-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add New Plan Service</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Plan Service
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>    
-      
- <div class="modal fade" id="modal-2">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add New Plan Service</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Plan Service
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-<div class="modal fade" id="modal-3">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add New Plan Service</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    Plan Service
-                  </div>
-                  <div class="col-8">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <br>
-              </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>             
-    
+ <form:form action="savepricingplan_1" method="POST" modelAttribute="pricingDetail_1" enctype="multipart/form-data">   
     <section class="content">
       <div class="card">
            <div class="card-header">
@@ -654,23 +565,21 @@
                 <div class="col-12">
                   <h4>
                     Basic Plan details
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-1">
-                  Add Plan Service
-                </button></small>
                   </h4>
                 </div>
               </div>
           </div>
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
                   <div class="col-3">
                     Plan name
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="planname" type="text" id="planname1" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanName1" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -685,13 +594,13 @@
                   <div class="col-5">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="planimage1" name="photo" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanImage1" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -704,10 +613,10 @@
                     Plan price
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:input path="planprice" type="text" id="planprice1" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanPrice1" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -720,10 +629,11 @@
                     Plan Service
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:textarea path="planservice" class="form-control" id="planservice1" rows="3" readonly="true"></form:textarea>
+                     Use (,) to add Multiple Plan Service
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanService1" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -731,61 +641,19 @@
                   </div>
                 </div>
                 <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
               </div>
             </div>
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
     </section>
+ </form:form>
     <br>
+   <form:form action="savepricingplan_2" method="POST" modelAttribute="pricingDetail_2" enctype="multipart/form-data">   
     <section class="content">
       <div class="card">
            <div class="card-header">
@@ -793,23 +661,21 @@
                 <div class="col-12">
                   <h4>
                     Professional Plan details
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-2">
-                  Add Plan Service
-                </button></small>
                   </h4>
                 </div>
               </div>
           </div>
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
                   <div class="col-3">
                     Plan name
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="planname" type="text" id="planname2" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanName2" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -824,13 +690,13 @@
                   <div class="col-5">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="planimage2" name="photo" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanImage2" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -843,10 +709,10 @@
                     Plan price
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:input path="planprice" type="text" id="planprice2" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanPrice2" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -859,10 +725,11 @@
                     Plan Service
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:textarea path="planservice" class="form-control" id="planservice2" rows="3" readonly="true"></form:textarea>
+                     Use (,) to add Multiple Plan Service
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanService2" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -870,62 +737,20 @@
                   </div>
                 </div>
                 <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
               </div>
             </div>
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
     </section>
+ </form:form>
     <br>
     
+   <form:form action="savepricingplan_3" method="POST" modelAttribute="pricingDetail_3" enctype="multipart/form-data">   
     <section class="content">
       <div class="card">
            <div class="card-header">
@@ -933,23 +758,21 @@
                 <div class="col-12">
                   <h4>
                     Business Plan details
-                    <small class="float-right"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-3">
-                  Add Plan Service
-                </button></small>
                   </h4>
                 </div>
               </div>
           </div>
               <div class="card-body">
+              <form:input path="id" type="hidden" class="form-control"/>
                 <div class="row">
                   <div class="col-3">
                     Plan name
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                    <form:input path="planname" type="text" id="planname3" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanName3" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -964,13 +787,13 @@
                   <div class="col-5">
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="planimage3" name="photo" accept=".png, .jpg, .jpeg" size="50" disabled required/>
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                     </div>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanImage3" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -983,10 +806,10 @@
                     Plan price
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:input path="planprice" type="text" id="planprice3" class="form-control" readonly="true"/>
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanPrice3" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -999,10 +822,11 @@
                     Plan Service
                   </div>
                   <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
+                     <form:textarea path="planservice" class="form-control" id="planservice3" rows="3" readonly="true"></form:textarea>
+                     Use (,) to add Multiple Plan Service
                   </div>
                   <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm editPlanService3" href="#">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
@@ -1010,60 +834,17 @@
                   </div>
                 </div>
                 <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-5">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                  <div class="col-4">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                  </div>
-                </div>
               </div>
             </div>
       <div class="row">
       <div class="col-5"></div>
         <div class="col-2">
-          <button type="button" class="btn btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn btn-block btn-primary">Submit</button>
         </div>
       <div class="col-5"></div>
       </div>
     </section>
+ </form:form>
     
     <br>
     
@@ -1117,6 +898,64 @@
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $(".editPlanName1").click(function(){
+    	$("#planname1").prop("readonly",false);
+    	return false;
+    });
+    $(".editPlanImage1").click(function(){
+    	$("#planimage1").prop("disabled",false); 
+    	return false;
+    });
+    $(".editPlanPrice1").click(function(){
+    	$("#planprice1").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPlanService1").click(function(){
+    	$("#planservice1").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPlanName2").click(function(){
+    	$("#planname2").prop("readonly",false);
+    	return false;
+    });
+    $(".editPlanImage2").click(function(){
+    	$("#planimage2").prop("disabled",false); 
+    	return false;
+    });
+    $(".editPlanPrice2").click(function(){
+    	$("#planprice2").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPlanService2").click(function(){
+    	$("#planservice2").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPlanName3").click(function(){
+    	$("#planname3").prop("readonly",false);
+    	return false;
+    });
+    $(".editPlanImage3").click(function(){
+    	$("#planimage3").prop("disabled",false); 
+    	return false;
+    });
+    $(".editPlanPrice3").click(function(){
+    	$("#planprice3").prop("readonly",false);
+    	return false;
+    });
+    
+    $(".editPlanService3").click(function(){
+    	$("#planservice3").prop("readonly",false);
+    	return false;
+    });
+})
 </script>
 
 <script>

@@ -12,6 +12,7 @@ import com.TechStash.entity.Footer;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Pricing_details;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
 import com.TechStash.entity.Subscriber;
@@ -119,4 +120,9 @@ public interface ContentService {
 	public Long subscriberCount();
 	public Long unSubscriberCount();
 	public Long organizerCount();
+	
+	// Pricing Details
+	public Pricing_details pricingDetailContent(int id);
+	public void updatePricingDetail(int id,String planname, byte[] image, String planprice, String planservice);
+	public List<Pricing_details> getPricingDetailsContent(int id);
 }

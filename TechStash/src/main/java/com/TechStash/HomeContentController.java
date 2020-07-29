@@ -2,6 +2,7 @@ package com.TechStash;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,12 +26,14 @@ import com.TechStash.entity.Home_setting;
 import com.TechStash.entity.JobSection;
 import com.TechStash.entity.NewsletterSection;
 import com.TechStash.entity.PodcastSection;
+import com.TechStash.entity.Pricing_details;
 import com.TechStash.entity.ResourceSection;
 import com.TechStash.entity.SpeakerSection;
 import com.TechStash.service.BannerService;
 import com.TechStash.service.BlogSectionService;
 import com.TechStash.service.CommunitySectionService;
 import com.TechStash.service.ConferenceSectionService;
+import com.TechStash.service.ContentService;
 import com.TechStash.service.FooterService;
 import com.TechStash.service.HomeSettingService;
 import com.TechStash.service.JobSectionService;
@@ -74,6 +77,9 @@ public class HomeContentController {
 	private HomeSettingService homeSettingService;
 	
 	@Autowired
+	private ContentService contentService;
+	
+	@Autowired
 	private FooterService footerService;
 	
 	@RequestMapping("/")
@@ -108,6 +114,36 @@ public class HomeContentController {
 		
 		List<Home_setting> dbResultHomeSetting = homeSettingService.getResultWebsite();
 		theModel.addAttribute("homeSetting", dbResultHomeSetting);
+		
+		List<Pricing_details> dbResultPrice1 = contentService.getPricingDetailsContent(1);
+		theModel.addAttribute("pringdetail1", dbResultPrice1);
+		
+		for(Pricing_details dpResult1 : dbResultPrice1) {
+			
+			List<String> planService1 = Arrays.asList(dpResult1.getPlanservice().split("\\s*,\\s*"));
+			theModel.addAttribute("planService1", planService1);
+			
+        }
+		
+		List<Pricing_details> dbResultPrice2 = contentService.getPricingDetailsContent(2);
+		theModel.addAttribute("pringdetail2", dbResultPrice2);
+		
+		for(Pricing_details dpResult2 : dbResultPrice2) {
+			
+			List<String> planService2 = Arrays.asList(dpResult2.getPlanservice().split("\\s*,\\s*"));
+			theModel.addAttribute("planService2", planService2);
+			
+        }
+		
+		List<Pricing_details> dbResultPrice3 = contentService.getPricingDetailsContent(3);
+		theModel.addAttribute("pringdetail3", dbResultPrice3);
+		
+		for(Pricing_details dpResult3 : dbResultPrice3) {
+			
+			List<String> planService3 = Arrays.asList(dpResult3.getPlanservice().split("\\s*,\\s*"));
+			theModel.addAttribute("planService3", planService3);
+			
+        }
 		
 		List<Footer> dbResultFooter = footerService.getFooterResultWebsite();
 		theModel.addAttribute("footerContent", dbResultFooter);

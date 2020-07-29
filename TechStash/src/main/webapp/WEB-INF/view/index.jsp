@@ -277,20 +277,21 @@
 					class="pricing-table position-relative text-center px-4 py-5 rounded-lg shadow transition bg-white">
 					<span
 						class="badge badge-pill badge-light font-weight-medium mb-3 py-2 px-4 text-primary">Basic</span>
-					<img src="images/pricing/price-1.svg" class="img-fluid w-100"
+				    <c:forEach var="tempPlan1" items="${pringdetail1}">
+					<img src="data:image/jpg;base64,${tempPlan1.encodedImage}" class="img-fluid w-100"
 						alt="mobile-screen">
 					<hr>
 					<div class="h2 text-dark">
-						INR 1000<span class="paragraph text-lowercase"> / mo</span>
+						${tempPlan1.planprice}
 					</div>
-					<h5 class="mb-4 font-weight-normal text-color">Basic Services</h5>
+					<h5 class="mb-4 font-weight-normal text-color">${tempPlan1.planname}</h5>
+					<c:forEach var="tempPlanService1" items="${planService1}">
 					<ul class="list-unstyled my-4">
-						<li class="my-3">2 Posting of Jobs and 2 Conferences</li>
-						<li class="my-3"> Feature it on our Newsletters </li>
-						<li class="my-3dash"> - </li>
-						<li class="my-3dash"> - </li>
+						<li class="my-3">${tempPlanService1}</li>
 					</ul>
+					</c:forEach>
 					<a href="#" class="btn btn-outline-primary">select plan</a>
+					</c:forEach>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6 mb-lg-0 mb-4" data-aos="fade-up"
@@ -299,20 +300,21 @@
 					class="pricing-table position-relative text-center px-4 py-5 rounded-lg shadow transition bg-white">
 					<span
 						class="badge badge-pill badge-light font-weight-medium mb-3 py-2 px-4 text-primary">Professional</span>
-					<img src="images/pricing/price-2.svg" class="img-fluid w-100"
+					<c:forEach var="tempPlan2" items="${pringdetail2}">
+					<img src="data:image/jpg;base64,${tempPlan2.encodedImage}" class="img-fluid w-100"
 						alt="mobile-screen">
 					<hr>
 					<div class="h2 text-dark">
-						INR 1500<span class="paragraph text-lowercase"> / mo</span>
+						${tempPlan2.planprice}
 					</div>
-					<h5 class="mb-4 font-weight-normal text-color">Premium services</h5>
+					<h5 class="mb-4 font-weight-normal text-color">${tempPlan2.planname}</h5>
+					<c:forEach var="tempPlanService2" items="${planService2}">
 					<ul class="list-unstyled my-4">
-						<li class="my-3">10 posting of Jobs and 5 Conferences</li>
-						<li class="my-3">Feature it on our Newsletters</li>
-						<li class="my-3">Highlight on Social Media</li>
-						<li class="my-3dash"> - </li>
+						<li class="my-3">${tempPlanService2}</li>
 					</ul>
+					</c:forEach>
 					<a href="#" class="btn btn-outline-primary">select plan</a>
+					</c:forEach>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-6 mb-lg-0 mb-4" data-aos="fade-up"
@@ -321,20 +323,21 @@
 					class="pricing-table position-relative text-center px-4 py-5 rounded-lg shadow transition bg-white">
 					<span
 						class="badge badge-pill badge-light font-weight-medium mb-3 py-2 px-4 text-primary">Business</span>
-					<img src="images/pricing/price-3.svg" class="img-fluid w-100"
+					<c:forEach var="tempPlan3" items="${pringdetail3}">
+					<img src="data:image/jpg;base64,${tempPlan3.encodedImage}" class="img-fluid w-100"
 						alt="mobile-screen">
 					<hr>
 					<div class="h2 text-dark">
-						INR 2000<span class="paragraph text-lowercase"> / mo</span>
+						${tempPlan3.planprice}
 					</div>
-					<h5 class="mb-4 font-weight-normal text-color">Best Services</h5>
+					<h5 class="mb-4 font-weight-normal text-color">${tempPlan3.planname}</h5>
+					<c:forEach var="tempPlanService3" items="${planService3}">
 					<ul class="list-unstyled my-4">
-						<li class="my-3">Unlimited posting of Jobs and Conferences</li>
-						<li class="my-3">Feature it on our Newsletters</li>
-						<li class="my-3">Highlight on Social Media </li>
-						<li class="my-3">Customer support via email</li>
+						<li class="my-3">${tempPlanService3}</li>
 					</ul>
+					</c:forEach>
 					<a href="#" class="btn btn-outline-primary">select plan</a>
+					</c:forEach>
 				</div>
 			</div>
 		</div>

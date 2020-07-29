@@ -14,6 +14,7 @@ import com.TechStash.entity.Conference;
 import com.TechStash.entity.Contact;
 import com.TechStash.entity.Header_section;
 import com.TechStash.entity.Jobs;
+import com.TechStash.entity.Pricing_details;
 import com.TechStash.entity.Resources;
 import com.TechStash.entity.Speakers;
 import com.TechStash.entity.Subscriber;
@@ -412,6 +413,21 @@ public class ContentServiceImpl implements ContentService {
 	@Transactional
 	public Long organizerCount() {
 		return contentDAO.organizerCount();
+	}
+
+	@Transactional
+	public Pricing_details pricingDetailContent(int id) {
+		return contentDAO.pricingDetailContent(id);
+	}
+
+	@Transactional
+	public void updatePricingDetail(int id, String planname, byte[] image, String planprice, String planservice) {
+		contentDAO.updatePricingDetail(id, planname, image, planprice, planservice);		
+	}
+
+	@Transactional
+	public List<Pricing_details> getPricingDetailsContent(int id) {
+		return contentDAO.getPricingDetailsContent(id);
 	}
 
 
