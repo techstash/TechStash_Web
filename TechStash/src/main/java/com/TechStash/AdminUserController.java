@@ -7,6 +7,8 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,8 +25,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.TechStash.entity.Conference;
 import com.TechStash.entity.Dashboard_users;
 import com.TechStash.entity.Home_setting;
+import com.TechStash.entity.Pricing_details;
 import com.TechStash.entity.Subscriber;
 import com.TechStash.mail.MailTemplate;
 import com.TechStash.service.ContentService;
@@ -116,6 +120,11 @@ public class AdminUserController {
 			
 			List<Subscriber> subscriberLocation=contentService.subscriberLocations();
 			theModel.addAttribute("subscriberLocation", subscriberLocation);
+			
+			// State Report
+			List<Subscriber> stateReport=contentService.subscriberLocations();
+			
+			stateReportCalculation(stateReport, theModel);
 			
 			theModel.addAttribute("userdetails", dbresultModel);
 			return "admin/index";
@@ -415,6 +424,240 @@ public class AdminUserController {
 			  dashboardUserService.updateOrganizerStatus(id,status);
 			  return "redirect:/admin/admindashboard/organizer";
 		  }
+	  }
+	  
+	  public void stateReportCalculation(List<Subscriber> stateReport, Model theModel)
+	  {
+		 
+		  int ArunachalPradeshCount=0;
+		  int AssamCount=0;
+		  int BiharCount=0;
+		  int ChhattisgarhCount=0;
+		  int GoaCount=0;
+		  int GujaratCount=0;
+		  int HaryanaCount=0;
+		  int HimachalPradeshCount=0;
+		  int JharkhandCount=0;
+		  int KarnatakaCount=0;
+		  int KeralaCount=0;
+		  int MadhyaPradeshCount=0;
+		  int MaharashtraCount=0;
+		  int ManipurCount=0;
+		  int MeghalayaCount=0;
+		  int MizoramCount=0;
+		  int NagalandCount=0;
+		  int AndhraPradesh=0;
+		  int OdishaCount=0;
+		  int PunjabCount=0;
+		  int RajasthanCount=0;
+		  int SikkimCount=0;
+		  int TamilNaduCount=0;
+		  int TelanganaCount=0;
+		  int TripuraCount=0;
+		  int UtterPradeshCount=0;
+		  int UtterakhandCount=0;
+		  int WestBengalCount=0;
+		  
+		  for(Subscriber dbResult : stateReport) {
+				
+				Pattern value1 = Pattern.compile("Arunachal Pradesh");
+				Matcher stateDb1 = value1.matcher( dbResult.getLocation() );
+				while (stateDb1.find()) {
+					ArunachalPradeshCount++;
+				}
+				
+				Pattern value2 = Pattern.compile("Assam");
+				Matcher stateDb2 = value2.matcher( dbResult.getLocation() );
+				while (stateDb2.find()) {
+					AssamCount++;
+				}
+				
+				Pattern value3 = Pattern.compile("Bihar");
+				Matcher stateDb3 = value3.matcher( dbResult.getLocation() );
+				while (stateDb3.find()) {
+					BiharCount++;
+				}
+				
+				Pattern value4 = Pattern.compile("Chhattisgarh");
+				Matcher stateDb4 = value4.matcher( dbResult.getLocation() );
+				while (stateDb4.find()) {
+					ChhattisgarhCount++;
+				}
+				
+				Pattern value5 = Pattern.compile("Goa");
+				Matcher stateDb5 = value5.matcher( dbResult.getLocation() );
+				while (stateDb5.find()) {
+					GoaCount++;
+				}
+				
+				Pattern value6 = Pattern.compile("Gujarat");
+				Matcher stateDb6 = value6.matcher( dbResult.getLocation() );
+				while (stateDb6.find()) {
+					GujaratCount++;
+				}
+				
+				Pattern value7 = Pattern.compile("Haryana");
+				Matcher stateDb7 = value7.matcher( dbResult.getLocation() );
+				while (stateDb7.find()) {
+					HaryanaCount++;
+				}
+				
+				Pattern value8 = Pattern.compile("Himachal Pradesh");
+				Matcher stateDb8 = value8.matcher( dbResult.getLocation() );
+				while (stateDb8.find()) {
+					HimachalPradeshCount++;
+				}
+				
+				Pattern value9 = Pattern.compile("Jharkhand");
+				Matcher stateDb9 = value9.matcher( dbResult.getLocation() );
+				while (stateDb9.find()) {
+					JharkhandCount++;
+				}
+				
+				Pattern value10 = Pattern.compile("Karnataka");
+				Matcher stateDb10 = value10.matcher( dbResult.getLocation() );
+				while (stateDb10.find()) {
+					KarnatakaCount++;
+				}
+				
+				Pattern value11 = Pattern.compile("Kerala");
+				Matcher stateDb11 = value11.matcher( dbResult.getLocation() );
+				while (stateDb11.find()) {
+					KeralaCount++;
+				}
+				
+				Pattern value12 = Pattern.compile("Madhya Pradesh");
+				Matcher stateDb12 = value12.matcher( dbResult.getLocation() );
+				while (stateDb12.find()) {
+					MadhyaPradeshCount++;
+				}
+				
+				Pattern value13 = Pattern.compile("Maharashtra");
+				Matcher stateDb13 = value13.matcher( dbResult.getLocation() );
+				while (stateDb13.find()) {
+					MaharashtraCount++;
+				}
+				
+				Pattern value14 = Pattern.compile("Manipur");
+				Matcher stateDb14 = value14.matcher( dbResult.getLocation() );
+				while (stateDb14.find()) {
+					ManipurCount++;
+				}
+				
+				Pattern value15 = Pattern.compile("Meghalaya");
+				Matcher stateDb15 = value15.matcher( dbResult.getLocation() );
+				while (stateDb15.find()) {
+					MeghalayaCount++;
+				}
+				
+				Pattern value16 = Pattern.compile("Mizoram");
+				Matcher stateDb16 = value16.matcher( dbResult.getLocation() );
+				while (stateDb16.find()) {
+					MizoramCount++;
+				}
+				
+				Pattern value17 = Pattern.compile("Nagaland");
+				Matcher stateDb17 = value17.matcher( dbResult.getLocation() );
+				while (stateDb17.find()) {
+					NagalandCount++;
+				}
+				
+				Pattern value18 = Pattern.compile("Odisha");
+				Matcher stateDb18 = value18.matcher( dbResult.getLocation() );
+				while (stateDb18.find()) {
+					OdishaCount++;
+				}
+				
+				Pattern value19 = Pattern.compile("Andhra Pradesh");
+				Matcher stateDb19 = value19.matcher( dbResult.getLocation() );
+				while (stateDb19.find()) {
+					AndhraPradesh++;
+				}
+				
+				Pattern value20 = Pattern.compile("Punjab");
+				Matcher stateDb20 = value20.matcher( dbResult.getLocation() );
+				while (stateDb20.find()) {
+					PunjabCount++;
+				}
+				
+				Pattern value21 = Pattern.compile("Rajasthan");
+				Matcher stateDb21 = value21.matcher( dbResult.getLocation() );
+				while (stateDb21.find()) {
+					RajasthanCount++;
+				}
+				
+				Pattern value22 = Pattern.compile("Sikkim");
+				Matcher stateDb22 = value22.matcher( dbResult.getLocation() );
+				while (stateDb22.find()) {
+					SikkimCount++;
+				}
+				
+				Pattern value23 = Pattern.compile("Tamil Nadu");
+				Matcher stateDb23 = value23.matcher( dbResult.getLocation() );
+				while (stateDb23.find()) {
+					TamilNaduCount++;
+				}
+				
+				Pattern value24 = Pattern.compile("Telangana");
+				Matcher stateDb24 = value24.matcher( dbResult.getLocation() );
+				while (stateDb24.find()) {
+					TelanganaCount++;
+				}
+				
+				Pattern value25 = Pattern.compile("Tripura");
+				Matcher stateDb25 = value25.matcher( dbResult.getLocation() );
+				while (stateDb25.find()) {
+					TripuraCount++;
+				}
+				
+				Pattern value26 = Pattern.compile("Uttar Pradesh");
+				Matcher stateDb26 = value26.matcher( dbResult.getLocation() );
+				while (stateDb26.find()) {
+					UtterPradeshCount++;
+				}
+				
+				Pattern value27 = Pattern.compile("Uttarakhand");
+				Matcher stateDb27 = value27.matcher( dbResult.getLocation() );
+				while (stateDb27.find()) {
+					UtterakhandCount++;
+				}
+				
+				Pattern value28 = Pattern.compile("West Bengal");
+				Matcher stateDb28 = value28.matcher( dbResult.getLocation() );
+				while (stateDb28.find()) {
+					WestBengalCount++;
+				}
+				
+	        }
+			theModel.addAttribute("ArunachalPradeshCount", ArunachalPradeshCount);
+			theModel.addAttribute("AssamCount", AssamCount);
+			theModel.addAttribute("BiharCount", BiharCount);
+			theModel.addAttribute("ChhattisgarhCount", ChhattisgarhCount);
+			theModel.addAttribute("GoaCount", GoaCount);
+			theModel.addAttribute("GujaratCount", GujaratCount);
+			theModel.addAttribute("HaryanaCount", HaryanaCount);
+			theModel.addAttribute("HimachalPradeshCount", HimachalPradeshCount);
+			theModel.addAttribute("JharkhandCount", JharkhandCount);
+			theModel.addAttribute("KarnatakaCount", KarnatakaCount);
+			theModel.addAttribute("KeralaCount", KeralaCount);
+			theModel.addAttribute("MadhyaPradeshCount", MadhyaPradeshCount);
+			theModel.addAttribute("MaharashtraCount", MaharashtraCount);
+			theModel.addAttribute("ManipurCount", ManipurCount);
+			theModel.addAttribute("MeghalayaCount", MeghalayaCount);
+			theModel.addAttribute("MizoramCount", MizoramCount);
+			theModel.addAttribute("NagalandCount", NagalandCount);
+			theModel.addAttribute("AndhraPradesh", AndhraPradesh);
+			theModel.addAttribute("OdishaCount", OdishaCount);
+			theModel.addAttribute("PunjabCount", PunjabCount);
+			theModel.addAttribute("RajasthanCount", RajasthanCount);
+			theModel.addAttribute("SikkimCount", SikkimCount);
+			theModel.addAttribute("TamilNaduCount", TamilNaduCount);
+			theModel.addAttribute("TelanganaCount", TelanganaCount);
+			theModel.addAttribute("TripuraCount", TripuraCount);
+			theModel.addAttribute("UtterPradeshCount", UtterPradeshCount);
+			theModel.addAttribute("UtterakhandCount", UtterakhandCount);
+			theModel.addAttribute("WestBengalCount", WestBengalCount);
+			
 	  }
 	
 }

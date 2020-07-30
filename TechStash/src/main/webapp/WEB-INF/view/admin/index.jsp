@@ -641,36 +641,116 @@
   <tr class="header">
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Andhra Pradesh</td>
+    <td style="padding-top: 32px;">${AndhraPradesh}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Arunachal Pradesh</td>
+    <td style="padding-top: 32px;">${ArunachalPradeshCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Assam</td>
+    <td style="padding-top: 32px;">${AssamCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Bihar</td>
+    <td style="padding-top: 32px;">${BiharCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Chhattisgarh</td>
+    <td style="padding-top: 32px;">${ChhattisgarhCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Goa</td>
+    <td style="padding-top: 32px;">${GoaCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Gujarat</td>
+    <td style="padding-top: 32px;">${GujaratCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Haryana</td>
+    <td style="padding-top: 32px;">${HaryanaCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Himachal Pradesh</td>
+    <td style="padding-top: 32px;">${HimachalPradeshCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Jharkhand</td>
+    <td style="padding-top: 32px;">${JharkhandCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Karnataka</td>
+    <td style="padding-top: 32px;">${KarnatakaCount}</td>
   </tr>
   <tr>
     <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Kerala</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td style="padding-top: 32px;">${KeralaCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Madhya Pradesh</td>
+    <td style="padding-top: 32px;">${MadhyaPradeshCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Maharashtra</td>
+    <td style="padding-top: 32px;">${MaharashtraCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Manipur</td>
+    <td style="padding-top: 32px;">${ManipurCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Meghalaya</td>
+    <td style="padding-top: 32px;">${MeghalayaCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Mizoram</td>
+    <td style="padding-top: 32px;">${MizoramCount}</td>
   </tr>
   <tr>
-    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamilnadu</td>
-    <td style="padding-top: 32px;">10,000</td>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Nagaland</td>
+    <td style="padding-top: 32px;">${NagalandCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Odisha</td>
+    <td style="padding-top: 32px;">${OdishaCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Punjab</td>
+    <td style="padding-top: 32px;">${PunjabCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Rajasthan</td>
+    <td style="padding-top: 32px;">${RajasthanCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Sikkim</td>
+    <td style="padding-top: 32px;">${SikkimCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tamil Nadu</td>
+    <td style="padding-top: 32px;">${TamilNaduCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Telangana</td>
+    <td style="padding-top: 32px;">${TelanganaCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Tripura</td>
+    <td style="padding-top: 32px;">${TripuraCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Uttar Pradesh</td>
+    <td style="padding-top: 32px;">${UtterPradeshCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> Uttarakhand</td>
+    <td style="padding-top: 32px;">${UtterakhandCount}</td>
+  </tr>
+  <tr>
+    <td><img src="/images/conference/conference-post-1.jpg" width="100" height="72"> West Bengal</td>
+    <td style="padding-top: 32px;">${WestBengalCount}</td>
   </tr>
 </table>
 		</div>		
@@ -715,8 +795,8 @@ var addressPoints = [ <c:forEach items="${subscriberLocation}" var="tempSubscrib
     	zoom: 4,
 	});
 
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    	attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
   	}).addTo(map);
 	
 	
